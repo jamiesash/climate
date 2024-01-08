@@ -3,7 +3,7 @@
 .Rapp.history
 
 # large data sets
-.nc
+*.nc
 
 # Session Data files
 .RData
