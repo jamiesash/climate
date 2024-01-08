@@ -2,6 +2,9 @@
 .Rhistory
 .Rapp.history
 
+# large data sets
+.nc
+
 # Session Data files
 .RData
 .RDataTmp
