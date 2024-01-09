@@ -72,14 +72,14 @@ print("1. Functions loaded.")
 library(cmocean)
 library(rworldmap)
 library(rworldxtra)
-library(terra)
 library(anytime)
+library(terra)
 
 print("2. Librares loaded.")
 
 # ------------------------------------------------------------------------------
 ### Loading the dataset
-chl = rast("/home/jamesash/blooms/data/chl_1998_2023_l3_multi_4k.nc")
+chl = rast("/home/jamesash/climate/data/chl_1998_2023_l3_multi_4k.nck.nc")
 
 print("3. Data loaded")
 
@@ -87,27 +87,28 @@ print("3. Data loaded")
 
 chla = anomalize(chl)
 
-print("3. Anomolized")
-
 # ------------------------------------------------------------------------------
-# Change to time variable. 
+# Perform the regression right awway fug it. 
+# I do this with a vector instead of the time variable. 
 t = 1:nlyr(chla)
 # the first layer is the intercept, and I assume the second layer is the slope. 
-cli = regress(chla, t, na.rm = TRUE, cores = 7)
+# testing the number of cores.
+cli = regress(chla, t, na.rm = TRUE)
 
 print("4. Regression complete.")
 
 # ------------------------------------------------------------------------------
 ### Save Raster
-save = FALSE
-if (save == TRUE){
-writeCDF(cli,
-	filename = paste("/home/jamesash/blooms/data/", "cli_day_", dt,, sep = ""), 
-        varname = "CHL", 
-        longname="cllimatology of chl from monthly data", 
-        unit="mg/m^3", 
-        split=FALSE)
-	}
+dt = gsub("-", "", as.character(Sys.Date()))
 
-# ------------------------------------------------------------------------------
+save = TRUE
+if (save == TRUE) {
+	writeCDF(cli, 
+		filename = paste("/home/jamesash/climate/data/", "cli_day_", dt, ".nc", sep = ""), 
+		overwrite = TRUE)
+		#varname = "CHL", 
+		#longname="cllimatology of chl from monthly data", 
+		#unit="mg/m^3", 
+		#split=FALSE)
+		}
 

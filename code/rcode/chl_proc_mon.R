@@ -93,16 +93,18 @@ chla = anomalize(chl)
 t = 1:nlyr(chla)
 # the first layer is the intercept, and I assume the second layer is the slope. 
 # testing the number of cores.
-cli = regress(chla, t, na.rm = TRUE, cores=4)
+cli = regress(chla, t, na.rm = TRUE)
 
 print("4. Regression complete.")
 
 # ------------------------------------------------------------------------------
 ### Save Raster
-save = FALSE
+dt = gsub("-", "", as.character(Sys.Date()))
+
+save = TRUE
 if (save == TRUE) {
 	writeCDF(cli, 
-		filename = paste("/home/jamesash/blooms/data/", "cli_mon_", dt,, sep = ""), 
+		filename = paste("/home/jamesash/climate/data/", "cli_mon_", dt, ".nc",sep = ""), 
 		overwrite = TRUE)
 		#varname = "CHL", 
 		#longname="cllimatology of chl from monthly data", 
