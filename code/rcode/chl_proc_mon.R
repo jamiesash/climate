@@ -72,14 +72,14 @@ print("1. Functions loaded.")
 library(cmocean)
 library(rworldmap)
 library(rworldxtra)
-library(terra)
 library(anytime)
+library(terra)
 
 print("2. Librares loaded.")
 
 # ------------------------------------------------------------------------------
 ### Loading the dataset
-chl = rast("/home/jamesash/blooms/data/chl_1998_2023_l3_multi_4k.nc")
+chl = rast("/home/jamesash/blooms/data/chl_1998_2023_l4_month_multi_4k.nc")
 
 print("3. Data loaded")
 
@@ -87,74 +87,26 @@ print("3. Data loaded")
 
 chla = anomalize(chl)
 
-print("3. Anomolized")
-
 # ------------------------------------------------------------------------------
-# Change to time variable. 
+# Perform the regression right awway fug it. 
+# I do this with a vector instead of the time variable. 
 t = 1:nlyr(chla)
 # the first layer is the intercept, and I assume the second layer is the slope. 
-cli = regress(chla, t, na.rm = TRUE, cores = 7)
+# testing the number of cores.
+cli = regress(chla, t, na.rm = TRUE, cores=4)
 
 print("4. Regression complete.")
 
 # ------------------------------------------------------------------------------
 ### Save Raster
 save = FALSE
-if (save == TRUE){
-writeCDF(cli,
-	filename = paste("/home/jamesash/blooms/data/", "cli_mon_", dt,, sep = ""),
-	overwrite = TRUE) 
-        # varname = "CHL", 
-        # longname="cllimatology of chl from monthly data", 
-        # unit="mg/m^3", 
-        # split=FALSE)
-	}
-
-# ------------------------------------------------------------------------------
-### Plotting
-# I may need to extract values here. I don't want to lower the suprimum.
-
-o = sd(cli, na.rm = TRUE)
-l = min(cli, na.rm = TRUE) 
-u = max(cli, na.rm = TRUE) 
-infi = l # + o*2
-supi = u - o*2
-
-cli = clamp(cli, lower=infi, upper=supi, values=TRUE)
-print("5. Clamped.")
-
-# -------------------------------------------------------------------------------
-wdmap <- getMap(resolution = "high")
-colmap = cmocean("delta")(100)
-dt = gsub("-", "", as.character(Sys.Date()))
-e = ext(cli)
-
-# Plotting the function. 
-pdf(paste("/home/jamesash/blooms/figures/", "cli_", dt, ".pdf", sep = ""),  
-    width = 5.5, # inches
-    height = 4,
-    pointsize = 10) # inches
-
-plot(cli[[2]], 
-	# ylim = c(16, 40),
-	# xlim = c(-175, -130),
-	col = colmap, 
-	mar = c(3.1, 3.1, 2.1, 7.1),
-	plg = list(size = c(1, 1.25)),
-	range = c(-0.001, 0.001),
-	ylab = "Latitude",
-	xlab = "Longitude")
-	#breaks = 100)
-plot(wdmap,
-     ylim = e[3:4],
-     xlim = e[1:2],
-     asp = 1,
-     bg = "black",
-     border = "black",
-     col = "black",
-     add = TRUE,
-     lwd = 1)
-dev.off()
-
-# ------------------------------------------------------------------------------
+if (save == TRUE) {
+	writeCDF(cli, 
+		filename = paste("/home/jamesash/blooms/data/", "cli_mon_", dt,, sep = ""), 
+		overwrite = TRUE)
+		#varname = "CHL", 
+		#longname="cllimatology of chl from monthly data", 
+		#unit="mg/m^3", 
+		#split=FALSE)
+		}
 
