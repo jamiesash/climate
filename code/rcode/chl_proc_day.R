@@ -79,7 +79,7 @@ print("2. Librares loaded.")
 
 # ------------------------------------------------------------------------------
 ### Loading the dataset
-chl = rast("/home/jamesash/climate/data/chl_1998_2023_l3_multi_4k.nck.nc")
+chl = rast("/home/jamesash/climate/data/chl_1998_2023_l3_multi_4k.nc")
 
 print("3. Data loaded")
 
