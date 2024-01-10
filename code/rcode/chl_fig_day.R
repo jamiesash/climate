@@ -1,4 +1,3 @@
-# functions --------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
 ### Liraries 
@@ -12,18 +11,19 @@ print("2. Librares loaded.")
 
 # ------------------------------------------------------------------------------
 ### Loading the dataset
-cli = rast("/home/jamesash/blooms/data/chl_day_xxxxxxxx.nc")
+cli = rast("/home/jamesash/climate/data/cli_day_20240110.nc")
 
 print("3. Data loaded")
 
 # ------------------------------------------------------------------------------
 ### Plotting prep.
 # I may need to extract values here. I don't want to lower the suprimum.
+cli = cli[[2]]
 
-o = sd(cli, na.rm = TRUE)
-l = min(cli, na.rm = TRUE) 
-u = max(cli, na.rm = TRUE) 
-infi = l # + o*2
+o = sd(values(cli), na.rm = TRUE)
+l = min(values(cli), na.rm = TRUE) 
+u = max(values(cli), na.rm = TRUE) 
+infi = l 
 supi = u - o*2
 
 cli = clamp(cli, lower=infi, upper=supi, values=TRUE)
@@ -38,12 +38,12 @@ dt = gsub("-", "", as.character(Sys.Date()))
 e  = ext(cli)
 
 # Plotting the function. 
-pdf(paste("/home/jamesash/blooms/figures/", "cli_", dt, ".pdf", sep = ""),  
+pdf(paste("/home/jamesash/climate/figures/", "cli_day_", dt, ".pdf", sep = ""),  
     width  = 5.5, # inches
     height = 4,
     pointsize = 10) # inches
 
-plot(cli[[2]], 
+plot(cli, 
 	# ylim = c(16, 40),
 	# xlim = c(-175, -130),
 	col  = colmap, 
