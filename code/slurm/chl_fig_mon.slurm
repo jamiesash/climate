@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=proc_mon
+#SBATCH --job-name=fig_mon
 
 #SBATCH --ntasks=1
 
@@ -26,5 +26,5 @@ module load lang/Anaconda3/2023.03-1
 
 source activate blooms
 cd /home/jamesash/climate/code/rcode/ 
-Rscript chl_proc_mon.R
+Rscript chl_fig_mon.R
 

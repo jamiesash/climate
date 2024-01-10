@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=cli_map
+#SBATCH --job-name=proc_day
 
 #SBATCH --ntasks=1
 
