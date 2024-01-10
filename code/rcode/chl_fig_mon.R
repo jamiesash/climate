@@ -10,7 +10,7 @@ print("2. Librares loaded.")
 
 # ------------------------------------------------------------------------------
 ### Loading the dataset
-cli = rast("/home/jamesash/blooms/data/chl_mon_xxxxxxxx.nc")
+cli = rast("/home/jamesash/climate/data/chl_mon_xxxxxxxx.nc")
 
 print("3. Data loaded")
 
@@ -34,7 +34,7 @@ dt = gsub("-", "", as.character(Sys.Date()))
 e = ext(cli)
 
 # Plotting the function. 
-pdf(paste("/home/jamesash/blooms/figures/", "cli_mon_", dt, ".pdf", sep = ""),  
+pdf(paste("/home/jamesash/climate/figures/", "cli_mon_", dt, ".pdf", sep = ""),  
     width = 5.5, # inches
     height = 4,
     pointsize = 10) # inches

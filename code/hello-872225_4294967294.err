@@ -1,8 +1,0 @@
-Loading required package: sp
-### Welcome to rworldmap ###
-For a short introduction type : 	 vignette('rworldmap')
-terra 1.7.65
-Error: [rast] file does not exist: /home/jamesash/blooms/data/chl_1998_2023_l4_month_multi_4k.nc
-In addition: Warning message:
-/home/jamesash/blooms/data/chl_1998_2023_l4_month_multi_4k.nc: No such file or directory (GDAL error 4) 
-Execution halted
