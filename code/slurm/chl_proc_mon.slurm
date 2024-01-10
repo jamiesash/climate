@@ -26,5 +26,5 @@ module load lang/Anaconda3/2023.03-1
 
 source activate blooms
 cd /home/jamesash/climate/code/rcode/ 
-Rscript chl_proc_day.R
+Rscript chl_proc_mon.R
 
