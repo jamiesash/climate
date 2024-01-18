@@ -26,8 +26,8 @@ print("3. Data loaded")
 # infi = l # + o*2
 # supi = u - o*2
 
-zlim = c(-0.0008, 0.0008)
-cli = clamp(cli, lower=zlim[1], upper=zlim[2], values=TRUE)
+zlim = c(-0.001, 0.001)
+cli = clamp(cli, lower=zlim[1], upper=zlim[2], values=FALSE)
 print("5. Clamped.")
 
 # -------------------------------------------------------------------------------
@@ -37,7 +37,7 @@ dt = gsub("-", "", as.character(Sys.Date()))
 e = ext(cli)
 
 # Plotting the function. 
-pdf(paste("/home/jamesash/climate/figures/", "cli_mon_2_", dt, ".pdf", sep = ""),  
+pdf(paste("/home/jamesash/climate/figures/", "cli_mon_3_", dt, ".pdf", sep = ""),  
     width = 5.5, # inches
     height = 4,
     pointsize = 10) # inches

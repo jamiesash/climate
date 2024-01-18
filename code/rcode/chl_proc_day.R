@@ -65,6 +65,22 @@ anomalize = function(ras, detrend = FALSE, f = 0.6){
   chla
 }
 
+subsum    = function(x, mnths = 7:10) {
+  sdate     <- time(x)
+  themonths <- c("January","February",
+                 "March", "April",
+                 "May","June",
+                 "July","August",
+                 "September", "October",
+                 "November","December")
+  m     <- months(sdate)
+  idx_t <- which(is.element(m, themonths[mnths]))
+  x     <- subset(x, idx_t)
+  sdate <- sdate[idx_t]
+  time(x) = sdate
+  x
+}
+
 print("1. Functions loaded.")
 
 # ------------------------------------------------------------------------------
@@ -85,7 +101,11 @@ print("3. Data loaded")
 
 # ------------------------------------------------------------------------------
 
+# remove the seasonal climatologic signal. 
 chla = anomalize(chl)
+
+# remove all but the summer months.
+chla = subsum(chla, mnths = 6:10)
 
 # ------------------------------------------------------------------------------
 # Perform the regression right awway fug it. 
@@ -104,7 +124,7 @@ dt = gsub("-", "", as.character(Sys.Date()))
 save = TRUE
 if (save == TRUE) {
 	writeCDF(cli, 
-		filename = paste("/home/jamesash/climate/data/", "cli_day_", dt, ".nc", sep = ""), 
+		filename = paste("/home/jamesash/climate/data/", "cli_day_sum_", dt, ".nc",sep = ""), 
 		overwrite = TRUE)
 		#varname = "CHL", 
 		#longname="cllimatology of chl from monthly data", 
