@@ -24,7 +24,7 @@ o = sd(values(cli), na.rm = TRUE)
 l = min(values(cli), na.rm = TRUE) 
 u = max(values(cli), na.rm = TRUE) 
 infi = l 
-supi = u - o*2
+supi = u - o
 
 cli = clamp(cli, lower=infi, upper=supi, values=TRUE)
 
