@@ -19,14 +19,15 @@ print("3. Data loaded")
 ### Plotting
 # I may need to extract values here. I don't want to lower the suprimum.
  
-o = sd(values(cli), na.rm = TRUE)
-l = min(values(cli), na.rm = TRUE)
-u = max(values(cli), na.rm = TRUE)
+# o = sd(values(cli), na.rm = TRUE)
+# l = min(values(cli), na.rm = TRUE)
+# u = max(values(cli), na.rm = TRUE)
 
-infi = l # + o*2
-supi = u - o*2
+# infi = l # + o*2
+# supi = u - o*2
 
-cli = clamp(cli, lower=infi, upper=supi, values=TRUE)
+zlim = c(-0.0008, 0.0008)
+cli = clamp(cli, lower=zlim[1], upper=zlim[2], values=TRUE)
 print("5. Clamped.")
 
 # -------------------------------------------------------------------------------
