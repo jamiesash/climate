@@ -10,7 +10,7 @@ print("2. Librares loaded.")
 
 # ------------------------------------------------------------------------------
 ### Loading the dataset
-cli = rast("/home/jamesash/climate/data/cli_mon_20240110.nc")
+cli = rast("/home/jamesash/climate/data/cli_mon_sum_20240118.nc")
 
 print("3. Data loaded")
 

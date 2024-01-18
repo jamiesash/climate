@@ -65,6 +65,22 @@ anomalize = function(ras, detrend = FALSE, f = 0.6){
   chla
 }
 
+subsum    = function(x, mnths = 7:10) {
+  sdate     <- time(x)
+  themonths <- c("January","February",
+                 "March", "April",
+                 "May","June",
+                 "July","August",
+                 "September", "October",
+                 "November","December")
+  m     <- months(sdate)
+  idx_t <- which(is.element(m, themonths[mnths]))
+  x     <- subset(x, idx_t)
+  sdate <- sdate[idx_t]
+  time(x) = sdate
+  x
+}
+
 print("1. Functions loaded.")
 
 # ------------------------------------------------------------------------------
@@ -85,15 +101,19 @@ print("3. Data loaded")
 
 # ------------------------------------------------------------------------------
 
-chla = anomalize(chl)
+# remove the seasonal climatologic signal. 
+# chla = anomalize(chl)
+
+# remove all but the summer months.
+chl = subsum(chl)
 
 # ------------------------------------------------------------------------------
 # Perform the regression right awway fug it. 
 # I do this with a vector instead of the time variable. 
-t = 1:nlyr(chla)
+t = 1:nlyr(chl)
 # the first layer is the intercept, and I assume the second layer is the slope. 
 # testing the number of cores.
-cli = regress(chla, t, na.rm = TRUE)
+cli = regress(chl, t, na.rm = TRUE)
 
 print("4. Regression complete.")
 
@@ -104,7 +124,7 @@ dt = gsub("-", "", as.character(Sys.Date()))
 save = TRUE
 if (save == TRUE) {
 	writeCDF(cli, 
-		filename = paste("/home/jamesash/climate/data/", "cli_mon_", dt, ".nc",sep = ""), 
+		filename = paste("/home/jamesash/climate/data/", "cli_mon_sum_", dt, ".nc",sep = ""), 
 		overwrite = TRUE)
 		#varname = "CHL", 
 		#longname="cllimatology of chl from monthly data", 
