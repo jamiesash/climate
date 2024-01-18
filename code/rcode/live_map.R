@@ -11,6 +11,7 @@ print("2. Librares loaded.")
 # ------------------------------------------------------------------------------
 ### Loading the dataset
 cli = rast("/home/jamesash/climate/data/cli_mon_sum_20240118.nc")
+cli = cli[[2]]
 
 print("3. Data loaded")
 
@@ -18,15 +19,15 @@ print("3. Data loaded")
 ### Plotting
 # I may need to extract values here. I don't want to lower the suprimum.
  
-o = sd(values(cli[[2]]), na.rm = TRUE)
-l = min(values(cli[[2]]), na.rm = TRUE)
-u = max(values(cli[[2]]), na.rm = TRUE)
+# o = sd(values(cli), na.rm = TRUE)
+# l = min(values(cli), na.rm = TRUE)
+# u = max(values(cli), na.rm = TRUE)
 
-infi = l # + o*2
-supi = u - o*2
+# infi = l # + o*2
+# supi = u - o*2
 
-cli = clamp(cli[[2]], lower=infi, upper=supi, values=TRUE)
-print("5. Clamped.")
+# cli = clamp(cli], lower=infi, upper=supi, values=TRUE)
+# print("5. Clamped.")
 
 # -------------------------------------------------------------------------------
 wdmap <- getMap(resolution = "high")
@@ -46,7 +47,7 @@ plot(cli,
 	col = colmap, 
 	mar = c(3.1, 3.1, 2.1, 7.1),
 	plg = list(size = c(1, 1.25)),
-	range = c(-0.0007, 0.0007),
+	range = c(-0.0008, 0.0008),
 	ylab = "Latitude",
 	xlab = "Longitude")
 	#breaks = 100)
