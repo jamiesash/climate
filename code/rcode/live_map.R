@@ -18,31 +18,31 @@ print("3. Data loaded")
 ### Plotting
 # I may need to extract values here. I don't want to lower the suprimum.
  
-o = sd(values(cli[[1]]), na.rm = TRUE)
-l = min(values(cli[[1]]), na.rm = TRUE)
-u = max(values(cli[[1]]), na.rm = TRUE)
+o = sd(values(cli[[2]]), na.rm = TRUE)
+l = min(values(cli[[2]]), na.rm = TRUE)
+u = max(values(cli[[2]]), na.rm = TRUE)
 
 infi = l # + o*2
 supi = u - o*2
 
-cli = clamp(cli[[1]], lower=infi, upper=supi, values=TRUE)
+cli = clamp(cli[[2]], lower=infi, upper=supi, values=TRUE)
 print("5. Clamped.")
 
 # -------------------------------------------------------------------------------
 wdmap <- getMap(resolution = "high")
 colmap = cmocean("delta")(100)
 dt = gsub("-", "", as.character(Sys.Date()))
-e = ext(cli[[1]])
+e = ext(cli[[2]])
 
 # Plotting the function. 
-pdf(paste("/home/jamesash/climate/figures/", "cli_mon_2_", dt, ".pdf", sep = ""),  
+pdf(paste("/home/jamesash/climate/figures/", "cli_mon_", dt, ".pdf", sep = ""),  
     width = 5.5, # inches
     height = 4,
     pointsize = 10) # inches
 
-plot(cli[[1]], 
-	# ylim = c(16, 40),
-	# xlim = c(-175, -130),
+plot(cli, 
+	ylim = c(16, 37),
+	xlim = c(-175, -130),
 	col = colmap, 
 	mar = c(3.1, 3.1, 2.1, 7.1),
 	plg = list(size = c(1, 1.25)),
