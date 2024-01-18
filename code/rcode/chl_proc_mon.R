@@ -102,18 +102,18 @@ print("3. Data loaded")
 # ------------------------------------------------------------------------------
 
 # remove the seasonal climatologic signal. 
-# chla = anomalize(chl)
+chla = anomalize(chl)
 
 # remove all but the summer months.
-chl = subsum(chl, mnths = 6:10)
+chla = subsum(chla, mnths = 6:10)
 
 # ------------------------------------------------------------------------------
 # Perform the regression right awway fug it. 
 # I do this with a vector instead of the time variable. 
-t = 1:nlyr(chl)
+t = 1:nlyr(chla)
 # the first layer is the intercept, and I assume the second layer is the slope. 
 # testing the number of cores.
-cli = regress(chl, t, na.rm = TRUE)
+cli = regress(chla, t, na.rm = TRUE)
 
 print("4. Regression complete.")
 

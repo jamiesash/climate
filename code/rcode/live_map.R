@@ -35,18 +35,18 @@ dt = gsub("-", "", as.character(Sys.Date()))
 e = ext(cli[[2]])
 
 # Plotting the function. 
-pdf(paste("/home/jamesash/climate/figures/", "cli_mon_", dt, ".pdf", sep = ""),  
+pdf(paste("/home/jamesash/climate/figures/", "cli_mon_2_", dt, ".pdf", sep = ""),  
     width = 5.5, # inches
     height = 4,
     pointsize = 10) # inches
 
 plot(cli, 
-	ylim = c(16, 37),
-	xlim = c(-175, -135),
+	ylim = c(16, 40),
+	xlim = c(-175, -130),
 	col = colmap, 
 	mar = c(3.1, 3.1, 2.1, 7.1),
 	plg = list(size = c(1, 1.25)),
-	range = c(-0.001, 0.001),
+	range = c(-0.0008, 0.0008),
 	ylab = "Latitude",
 	xlab = "Longitude")
 	#breaks = 100)
