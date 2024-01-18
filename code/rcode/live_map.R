@@ -42,11 +42,11 @@ pdf(paste("/home/jamesash/climate/figures/", "cli_mon_", dt, ".pdf", sep = ""),
 
 plot(cli, 
 	ylim = c(16, 37),
-	xlim = c(-175, -130),
+	xlim = c(-175, -135),
 	col = colmap, 
 	mar = c(3.1, 3.1, 2.1, 7.1),
 	plg = list(size = c(1, 1.25)),
-	# range = c(-0.001, 0.001),
+	range = c(-0.001, 0.001),
 	ylab = "Latitude",
 	xlab = "Longitude")
 	#breaks = 100)

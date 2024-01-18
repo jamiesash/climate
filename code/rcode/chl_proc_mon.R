@@ -105,7 +105,7 @@ print("3. Data loaded")
 # chla = anomalize(chl)
 
 # remove all but the summer months.
-chl = subsum(chl)
+chl = subsum(chl, mnths = 6:10)
 
 # ------------------------------------------------------------------------------
 # Perform the regression right awway fug it. 
