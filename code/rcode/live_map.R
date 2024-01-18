@@ -19,21 +19,21 @@ print("3. Data loaded")
 ### Plotting
 # I may need to extract values here. I don't want to lower the suprimum.
  
-# o = sd(values(cli), na.rm = TRUE)
-# l = min(values(cli), na.rm = TRUE)
-# u = max(values(cli), na.rm = TRUE)
+o = sd(values(cli), na.rm = TRUE)
+l = min(values(cli), na.rm = TRUE)
+u = max(values(cli), na.rm = TRUE)
 
-# infi = l # + o*2
-# supi = u - o*2
+infi = l # + o*2
+supi = u - o*2
 
-# cli = clamp(cli], lower=infi, upper=supi, values=TRUE)
-# print("5. Clamped.")
+cli = clamp(cli, lower=infi, upper=supi, values=TRUE)
+print("5. Clamped.")
 
 # -------------------------------------------------------------------------------
 wdmap <- getMap(resolution = "high")
 colmap = cmocean("delta")(100)
 dt = gsub("-", "", as.character(Sys.Date()))
-e = ext(cli[[2]])
+e = ext(cli)
 
 # Plotting the function. 
 pdf(paste("/home/jamesash/climate/figures/", "cli_mon_2_", dt, ".pdf", sep = ""),  
