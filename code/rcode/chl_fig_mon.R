@@ -1,8 +1,6 @@
 # ------------------------------------------------------------------------------
 ### Liraries and functions
 library(cmocean)
-library(rworldmap)
-library(rworldxtra)
 library(anytime)
 library(terra)
 
@@ -10,58 +8,68 @@ print("2. Librares loaded.")
 
 # ------------------------------------------------------------------------------
 ### Loading the dataset
-cli = rast("/home/jamesash/climate/data/cli_mon_sum_20240118.nc")
+states = vect("../../data/states/s_05mr24.shp")
+cli = rast("../../data/cli_mon_sum_20240118.nc")
 cli = cli[[2]]
 
 print("3. Data loaded")
-
 # ------------------------------------------------------------------------------
 ### Plotting
 # I may need to extract values here. I don't want to lower the suprimum.
- 
-# o = sd(values(cli), na.rm = TRUE)
-# l = min(values(cli), na.rm = TRUE)
-# u = max(values(cli), na.rm = TRUE)
 
-# infi = l # + o*2
-# supi = u - o*2
-
-zlim = c(-0.002, 0.0008)
-cli = clamp(cli, lower=zlim[1], upper=zlim[2], values=TRUE)
+# for dayly I use c(-0.00005, 0.00005)
+bounds = c(-0.001, 0.001)
+cli = clamp(cli, lower=bounds[1], upper=bounds[2], values=TRUE)
 print("5. Clamped.")
 
 # -------------------------------------------------------------------------------
-wdmap <- getMap(resolution = "high")
 colmap = cmocean("delta")(100)
 dt = gsub("-", "", as.character(Sys.Date()))
 e = ext(cli)
 
 # Plotting the function. 
-pdf(paste("/home/jamesash/climate/figures/", "cli_mon_4_", dt, ".pdf", sep = ""),  
+pdf(paste("../../figures/", "cli_mon_", dt, ".pdf", sep = ""),  
     width = 5.5, # inches
     height = 4,
-    pointsize = 10) # inches
+    pointsize = 8) # inches
 
-plot(cli, 
-	ylim = c(15, 38),
-	xlim = c(-175, -130),
-	col = colmap, 
-	mar = c(3.1, 3.1, 2.1, 7.1),
-	plg = list(size = c(1, 1.25)),
-	range = c(-0.001, 0.0008),
-	ylab = "Latitude",
-	xlab = "Longitude")
-	#breaks = 100)
-plot(wdmap,
-     ylim = e[3:4],
-     xlim = e[1:2],
-     asp = 1,
-     bg = "black",
-     border = "black",
+image(cli,
+      col = colmap,
+      ylim = c(16, 40),
+      #zlim = c(-0.00005, 0.00005),
+      xlim = c(-175, -130),
+      asp = 1,
+      axes = FALSE)
+plot(states,
      col = "black",
-     add = TRUE,
-     lwd = 1)
+     asp = 1,
+     add = TRUE)
+axis(side = 2, 
+     las = 2, 
+     lwd = 1, 
+     at = c(18, 22, 26, 30, 34, 38),
+     mgp = c(1, 0.75, 0), 
+     cex.axis = 1)
+axis(side = 1, 
+     las = 1, 
+     lwd = 1,
+     mgp = c(2, 1, 0),    
+     at = c(-170, -160, -150, -140, -130),
+     cex.axis = 1)
+box(lwd = 1)
 dev.off()
+
+# plot(cli, 
+#      ylim = c(16, 37),
+#      xlim = c(-175, -130),
+#      col = colmap,
+#      colNA = "black",
+#      mar = c(3.1, 3.1, 2.1, 7.1),
+#      plg = list(size = c(1, 1.25)),
+#      range = c(-0.00005, 0.00005),
+#      ylab = "Latitude",
+#      xlab = "Longitude")
+#breaks = 100)
 
 # ------------------------------------------------------------------------------
 
