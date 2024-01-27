@@ -38,11 +38,11 @@ image(cli,
       ylim = c(16, 40),
       #zlim = c(-0.00005, 0.00005),
       xlim = c(-175, -130),
-      asp = 1,
+      asp = 0.83,
       axes = FALSE)
 plot(states,
      col = "black",
-     asp = 1,
+     #asp = 1,
      add = TRUE)
 axis(side = 2, 
      las = 2, 
@@ -59,17 +59,22 @@ axis(side = 1,
 box(lwd = 1)
 dev.off()
 
-# plot(cli, 
-#      ylim = c(16, 37),
-#      xlim = c(-175, -130),
-#      col = colmap,
-#      colNA = "black",
-#      mar = c(3.1, 3.1, 2.1, 7.1),
-#      plg = list(size = c(1, 1.25)),
-#      range = c(-0.00005, 0.00005),
-#      ylab = "Latitude",
-#      xlab = "Longitude")
-#breaks = 100)
+
+pdf(paste("../../figures/", "cli_mon_", dt, ".pdf", sep = ""),  
+    width = 5.5, # inches
+    height = 4,
+    pointsize = 8) # inches
+plot(cli, 
+     col = colmap,
+     range=c(-0.001, 0.001),
+     mar=c(4, 4, 4, 6), 
+     #pal=list(shrink=0.9, cex=.8), 
+     pax=list(cex.axis=1.25))
+plot(states,
+     col = "black",
+     add = TRUE)
+dev.off()
+
 
 # ------------------------------------------------------------------------------
 
