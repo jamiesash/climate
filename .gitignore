@@ -4,6 +4,10 @@
 
 # large data sets
 *.nc
+*.dbf  
+*.prj  
+*.shp  
+*.shx
 
 # Session Data files
 .RData
