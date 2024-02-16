@@ -42,7 +42,7 @@ image(cli,
       axes = FALSE)
 plot(states,
      col = "black",
-     #asp = 1,
+     # asp = 1,
      add = TRUE)
 axis(side = 2, 
      las = 2, 
