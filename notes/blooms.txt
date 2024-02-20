@@ -204,7 +204,6 @@ Rscript ./chl_loc_reg.R
 # And I get a warnning that files arent pushed to the main....
 
 # Personal access token. 
-# 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
 
 # starting over from a new directory climate
 [jamesash@cn-03-13-04 climate]$ git init
