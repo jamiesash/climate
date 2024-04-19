@@ -223,4 +223,43 @@ Rscript ./chl_loc_reg.R
 # my project is being tracke using git in climate. 
 # at some point I may figure out how to push this to github.
 # mayb I'll try cloning a project localy. 
- 
+
+# ------------------------------------------------------------------------------------------------------------------------------------
+# Downloading SLA from cmems
+
+# Downloading the daily ssh.
+# product id is SEALEVEL_GLO_PHY_L4_MY_008_047
+
+# actate conda env first of course then run copernicous
+(cmc-beta) jamie@jamie:~/projects/climate/data/sla$ conda activate 
+(cmc-beta) jamie@jamie:~/projects/climate/data/sla$ copernicus-marine subset -i cmems_obs-sl_glo_phy-ssh_my_allsat-l4-duacs-0.25deg_P1D -y 16.0 -Y 40.0 -x -175.0 -X -130.0 -v sla -t 1998-01-01 -T 2023-12-30 -o . -f sla_1998_2023_l4_4k.nc
+
+# Not too large of a file.
+-rw-rw-r-- 1 jamie jamie 613M Feb 22 10:26 sla_1998_2023_l4_4k.nc
+
+
+# ------------------------------------------------------------------------------------------------------------------------------------
+# Downloading FSLE from AVISO
+
+copernicus-marine subset -i cmems_obs-sl_glo_phy-ssh_my_allsat-l4-duacs-0.25deg_P1D -y 16.0 -Y 40.0 -x -175.0 -X -130.0 -v sla -t 1998-01-01 -T 2023-12-30 -o . -f sla_1998_2023_l4_4k.nc
+https://motu.aviso.altimetry.fr/motu-web/Motu?action=listcatalog&service=AvisoFSLE
+
+# Just fsle max 2015
+python motuclient.exe -u jamesash@hawaii.edu -p "liw3x9" -m https://motu.aviso.altimetry.fr/motu-web/Motu -s AvisoFSLE -id dataset-duacs-dt-global-allsat-madt-fsle -x -180 -X -120 -y 15 -Y 45 -t "2010-01-01" -T "2023-01-01" --outputWritten netcdf -v fsle_max -o C:\Users\james\Desktop\jamieslife\data\infiles\case_study -f fsle_po_2010_2023.nc
+
+# directly from aviso
+python motuclient.py -u jamesash@hawaii.edu -p "liw3x9" -m https://motu.aviso.altimetry.fr/motu-web/Motu -s AvisoFSLE -d dataset-duacs-dt-global-allsat-madt-fsle -x 0.019999999552965164 -X -0.019989013671875 -y -89.9800033569336 -Y 89.9800033569336 -t "2023-06-07" -T "2023-06-07" --outputWritten netcdf -v fsle_max -o your_output_directory(1) -f your_output_file_name(1) --proxy-server=your_proxy_server_url:your_proxy_port_number(2) --proxy-user=your_proxy_user_login(3) --proxy-pwd=your_proxy_user_password(3)
+
+# add my info
+python motuclient.py -u jamesash@hawaii.edu -p "liw3x9" -m https://motu.aviso.altimetry.fr/motu-web/Motu -s AvisoFSLE -d dataset-duacs-dt-global-allsat-madt-fsle -x -175 -X -130 -y 16 -Y 40 -t "1998-01-01" -T "2023-06-07" --outputWritten netcdf -v fsle_max -o . -f fsle_max_2010_2023.nc 
+
+# idk it's fucked.
+motuclient -u jamesash@hawaii.edu -p "liw3x9" -m https://motu.aviso.altimetry.fr/motu-web/Motu -s AvisoFSLE -d dataset-duacs-dt-global-allsat-madt-fsle -x -175 -X -130 -y 16 -Y 40 -t "1998-01-01" -T "2023-06-07" --outputWritten netcdf -v fsle_max -o . -f fsle_max_2010_2023.nc 
+
+# im so tuired of motuclient
+python /home/jamie/anaconda3/envs/aviso/lib/python3.12/site-packages/motuclient/motuclient.py -u jamesash@hawaii.edu -p "liw3x9" -m https://motu.aviso.altimetry.fr/motu-web/Motu -s AvisoFSLE -d dataset-duacs-dt-global-allsat-madt-fsle -x -130 -X -175 -y 16 -Y 40 -t "2023-01-01" -T "2023-02-01" --outputWritten netcdf -v fsle_max -o /home/jamie/projects/climate/data/fsle/ -f fsle_max_2023_test.nc
+
+python /home/jamie/anaconda3/envs/aviso/lib/python3.12/site-packages/motuclient/motuclient.py -u jamesash@hawaii.edu -p "liw3x9" -m https://motu.aviso.altimetry.fr/motu-web/Motu -s AvisoFSLE -d dataset-duacs-dt-global-allsat-madt-fsle -x 110 -X -100 -y 0 -Y 70 -t "2023-05-07" -T "2023-06-07" --outputWritten netcdf -v fsle_max -o . -f fsle_test.nc
+
+
+
