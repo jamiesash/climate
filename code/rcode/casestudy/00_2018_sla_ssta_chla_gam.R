@@ -1,23 +1,18 @@
 source("functions.R")
 source("libraries.R")
 source("blooms.R")
-library(animation)
-library("rerddap")
 library("akima")
 library("dplyr")
-library("ggplot2")
 library("mapdata")
 library("ncdf4")
-library("plot3D")
 library(IndexNumR)
 library(imputeTS)
-library(sp)
-#library(rgdal)
-library(raster)
+library(tera)
 library("plotrix") 
 library(rasterVis)
-rasterOptions(maxmemory = 120e+10, memfrac = 0.9)
-knitr::opts_chunk$set(echo = TRUE)
+
+# rasterOptions(maxmemory = 120e+10, memfrac = 0.9)
+# knitr::opts_chunk$set(echo = TRUE)
 
 # ------------------------------------------------------------------------------
 # the data loading function we've all been waiting for
