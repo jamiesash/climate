@@ -27,6 +27,7 @@ bloomclim = function(x) {
   clim[[2:13]]
   }
 
+# The terra version of anomalize. I think. 
 anomalize = function(ras, detrend = FALSE, f = 0.6){
   themonths <- c("January","February", "March", "April", "May","June",  "July",
                  "August", "September", "October", "November","December")
