@@ -2462,17 +2462,7 @@ bufcoast = function(ras,
   hawaii = st_polygonize(hawaii)
   hawaii = as(hawaii, "Spatial")
   
-  # t = getZ(ras)
-  # e = extent(ras)
-  # ras = t(ras)
-  # extent(ras) = e
-  
   ras = raster::mask(ras, hawaii, inverse = TRUE)
-  
-  # ras = t(ras)
-  # extent(ras) = e
-  # ras = setZ(ras, z = t, name = "time")
-  # ras
 }
 
 # ------------------------------------------------------------------------------
@@ -2591,4 +2581,22 @@ anomalize = function(ras, detrend = FALSE, f = 0.6){
 
   chla
 }
+
+# match ------------------------------------------------------------------------
+
+# match = function(x, y){
+#   ty = getZ(y)
+#   ty = as.numeric(ty)
+#   tx = getZ(x)
+#   tx = as.numeric(tx)
+#   idx = which(is.element(tx, ty))
+#   tx = subset(tx, is.element(tx, ty))
+#   x = raster::subset(x, idx)
+#   x = setZ(x, z = as.Date(tx), name = "time")
+#   x
+# }
+
+# example 
+# sla = match(x = sla, y = chl)
+
 
