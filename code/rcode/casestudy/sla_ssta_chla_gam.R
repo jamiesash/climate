@@ -6,10 +6,14 @@ library(terra)
 # ------------------------------------------------------------------------------
 ### To do
 
-# 1. Download SSTA for the same time domain.
+# 1. Download SSTA for the same resolution as CHL. 
 # 2. Resize to CHL for higher fake resolution. Use nearest neighbor. 
 # 3. Run the same GAM as before. 
 # 4. Save the model output. 
+# 5. Re-download SST I deleted it by accident. 
+# 6. SLA resize introduces extreme negative number.  
+# 7. Fix the way the way SSTA is being saved. It's extent is messed up. 
+# 8. Download a different CHL this one is cloudy. 
 
 # ------------------------------------------------------------------------------
 # Load SLA, CHL and SSTA data sets. 
@@ -19,7 +23,7 @@ setwd("/home/jamie/projects/climate/code/rcode/casestudy")
 
 sla = rast("../../../data/sla/sla_2018_l4_4k.nc")
 chl = rast("../../../data/chl/chl_2018_daily_multi_l3_4k.nc")
-sst = rast("../../../data/sst/ssta_l4_2018_lowres_20240716.nc")
+sst = rast("../../../data/sst/ssta_l4_2018_4k_20240717.nc")
 
 # subset spacial polygon like a data frame. 
 eez = terra::vect("../../../data/eez/USMaritimeLimitsNBoundaries.shp")
@@ -29,7 +33,6 @@ hawaii = eez[idx,]
 # ------------------------------------------------------------------------------
 # removing coastal effects
 
-# Select the regions of interest for subseting. 
 idx = hawaii$CZ + hawaii$TS
 idx = which(idx == 1)
 hawaii = hawaii[idx,]
@@ -37,9 +40,9 @@ hawaii = hawaii[idx,]
 # ------------------------------------------------------------------------------
 # Resize to SLA since it is the lowest resolution. 
 
-sst = resample(sst, sla)
-chl = resample(chl, sla)
-sla = resample(sla, sla)
+sst = resample(sst, sla, method = "near")
+chl = resample(chl, sla, method = "near")
+#sla = resample(sla, sla, method = "near")
 
 # So close. Close enough for now. Still leaves little blips. 
 sst = terra::mask(sst, hawaii, inverse = TRUE)
@@ -61,7 +64,7 @@ sst = as.data.frame(sst, xy = TRUE, wide = FALSE, na.rm=FALSE, time=TRUE)
 idx = which(!is.na(chl$values))
 chl = chl[idx,]
 sla = sla[idx,]
-sst = ssta[idx,]
+sst = sst[idx,]
 
 time = sla$time
 time = yday(time)
@@ -70,7 +73,7 @@ alldata = data.frame(time = time,
                      lat = sla$y, 
                      sla = sla$values, 
                      chl = chl$values,
-                     sst = ssta$values)
+                     sst = sst$values)
 # KOA might not like this. 
 rm(sla, chl, sst, time)
 

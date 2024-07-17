@@ -40,7 +40,7 @@ dap = function(sdate, edate, x, y,
     dap_that_ass = function(day, data_info, x, y){
       data = griddap(data_info, 
                      latitude = y[1:2],
-                     stride =  c(1, 25, 25),
+                     stride =  c(1, 5, 5),
                      longitude = x[1:2], 
                      time = c(as.character(day), as.character(day)),
                      fmt = "nc",
@@ -78,11 +78,13 @@ dap = function(sdate, edate, x, y,
     e = ext(ras)
     ras = t(ras)
     ras = flip(ras)
+    ext(ras) = e
     ras
 }
 
 # Note this fills the hell out of the tmp directory /tmp/RtmpjCHdUF/R/rerddap/
 # /tmp/RtmpTTr6r3/R/rerdda
+# /tmp/RtmpKdtXge/R/rerddap
 # Will fail if there are corrupted files in that directory. 
 sst = dap(sdate = "2018-06-01",
           edate = "2018-11-01",
@@ -93,3 +95,8 @@ dt = gsub("-", "", as.character(Sys.Date()))
 writeCDF(sst, 
          filename = paste("/home/jamie/projects/climate/data/", "ssta_l4_2018_lowres_", dt, ".nc", sep = ""), 
          overwrite = TRUE)
+
+
+
+
+
