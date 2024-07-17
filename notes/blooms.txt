@@ -91,7 +91,6 @@ scp chl_1998_2023_l4_month_multi_4k.nc jamesash@koa.its.hawaii.edu:/home/jamesas
 ### Local CHL download small daily data.
 # dataset id: c3s_obs-oc_glo_bgc-plankton_my_l3-multi-4km_P1D
 
-# YOLO the big dady dataset. 
 (cmc-beta) jamie@jamie:~/projects/blooms/data$ copernicus-marine subset -i c3s_obs-oc_glo_bgc-plankton_my_l3-multi-4km_P1D -y 16.0 -Y 40.0 -x -175.0 -X -130.0 -v CHL -t 2022-01-01 -T 2023-11-01 -o . -f chl_2022_2023_l3_daily_multi_4k.nc
 
 # Transfer to the HPC.
@@ -261,12 +260,12 @@ python /home/jamie/anaconda3/envs/aviso/lib/python3.12/site-packages/motuclient/
 python /home/jamie/anaconda3/envs/aviso/lib/python3.12/site-packages/motuclient/motuclient.py -u jamesash@hawaii.edu -p "liw3x9" -m https://motu.aviso.altimetry.fr/motu-web/Motu -s AvisoFSLE -d dataset-duacs-dt-global-allsat-madt-fsle -x 110 -X -100 -y 0 -Y 70 -t "2023-05-07" -T "2023-06-07" --outputWritten netcdf -v fsle_max -o . -f fsle_test.nc
 
 # ------------------------------------------------------------------------------------------------------------------------------------
-# Downloading SST from CMEMS. 
+# Downloading Sattelite data from CMEMS. 
 
-# Sea surface temperature. 
+# Test sea surface temperature. 
 copernicusmarine subset -i METOFFICE-GLO-SST-L4-NRT-OBS-SST-V2 -y 18.0 -Y 24.0 -x -170.0 -X -155.0 -t 2022-01-01 -T 2022-01-15 -f tmp_test.nc -v analysed_sst
 
-# To download temperature for one year. Might need mroe to calculate an anomaly. 
+# To download temperature for all year. Might need mroe to calculate an anomaly. 
 copernicusmarine subset -i METOFFICE-GLO-SST-L4-NRT-OBS-SST-V2 -y 16.0 -Y 40.0 -x -175.0 -X -130.0 -v analysed_sst -t 2007-01-01 -T 2022-12-30 -o . -f ssta_2018_2022_l4_4k.nc
 
 # Downlaod a subset. Beta is slightly different.  
@@ -278,10 +277,22 @@ copernicusmarine subset -i METOFFICE-GLO-SST-L4-NRT-OBS-SST-V2 -y 16.0 -Y 40.0 -
 copernicusmarine subset -i cmems_obs-sl_glo_phy-ssh_my_allsat-l4-duacs-0.25deg_P1D -y 16.0 -Y 40.0 -x -175.0 -X -130.0 -v sla -t 2018-06-01 -T 2018-11-01 -o . -f sla_2018_l4_4k.nc
 copernicusmarine subset -i c3s_obs-oc_glo_bgc-plankton_my_l3-multi-4km_P1D -y 16.0 -Y 40.0 -x -175.0 -X -130.0 -v CHL -t 2018-06-01 -T 2018-11-01 -o . -f chl_2018_daily_multi_l3_4k.nc
 
-
-
 # To download the same timespan for SLA. Or just use the whole data set it is already an anomaly.  
 copernicusmarine subset -i cmems_obs-sl_glo_phy-ssh_my_allsat-l4-duacs-0.25deg_P1D -y 16.0 -Y 40.0 -x -175.0 -X -130.0 -v sla -t 2007-01-01 -T 2022-12-30 -o . -f sla_2018_2022_l4_4k.nc
 
 # To download the same timespan for CHL. 
+
+# ------------------------------------------------------------------------------------------------------------------------------------
+# Actual data sets used for analysis 
+
+# Downloading jsut the summer for the case study.
+copernicusmarine subset -i METOFFICE-GLO-SST-L4-NRT-OBS-SST-V2 -y 16.0 -Y 40.0 -x -175.0 -X -130.0 -v analysed_sst -t 2018-06-01 -T 2018-11-01 -o . -f ssta_2018_l4_4k.nc
+copernicusmarine subset -i cmems_obs-sl_glo_phy-ssh_my_allsat-l4-duacs-0.25deg_P1D -y 16.0 -Y 40.0 -x -175.0 -X -130.0 -v sla -t 2018-06-01 -T 2018-11-01 -o . -f sla_2018_l4_4k.nc
+copernicusmarine subset -i c3s_obs-oc_glo_bgc-plankton_my_l3-multi-4km_P1D -y 16.0 -Y 40.0 -x -175.0 -X -130.0 -v CHL -t 2018-06-01 -T 2018-11-01 -o . -f chl_2018_daily_multi_l3_4k.nc
+
+# To download all of SLA.
+copernicusmarine subset -i cmems_obs-sl_glo_phy-ssh_my_allsat-l4-duacs-0.25deg_P1D -y 16.0 -Y 40.0 -x -175.0 -X -130.0 -v sla -t 2007-01-01 -T 2022-12-30 -o . -f sla_2018_2022_l4_4k.nc
+
+# To download all of CHL. 
+copernicus-marine subset -i cmems_obs-oc_glo_bgc-plankton_my_l4-multi-4km_P1M -y 16.0 -Y 40.0 -x -175.0 -X -130.0 -v CHL -t 1998-01-01 -T 2023-12-30 -o . -f chl_1998_2023_l4_month_multi_4k.nc
 
