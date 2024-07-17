@@ -1,19 +1,27 @@
-# library("dplyr")
-# library(IndexNumR)
-# library(imputeTS)
+library(yaml)
 library(mgcViz)
 library(lubridate)
 library(terra)
 
 # ------------------------------------------------------------------------------
+### To do
+
+# 1. Download SSTA for the same time domain.
+# 2. Resize to CHL for higher fake resolution. Use nearest neighbor. 
+# 3. Run the same GAM as before. 
+# 4. Save the model output. 
+
+# ------------------------------------------------------------------------------
 # Load SLA, CHL and SSTA data sets. 
 # With this method I prefer to download the extent and time span of interest. 
 
+setwd("/home/jamie/projects/climate/code/rcode/casestudy")
+
 sla = rast("../../../data/sla/sla_2018_l4_4k.nc")
 chl = rast("../../../data/chl/chl_2018_daily_multi_l3_4k.nc")
-sst = rast("../../../data/sst/ssta_2018_l4_4k.nc")
+sst = rast("../../../data/sst/ssta_l4_2018_lowres_20240716.nc")
 
-# subset spacial polygone like a data frame. 
+# subset spacial polygon like a data frame. 
 eez = terra::vect("../../../data/eez/USMaritimeLimitsNBoundaries.shp")
 idx = which(eez$REGION == 'Hawaiian Islands')
 hawaii = eez[idx,]
@@ -33,7 +41,7 @@ sst = resample(sst, sla)
 chl = resample(chl, sla)
 sla = resample(sla, sla)
 
-# So close. Close enough for now.  
+# So close. Close enough for now. Still leaves little blips. 
 sst = terra::mask(sst, hawaii, inverse = TRUE)
 chl = terra::mask(chl, hawaii, inverse = TRUE)
 sla = terra::mask(sla, hawaii, inverse = TRUE)
@@ -41,19 +49,19 @@ sla = terra::mask(sla, hawaii, inverse = TRUE)
 # ------------------------------------------------------------------------------
 # Create table
 
-# welp this used to be really hard before terra. 
-chl = terra::as.data.frame(chl, xy = TRUE, wide = FALSE, na.rm=FALSE, time=TRUE)
-sla = terra::as.data.frame(sla, xy = TRUE, wide = FALSE, na.rm=FALSE, time=TRUE)
-sst = terra::as.data.frame(sst, xy = TRUE, wide = FALSE, na.rm=FALSE, time=TRUE)
+# Welp this used to be really hard before terra. 
+chl = as.data.frame(chl, xy = TRUE, wide = FALSE, na.rm=FALSE, time=TRUE)
+sla = as.data.frame(sla, xy = TRUE, wide = FALSE, na.rm=FALSE, time=TRUE)
+sst = as.data.frame(sst, xy = TRUE, wide = FALSE, na.rm=FALSE, time=TRUE)
 
 # ------------------------------------------------------------------------------
 # remove clouds. 
 
-# this seems not to work.
+# This seems not to work. 
 idx = which(!is.na(chl$values))
 chl = chl[idx,]
 sla = sla[idx,]
-sst = sst[idx,]
+sst = ssta[idx,]
 
 time = sla$time
 time = yday(time)
@@ -62,7 +70,7 @@ alldata = data.frame(time = time,
                      lat = sla$y, 
                      sla = sla$values, 
                      chl = chl$values,
-                     sst = sst$values)
+                     sst = ssta$values)
 # KOA might not like this. 
 rm(sla, chl, sst, time)
 
@@ -73,6 +81,8 @@ gam_chl = gam(chl ~ sst + sla + s(time) + s(lon, lat),
               data = alldata,
               family = Gamma(link = "inverse"))
 
+write_yaml(gam_chl, "chl_gam_20240715.yml")
+
 # ------------------------------------------------------------------------------
 # plotting the gam output. 
 
@@ -80,6 +90,8 @@ gam_visual <- getViz(gam_chl)
 gridPrint(plot(pterm(gam_visual, 1)) + l_ciPoly() + l_fitLine(),
           plot(pterm(gam_visual, 2)) + l_ciPoly() + l_fitLine(),
           ncol = 2)
+
+# save the model output. 
 
 # ------------------------------------------------------------------------------
 # Preparing a data frame for the GAM

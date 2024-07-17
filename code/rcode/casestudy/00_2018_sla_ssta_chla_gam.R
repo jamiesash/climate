@@ -42,18 +42,18 @@ dap = function(sdate, edate, e,
     crs(ras) = "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
     ras
   }
-  
+  # create a list of times to download small sets off data
   time = seq(sdate, edate, by = 1)
   time = as.list(time)
   
   data_info = info(id, 
                    url = url)
-  
+  # download all rasters as a list.
   ras  = lapply(time, FUN = dap_that_ass, data_info = data_info, e = e)
   time = lapply(ras, getZ)
   time = unlist(time)
   time = as.Date(time)
-  ext    = lapply(ras, extent)
+  ext  = lapply(ras, extent)
   ras  = stack(ras)
   extent(ras) = ext[[1]]
   ras = setZ(ras, z= time, name = "time")
@@ -239,17 +239,9 @@ ras2tbl = function(ras, name = "value"){
 }
 
 xdf = ras2tbl(x, name = "value")
-gc()
-
 ydf = ras2tbl(y, name = "value")
-gc()
-
 zdf  = ras2tbl(z,  name = "value")
-gc()
-
 qdf  = ras2tbl(q,  name = "value")
-gc()
-
 sdf  = ras2tbl(s,  name = "value")
 gc()
 
@@ -265,7 +257,6 @@ xyz = data.frame(time = xdf$time,
 )
 
 rm(xdf, ydf, zdf, qdf, sdf)
-gc() 
 
 xyz = xyz[!is.na(xyz$sla),]
 gc()
@@ -479,10 +470,5 @@ axis(side = 1,
      lwd = 2, 
      mgp = c(2, 1, 0), 
      cex.axis = 1.15)
-# ------------------------------------------------------------------------------
-
-# ------------------------------------------------------------------------------
-
-# ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
