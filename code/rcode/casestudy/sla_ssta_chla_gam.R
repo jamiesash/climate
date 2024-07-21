@@ -3,14 +3,14 @@ library(lubridate)
 library(terra)
 
 # ------------------------------------------------------------------------------
-### To do
+### Script To Do
 
-# 1. Download SSTA for the same resolution as CHL. 
-# 2. Resize to CHL for higher fake resolution. Use nearest neighbor. 
+# 1. Resize to CHL for higher fake resolution. Use nearest neighbor. 
+# 2. Calculate distance not lat/lon for the GAM. 
+# 3. Download a different CHL this one is cloudy. 
+# 4. Mask does not remove the center of the island. 
 # 5. Re-download SST I deleted it by accident. 
 # 6. SLA resize introduces extreme negative number.  
-# 8. Download a different CHL this one is cloudy. 
-# 9. Calculate distance not lat/lon for the GAM. 
 
 # ------------------------------------------------------------------------------
 # Load SLA, CHL and SSTA data sets. 
@@ -76,7 +76,7 @@ rm(sla, chl, sst, time)
 
 # ------------------------------------------------------------------------------
 
-# So I can easily run this on my local computer. 
+# Subset data so I can easily run this on my local computer. 
 idx = 1:nrow(alldata)
 idx = sample(idx, 100000)
 smalldata = alldata[idx,]
@@ -86,17 +86,16 @@ smalldata = alldata[idx,]
 
 gam_chl_sla = gam(chl ~ sla + s(time) + s(lon, lat), 
               data = smalldata,
+              # method = "REML",
               family = Gamma(link = "inverse"))
 
 gam_sla_sst = gam(sla ~ sst + s(time) + s(lon, lat), 
+              # method = "REML",
               data = smalldata)
 
 # save the model output. 
 save(gam_chl, file="../../../data/gam/chl_gam.Rdata")
 save(gam_sla, file="../../../data/gam/sla_gam.Rdata")
-
-# write_yaml(gam_chl, "../../../data/gam/chl_gam_20240715.yml")
-write_yaml(gam_chl, "../../../data/gam/sla_gam_20240715.yml")
 
 # ------------------------------------------------------------------------------
 # plotting the GAM output. 
@@ -123,8 +122,6 @@ gridPrint(plot(pterm(gam_sla_sst_visual, 1)) + xlab("SSTA [C]") + ylab(expressio
 dev.off()
 
 # ------------------------------------------------------------------------------
-
-
 
 # Preparing a data frame for the GAM
 # remove effects of clouds
