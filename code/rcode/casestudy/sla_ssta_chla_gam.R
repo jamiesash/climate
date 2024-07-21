@@ -1,4 +1,3 @@
-library(yaml)
 library(mgcViz)
 library(lubridate)
 library(terra)
@@ -8,12 +7,10 @@ library(terra)
 
 # 1. Download SSTA for the same resolution as CHL. 
 # 2. Resize to CHL for higher fake resolution. Use nearest neighbor. 
-# 3. Run the same GAM as before. 
-# 4. Save the model output. 
 # 5. Re-download SST I deleted it by accident. 
 # 6. SLA resize introduces extreme negative number.  
-# 7. Fix the way the way SSTA is being saved. It's extent is messed up. 
 # 8. Download a different CHL this one is cloudy. 
+# 9. Calculate distance not lat/lon for the GAM. 
 
 # ------------------------------------------------------------------------------
 # Load SLA, CHL and SSTA data sets. 
@@ -42,7 +39,7 @@ hawaii = hawaii[idx,]
 
 sst = resample(sst, sla, method = "near")
 chl = resample(chl, sla, method = "near")
-#sla = resample(sla, sla, method = "near")
+# sla = resample(sla, sla, method = "near")
 
 # So close. Close enough for now. Still leaves little blips. 
 sst = terra::mask(sst, hawaii, inverse = TRUE)
@@ -78,25 +75,57 @@ alldata = data.frame(time = time,
 rm(sla, chl, sst, time)
 
 # ------------------------------------------------------------------------------
+
+# So I can easily run this on my local computer. 
+idx = 1:nrow(alldata)
+idx = sample(idx, 100000)
+smalldata = alldata[idx,]
+
+# ------------------------------------------------------------------------------
 # going for it. 
 
-gam_chl = gam(chl ~ sst + sla + s(time) + s(lon, lat), 
-              data = alldata,
+gam_chl_sla = gam(chl ~ sla + s(time) + s(lon, lat), 
+              data = smalldata,
               family = Gamma(link = "inverse"))
 
-write_yaml(gam_chl, "chl_gam_20240715.yml")
-
-# ------------------------------------------------------------------------------
-# plotting the gam output. 
-
-gam_visual <- getViz(gam_chl)
-gridPrint(plot(pterm(gam_visual, 1)) + l_ciPoly() + l_fitLine(),
-          plot(pterm(gam_visual, 2)) + l_ciPoly() + l_fitLine(),
-          ncol = 2)
+gam_sla_sst = gam(sla ~ sst + s(time) + s(lon, lat), 
+              data = smalldata)
 
 # save the model output. 
+save(gam_chl, file="../../../data/gam/chl_gam.Rdata")
+save(gam_sla, file="../../../data/gam/sla_gam.Rdata")
+
+# write_yaml(gam_chl, "../../../data/gam/chl_gam_20240715.yml")
+write_yaml(gam_chl, "../../../data/gam/sla_gam_20240715.yml")
 
 # ------------------------------------------------------------------------------
+# plotting the GAM output. 
+
+gam_chl_sla_visual <- getViz(gam_chl_sla)
+gam_sla_sst_visual <- getViz(gam_sla_sst)
+
+dt = gsub("-", "", as.character(Sys.Date()))
+pdf(paste("../../../figures/chl_sla_gam_", dt, ".pdf", sep = ""),   # The directory you want to save the file in
+    width = 8, # The width of the plot in inches
+    height = 8,
+    pointsize = 10) # The height of the plot in inches
+gridPrint(plot(pterm(gam_chl_sla_visual, 1)) + xlab("SLA [m]") + ylab(expression(CHL ~ Effect ~ (mg ~ m^{-3}))) + l_ciPoly() + l_fitLine(),
+          ncol = 1)
+dev.off()
+
+dt = gsub("-", "", as.character(Sys.Date()))
+pdf(paste("../../../figures/sla_sst_gam_", dt, ".pdf", sep = ""),   # The directory you want to save the file in
+    width = 8, # The width of the plot in inches
+    height = 8,
+    pointsize = 10) # The height of the plot in inches
+gridPrint(plot(pterm(gam_sla_sst_visual, 1)) + xlab("SSTA [C]") + ylab(expression(SLA ~ Effect ~ (m))) + l_ciPoly() + l_fitLine(),
+          ncol = 1)
+dev.off()
+
+# ------------------------------------------------------------------------------
+
+
+
 # Preparing a data frame for the GAM
 # remove effects of clouds
 # xyz = xyz[!is.na(xyz$sla),]
