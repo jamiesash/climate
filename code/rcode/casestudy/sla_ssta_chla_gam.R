@@ -21,6 +21,7 @@ setwd("/home/jamie/projects/climate/code/rcode/casestudy")
 sla = rast("../../../data/sla/sla_2018_l4_4k.nc")
 chl = rast("../../../data/chl/chl_2018_daily_multi_l3_4k.nc")
 sst = rast("../../../data/sst/ssta_l4_2018_4k_20240717.nc")
+chl = rast("../../../data/chl/chl_2018_glob_daily_multi_l3_4k.nc")
 
 # subset spacial polygon like a data frame. 
 eez = terra::vect("../../../data/eez/USMaritimeLimitsNBoundaries.shp")
@@ -89,13 +90,13 @@ gam_chl_sla = gam(chl ~ sla + s(time) + s(lon, lat),
               # method = "REML",
               family = Gamma(link = "inverse"))
 
-gam_sla_sst = gam(sla ~ sst + s(time) + s(lon, lat), 
+gam_sla_sst = gam(sst ~ sla + s(time) + s(lon, lat), 
               # method = "REML",
               data = smalldata)
 
 # save the model output. 
-save(gam_chl, file="../../../data/gam/chl_gam.Rdata")
-save(gam_sla, file="../../../data/gam/sla_gam.Rdata")
+save(gam_chl_sla, file="../../../data/gam/chl_gam.Rdata")
+save(gam_sla_sst, file="../../../data/gam/sla_gam.Rdata")
 
 # ------------------------------------------------------------------------------
 # plotting the GAM output. 
@@ -119,6 +120,16 @@ pdf(paste("../../../figures/sla_sst_gam_", dt, ".pdf", sep = ""),   # The direct
     pointsize = 10) # The height of the plot in inches
 gridPrint(plot(pterm(gam_sla_sst_visual, 1)) + xlab("SSTA [C]") + ylab(expression(SLA ~ Effect ~ (m))) + l_ciPoly() + l_fitLine(),
           ncol = 1)
+dev.off()
+
+dt = gsub("-", "", as.character(Sys.Date()))
+pdf(paste("../../../figures/gam_subplots_", dt, ".pdf", sep = ""),   # The directory you want to save the file in
+    width = 9, # The width of the plot in inches
+    height = 4,
+    pointsize = 10) # The height of the plot in inches
+gridPrint(plot(pterm(gam_sla_sst_visual, 1)) + xlab(expression(SLA ~ (m))) + ylab(expression(SSTA ~ Effect ~ (C))) + l_ciPoly() + l_fitLine(),
+          plot(pterm(gam_chl_sla_visual, 1)) + xlab(expression(SLA ~ (m))) + ylab(expression(CHL ~ Effect ~ (mg ~ m^{-3}))) + l_ciPoly() + l_fitLine(),
+          ncol = 2)
 dev.off()
 
 # ------------------------------------------------------------------------------
