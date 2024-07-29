@@ -7,9 +7,7 @@ library(terra)
 
 # 1. Resize to CHL for higher fake resolution. Use nearest neighbor. 
 # 2. Calculate distance not lat/lon for the GAM. 
-# 3. Download a different CHL this one is cloudy. 
 # 4. Mask does not remove the center of the island. 
-# 5. Re-download SST I deleted it by accident. 
 # 6. SLA resize introduces extreme negative number.  
 
 # ------------------------------------------------------------------------------
@@ -19,7 +17,6 @@ library(terra)
 setwd("/home/jamie/projects/climate/code/rcode/casestudy")
 
 sla = rast("../../../data/sla/sla_2018_l4_4k.nc")
-chl = rast("../../../data/chl/chl_2018_daily_multi_l3_4k.nc")
 sst = rast("../../../data/sst/ssta_l4_2018_4k_20240717.nc")
 chl = rast("../../../data/chl/chl_2018_glob_daily_multi_l3_4k.nc")
 
@@ -103,6 +100,11 @@ save(gam_sla_sst, file="../../../data/gam/sla_gam.Rdata")
 
 gam_chl_sla_visual <- getViz(gam_chl_sla)
 gam_sla_sst_visual <- getViz(gam_sla_sst)
+
+# test visualization
+gridPrint(plot(pterm(gam_sla_sst_visual, 1)) + xlab(expression(SLA ~ (m))) + ylab(expression(SSTA ~ Effect ~ (C))) + l_ciPoly() + l_fitLine(),
+          plot(pterm(gam_chl_sla_visual, 1)) + xlab(expression(SLA ~ (m))) + ylab(expression(CHL ~ Effect ~ (mg ~ m^{-3}))) + l_ciPoly() + l_fitLine(),
+          ncol = 2)
 
 dt = gsub("-", "", as.character(Sys.Date()))
 pdf(paste("../../../figures/chl_sla_gam_", dt, ".pdf", sep = ""),   # The directory you want to save the file in

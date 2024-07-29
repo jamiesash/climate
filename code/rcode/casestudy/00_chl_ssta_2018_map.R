@@ -98,6 +98,7 @@ gc()
 
 chla = anomalize(chl, detrend = FALSE)
 gc()
+
 # ------------------------------------------------------------------------------
 
 # probs not needed
