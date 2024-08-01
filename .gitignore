@@ -8,6 +8,8 @@
 *.prj  
 *.shp  
 *.shx
+*.out
+*.err
 
 # Session Data files
 .RData
