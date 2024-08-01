@@ -296,6 +296,10 @@ copernicusmarine subset -i c3s_obs-oc_glo_bgc-plankton_my_l3-multi-4km_P1D -y 16
 copernicusmarine subset -i cmems_obs-oc_glo_bgc-plankton_my_l3-multi-4km_P1D -y 16.0 -Y 40.0 -x -175.0 -X -130.0 -v CHL -t 2018-06-01 -T 2018-11-01 -o . -f chl_2018_daily_multi_l3_4k.nc
 # GlobColor L4
 copernicusmarine subset -i cmems_obs-oc_glo_bgc-plankton_my_l4-gapfree-multi-4km_P1D -y 16.0 -Y 40.0 -x -175.0 -X -130.0 -v CHL -t 2018-06-01 -T 2018-11-01 -o . -f chl_2018_glob_daily_multi_l4_4k.nc
+# GlobColor Monthly
+copernicusmarine subset -i  cmems_obs-oc_glo_bgc-plankton_my_l4-multi-4km_P1M-y 16.0 -Y 40.0 -x -175.0 -X -130.0 -v CHL -t 2018-06-01 -T 2018-11-01 -o . -f chl_2018_glob_monthly_multi_l4_4k.nc
+
+
 
 # To download all of SLA.
 copernicusmarine subset -i cmems_obs-sl_glo_phy-ssh_my_allsat-l4-duacs-0.25deg_P1D -y 16.0 -Y 40.0 -x -175.0 -X -130.0 -v sla -t 2007-01-01 -T 2022-12-30 -o . -f sla_2018_2022_l4_4k.nc

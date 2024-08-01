@@ -2,18 +2,18 @@
 # ------------------------------------------------------------------------------
 ### Liraries 
 library(cmocean)
-library(rworldmap)
-library(rworldxtra)
+# library(rworldmap)
+# library(rworldxtra)
 library(terra)
-library(anytime)
+# library(anytime)
 
-print("2. Librares loaded.")
+print("`. Librares loaded.")
 
 # ------------------------------------------------------------------------------
 ### Loading the dataset
-cli = rast("/home/jamesash/climate/data/cli_day_20240110.nc")
+cli = rast("../../../data/chl/cli_day_sum_20240118.nc")
 
-print("3. Data loaded")
+print("2. Data loaded")
 
 # ------------------------------------------------------------------------------
 ### Plotting prep.
@@ -28,7 +28,7 @@ supi = u - o
 
 cli = clamp(cli, lower=infi, upper=supi, values=TRUE)
 
-print("5. Clamped.")
+print("3. Clamped.")
 
 # -------------------------------------------------------------------------------
 ### Plotting
