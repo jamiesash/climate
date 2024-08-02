@@ -95,22 +95,22 @@ print("2. Librares loaded.")
 
 # ------------------------------------------------------------------------------
 ### Loading the dataset
-chl = rast("/home/jamesash/climate/data/chl_1998_2023_l4_month_multi_4k.nc")
+chl = rast("/home/jamesash/climate/data/chl_1998_2023_l3_multi_4k.nc")
 
 print("3. Data loaded")
 
 # ------------------------------------------------------------------------------
 
 # remove the seasonal climatologic signal. 
-chla = anomalize(chl)
+chl = anomalize(chl)
 
 # remove all but the summer months.
-chla = subsum(chla, mnths = 6:10)
+chl = subsum(chl, mnths = 6:10)
 
 # ------------------------------------------------------------------------------
 # Perform find the climatology. 
 # cmap = calc(chla, fun = mean, na.rm = TRUE)
-cli = app(chla, fun = mean, na.rm = TRUE)
+chl = app(chl, fun = mean, na.rm = TRUE)
 # cli = mean(chla, na.rm=FALSE)
 
 # ------------------------------------------------------------------------------
@@ -120,10 +120,10 @@ dt = gsub("-", "", as.character(Sys.Date()))
 
 save = TRUE
 if (save == TRUE) {
-	writeCDF(cli, 
-		filename = paste("/home/jamesash/climate/data/", "climatology_mon_sum_", dt, ".nc",sep = ""), 
-		overwrite = TRUE)
-		#varname = "CHL", 
+	writeCDF(chl, 
+		filename = paste("/home/jamesash/climate/data/", "climatology_day_sum_", dt, ".nc",sep = ""), 
+		overwrite = TRUE),
+		varname = "CHL"
 		#longname="cllimatology of chl from monthly data", 
 		#unit="mg/m^3", 
 		#split=FALSE)
