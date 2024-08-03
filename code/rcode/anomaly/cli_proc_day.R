@@ -14,7 +14,7 @@ bloomclim = function(x) {
   j    = 0 # start j at 0 to count loops. i is a string
   # placeholder raster
   clim = x[[1]]
-
+  
   # looping through each month and finding a spacial average using calc()
   for (i in themonths) {
     j = j + 1
@@ -25,14 +25,16 @@ bloomclim = function(x) {
   }
   # Should add a time stamp and extent to the raster
   clim[[2:13]]
-  }
+}
 
-anomalize = function(ras, detrend = FALSE, f = 0.6){
+# The terra version of anomalize. I think. 
+anomalize = function(ras){
   themonths <- c("January","February", "March", "April", "May","June",  "July",
                  "August", "September", "October", "November","December")
-
+  
   # find the monthly climotology of the data set 
   ras_clim = bloomclim(ras)
+  gc()
   
   # subtract each month from corresponding daily data set
   ogt = time(ras)
@@ -43,25 +45,20 @@ anomalize = function(ras, detrend = FALSE, f = 0.6){
   # placeholder raster
   chla  = ras[[1]] 
   j    = 0 # start j at 0 to count loops. i is a string
-
   for (mon in themonths) {
     j = j + 1
     ind  = which(mon_raw == mon)
     temp = ras[[ind]] - ras_clim[[j]]
     chla = c(chla, temp)
   }
+  rm(temp, ras_clim)
+  gc()
   
-  rm(temp)
   chla = chla[[2:nlyr(chla)]]
+  gc()
   idx = order(time(chla))
+  gc()
   chla = chla[[idx]]
-  
-  if(detrend == TRUE) {
-    clim = smooth.time.series(chla, f = f, smooth.data = TRUE)
-    chla = chla - clim
-    chla = setZ(chla, z = anydate(t), name = "time")
-    }
-
   chla
 }
 
@@ -82,20 +79,17 @@ subsum    = function(x, mnths = 7:10) {
 }
 
 print("1. Functions loaded.")
-
 # ------------------------------------------------------------------------------
 ### Liraries and functions
-library(cmocean)
-library(rworldmap)
-library(rworldxtra)
 library(anytime)
 library(terra)
+setwd("/home/jamie/projects/climate/code/rcode/casestudy")
 
 print("2. Librares loaded.")
 
 # ------------------------------------------------------------------------------
 ### Loading the dataset
-chl = rast("/home/jamesash/climate/data/chl_1998_2023_l3_multi_4k.nc")
+chl = rast("../../../data/chl/chl_2017_2023_glob_day_multi_l4_4k.nc")
 
 print("3. Data loaded")
 
@@ -103,29 +97,18 @@ print("3. Data loaded")
 
 # remove the seasonal climatologic signal. 
 chl = anomalize(chl)
-
-# remove all but the summer months.
-chl = subsum(chl, mnths = 6:10)
-
-# ------------------------------------------------------------------------------
-# Perform find the climatology. 
-# cmap = calc(chla, fun = mean, na.rm = TRUE)
-chl = app(chl, fun = mean, na.rm = TRUE)
-# cli = mean(chla, na.rm=FALSE)
+gc()
 
 # ------------------------------------------------------------------------------
 
 ### Save Raster
 dt = gsub("-", "", as.character(Sys.Date()))
 
-save = TRUE
-if (save == TRUE) {
-	writeCDF(chl, 
-		filename = paste("/home/jamesash/climate/data/", "climatology_day_sum_", dt, ".nc",sep = ""), 
-		overwrite = TRUE),
-		varname = "CHL"
+writeCDF(chl, 
+	filename = paste("/home/jamesash/climate/data/", "chla_day_", dt, ".nc",sep = ""), 
+	overwrite = TRUE,
+	varname = "CHL")
 		#longname="cllimatology of chl from monthly data", 
 		#unit="mg/m^3", 
 		#split=FALSE)
-		}
 

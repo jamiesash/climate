@@ -28,7 +28,7 @@ bloomclim = function(x) {
   }
 
 # The terra version of anomalize. I think. 
-anomalize = function(ras, detrend = FALSE, f = 0.6){
+anomalize = function(ras){
   themonths <- c("January","February", "March", "April", "May","June",  "July",
                  "August", "September", "October", "November","December")
 
@@ -56,12 +56,6 @@ anomalize = function(ras, detrend = FALSE, f = 0.6){
   chla = chla[[2:nlyr(chla)]]
   idx = order(time(chla))
   chla = chla[[idx]]
-  
-  if(detrend == TRUE) {
-    clim = smooth.time.series(chla, f = f, smooth.data = TRUE)
-    chla = chla - clim
-    chla = setZ(chla, z = anydate(t), name = "time")
-    }
 
   chla
 }
@@ -86,9 +80,6 @@ print("1. Functions loaded.")
 
 # ------------------------------------------------------------------------------
 ### Liraries and functions
-library(cmocean)
-library(rworldmap)
-library(rworldxtra)
 library(anytime)
 library(terra)
 
