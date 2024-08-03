@@ -89,26 +89,6 @@ print("3. Data loaded")
 chl = anomalize(chl)
 gc()
 
-dt = gsub("-", "", as.character(Sys.Date()))
-writeCDF(chl, 
-         filename = paste("../../../data/", "chla_mon_1997_2023_l3_", dt, ".nc",sep = ""), 
-         overwrite = TRUE,
-         varname = "CHL")
-gc()
-
-chl = bool(chl)
-gc()
-
-dt = gsub("-", "", as.character(Sys.Date()))
-writeCDF(chl, 
-         filename = paste("../../../data/", "blooms_mon_1997_2023_l3_", dt, ".nc",sep = ""), 
-         overwrite = TRUE,
-         varname = "CHL")
-
-rm(blooms)
-gc()
-# if this where python id just have a masked array.
-
 # remove all but the summer months.
 chl = subsum(chl, mnths = 6:10)
 gc()
