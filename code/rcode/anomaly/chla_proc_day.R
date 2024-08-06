@@ -75,17 +75,17 @@ subsum    = function(x, mnths = 7:10) {
   time(x) = sdate
   x
 }
+
 # ------------------------------------------------------------------------------
 ### Liraries and functions
 library(anytime)
 library(terra)
-setwd("/home/jamie/projects/climate/code/rcode/casestudy")
 
 print("2. Librares loaded.")
 
 # ------------------------------------------------------------------------------
 ### Loading the dataset
-chl = rast("../../../data/chl/chl_2017_2023_glob_day_multi_l3_4k.nc")
+chl = rast("/home/jamesash/climate/data/chl/chl_2017_2023_glob_day_multi_l3_4k.nc")
 
 print("3. Data loaded")
 
@@ -94,6 +94,8 @@ print("3. Data loaded")
 # remove the seasonal climatologic signal. 
 chl = anomalize(chl)
 gc()
+
+print("4. anomalized")
 
 # ------------------------------------------------------------------------------
 
