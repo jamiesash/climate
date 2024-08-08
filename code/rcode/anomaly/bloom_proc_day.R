@@ -15,13 +15,13 @@ bool = function(x){
 library(anytime)
 library(terra)
 
-print("2. Librares loaded.")
+print("1. Librares loaded.")
 
 # ------------------------------------------------------------------------------
 ### Loading the dataset
-chl = rast("/home/jamesash/climate/data/chl/.chla_day_l3_2017_2023_20240804.nc")
+chl = rast("/home/jamesash/climate/data/chl/chla_day_l3_2017_2023_20240804.nc")
 
-print("3. Data loaded")
+print("2. Data loaded")
 
 # ------------------------------------------------------------------------------
 
@@ -29,7 +29,7 @@ print("3. Data loaded")
 chl = bool(chl)
 gc()
 
-print("4. Blooms found")
+print("3. Blooms found")
 
 # ------------------------------------------------------------------------------
 
@@ -39,5 +39,5 @@ dt = gsub("-", "", as.character(Sys.Date()))
 writeCDF(chl, 
 	filename = paste("/home/jamesash/climate/data/chl/", "blooms_day_l3_2017_2023_", dt, ".nc",sep = ""), 
 	overwrite = TRUE,
-	varname = "CHL")
+	varname = "blooms")
 

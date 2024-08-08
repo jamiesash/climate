@@ -8,7 +8,7 @@
 #SBATCH --time=1-00:00:00 ## time format is DD-HH:MM:SS
 
 #SBATCH --cpus-per-task=4
-#SBATCH --mem=500G ## max amount of memory per node you require
+#SBATCH --mem=200G ## max amount of memory per node you require
 
 #SBATCH --error=hello-%A_%a.err ## %A - filled with jobid
 #SBATCH --output=hello-%A_%a.out ## %A - filled with jobid
@@ -26,5 +26,5 @@ module load lang/Anaconda3/2023.03-1
 
 source activate blooms
 cd /home/jamesash/climate/code/rcode/anomaly/
-Rscript blooms_proc_day.R
+Rscript bloom_proc_day.R
 
