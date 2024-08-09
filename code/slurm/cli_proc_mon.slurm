@@ -8,7 +8,7 @@
 #SBATCH --time=0-06:00:00 ## time format is DD-HH:MM:SS
 
 #SBATCH --cpus-per-task=4
-#SBATCH --mem=100G ## max amount of memory per node you require
+#SBATCH --mem=200G ## max amount of memory per node you require
 
 #SBATCH --error=hello-%A_%a.err ## %A - filled with jobid
 #SBATCH --output=hello-%A_%a.out ## %A - filled with jobid

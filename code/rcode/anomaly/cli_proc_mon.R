@@ -81,14 +81,14 @@ subsum    = function(x, mnths = 7:10) {
 library(anytime)
 library(terra)
 
-print("2. Librares loaded.")
+print("1. Librares loaded.")
 
 # ------------------------------------------------------------------------------
 ### Loading the dataset
 # chl = rast("/home/jamesash/climate/data/chl_1998_2023_l4_month_multi_4k.nc")
-chl = rast("/home/jamesash/climate/data/chl_1998_2023_l4_month_multi_4k.nc")
+chl = rast("/home/jamesash/climate/data/chl/chl_1998_2023_l4_month_multi_4k.nc")
 
-print("3. Data loaded")
+print("2. Data loaded")
 
 # ------------------------------------------------------------------------------
 # remove the seasonal climatologic signal. 
@@ -99,18 +99,19 @@ gc()
 chl = subsum(chl, mnths = 6:10)
 gc()
 
+print("3. Anamolized and summer subset.")
+
 # ------------------------------------------------------------------------------
 # Perform find the climatology. 
-# cmap = calc(chla, fun = mean, na.rm = TRUE)
 cli = app(chl, fun = mean, na.rm = TRUE)
+
+print("4. Averaged.")
 
 # ------------------------------------------------------------------------------
 
 ### Save Raster
 writeCDF(cli, 
-	filename = paste("/home/jamesash/climate/data/data/chl/", "climatology_mon_sum_", dt, ".nc",sep = ""), 
+	filename = paste("/mnt/lustre/koa/scratch/jamesash/", "climatology_mon_sum", ".nc", sep = ""), 
 	overwrite = TRUE,
 	varname = "CHL")
-	#longname="cllimatology of chl from monthly data", 
-	#unit="mg/m^3", 
-	#split=FALSE)
+
