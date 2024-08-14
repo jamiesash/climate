@@ -1,0 +1,3093 @@
+{
+  "products": [
+    {
+      "title": "Antarctic Sea Ice Extent from Reanalysis",
+      "product_id": "ANTARCTIC_OMI_SI_extent",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/ANTARCTIC_OMI_SI_extent.png",
+      "digital_object_identifier": "10.48670/moi-00186",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Antarctic Monthly Sea Ice Extent from Observations Reprocessing",
+      "product_id": "ANTARCTIC_OMI_SI_extent_obs",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/ANTARCTIC_OMI_SI_extent_obs.png",
+      "digital_object_identifier": "10.48670/moi-00187",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "MET Norway"
+    },
+    {
+      "title": "Arctic Ocean Biogeochemistry Analysis and Forecast",
+      "product_id": "ARCTIC_ANALYSISFORECAST_BGC_002_004",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/ARCTIC_ANALYSISFORECAST_BGC_002_004.png",
+      "digital_object_identifier": "10.48670/moi-00003",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "MET Norway"
+    },
+    {
+      "title": "Arctic Ocean Physics Analysis and Forecast",
+      "product_id": "ARCTIC_ANALYSISFORECAST_PHY_002_001",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/ARCTIC_ANALYSISFORECAST_PHY_002_001.png",
+      "digital_object_identifier": "10.48670/moi-00001",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "MET Norway"
+    },
+    {
+      "title": "Arctic Ocean Sea Ice Analysis and Forecast",
+      "product_id": "ARCTIC_ANALYSISFORECAST_PHY_ICE_002_011",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/ARCTIC_ANALYSISFORECAST_PHY_ICE_002_011.png",
+      "digital_object_identifier": "10.48670/moi-00004",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "NERSC (Norway)"
+    },
+    {
+      "title": "Arctic Ocean Tidal Analysis and Forecast",
+      "product_id": "ARCTIC_ANALYSISFORECAST_PHY_TIDE_002_015",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/ARCTIC_ANALYSISFORECAST_PHY_TIDE_002_015.png",
+      "digital_object_identifier": "10.48670/moi-00005",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "MET Norway"
+    },
+    {
+      "title": "Arctic Ocean Wave Analysis and Forecast",
+      "product_id": "ARCTIC_ANALYSIS_FORECAST_WAV_002_014",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/ARCTIC_ANALYSIS_FORECAST_WAV_002_014.png",
+      "digital_object_identifier": "10.48670/moi-00002",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "MET Norway"
+    },
+    {
+      "title": "Arctic Ocean Biogeochemistry Reanalysis",
+      "product_id": "ARCTIC_MULTIYEAR_BGC_002_005",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/ARCTIC_MULTIYEAR_BGC_002_005.png",
+      "digital_object_identifier": "10.48670/moi-00006",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "NERSC (Norway)"
+    },
+    {
+      "title": "Arctic Ocean Physics Reanalysis",
+      "product_id": "ARCTIC_MULTIYEAR_PHY_002_003",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/ARCTIC_MULTIYEAR_PHY_002_003.png",
+      "digital_object_identifier": "10.48670/moi-00007",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "NERSC (Norway)"
+    },
+    {
+      "title": "Arctic Ocean Wave Hindcast",
+      "product_id": "ARCTIC_MULTIYEAR_WAV_002_013",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/ARCTIC_MULTIYEAR_WAV_002_013.png",
+      "digital_object_identifier": "10.48670/moi-00008",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "MET Norway"
+    },
+    {
+      "title": "Sea Ice Area/Volume Transport in the Nordic Seas from Reanalysis",
+      "product_id": "ARCTIC_OMI_SI_Transport_NordicSeas",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/ARCTIC_OMI_SI_Transport_NordicSeas.png",
+      "digital_object_identifier": "10.48670/moi-00192",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "NERSC (Norway)"
+    },
+    {
+      "title": "Arctic Sea Ice Extent from Reanalysis",
+      "product_id": "ARCTIC_OMI_SI_extent",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/ARCTIC_OMI_SI_extent.png",
+      "digital_object_identifier": "10.48670/moi-00190",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Arctic Monthly Mean Sea Ice Extent from Observations Reprocessing",
+      "product_id": "ARCTIC_OMI_SI_extent_obs",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/ARCTIC_OMI_SI_extent_obs.png",
+      "digital_object_identifier": "10.48670/moi-00191",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "MET Norway"
+    },
+    {
+      "title": "Arctic Freshwater Content from Reanalysis",
+      "product_id": "ARCTIC_OMI_TEMPSAL_FWC",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/ARCTIC_OMI_TEMPSAL_FWC.png",
+      "digital_object_identifier": "10.48670/moi-00193",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Baltic Sea Biogeochemistry Analysis and Forecast",
+      "product_id": "BALTICSEA_ANALYSISFORECAST_BGC_003_007",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BALTICSEA_ANALYSISFORECAST_BGC_003_007.png",
+      "digital_object_identifier": "10.48670/moi-00009",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "SMHI (Sweden)"
+    },
+    {
+      "title": "Baltic Sea Physics Analysis and Forecast",
+      "product_id": "BALTICSEA_ANALYSISFORECAST_PHY_003_006",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BALTICSEA_ANALYSISFORECAST_PHY_003_006.png",
+      "digital_object_identifier": "10.48670/moi-00010",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "SMHI (Sweden)"
+    },
+    {
+      "title": "Baltic Sea Wave Analysis and Forecast",
+      "product_id": "BALTICSEA_ANALYSISFORECAST_WAV_003_010",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BALTICSEA_ANALYSISFORECAST_WAV_003_010.png",
+      "digital_object_identifier": "10.48670/moi-00011",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "FMI (Finland)"
+    },
+    {
+      "title": "Baltic Sea Biogeochemistry Reanalysis",
+      "product_id": "BALTICSEA_MULTIYEAR_BGC_003_012",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BALTICSEA_REANALYSIS_BIO_003_012.png",
+      "digital_object_identifier": "10.48670/moi-00012",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "DMI (Denmark)"
+    },
+    {
+      "title": "Baltic Sea Physics Reanalysis",
+      "product_id": "BALTICSEA_MULTIYEAR_PHY_003_011",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BALTICSEA_REANALYSIS_PHY_003_011.png",
+      "digital_object_identifier": "10.48670/moi-00013",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "DMI (Denmark)"
+    },
+    {
+      "title": "Baltic Sea Wave Hindcast",
+      "product_id": "BALTICSEA_REANALYSIS_WAV_003_015",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BALTICSEA_REANALYSIS_WAV_003_015.png",
+      "digital_object_identifier": "10.48670/moi-00014",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "FMI (Finland)"
+    },
+    {
+      "title": "Baltic Sea Cod Reproductive Volume from Reanalysis",
+      "product_id": "BALTIC_OMI_HEALTH_codt_volume",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BALTIC_OMI_HEALTH_codt_volume.png",
+      "digital_object_identifier": "10.48670/moi-00196",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "SMHI (Sweden)"
+    },
+    {
+      "title": "Baltic Sea Ocean Heat Content Anomaly (0-300m) from Reanalysis",
+      "product_id": "BALTIC_OMI_OHC_area_averaged_anomalies",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BALTIC_OMI_OHC_area_averaged_anomalies.png",
+      "digital_object_identifier": "10.48670/mds-00322",
+      "sources": [
+        "In-situ observations",
+        "Numerical models",
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "SMHI (Sweden)"
+    },
+    {
+      "title": "Baltic Sea Ice Extent from Observations Reprocessing",
+      "product_id": "BALTIC_OMI_SI_extent",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BALTIC_OMI_SI_extent.png",
+      "digital_object_identifier": "10.48670/moi-00200",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "SMHI (Sweden)"
+    },
+    {
+      "title": "Baltic Sea Ice Volume from Observations Reprocessing",
+      "product_id": "BALTIC_OMI_SI_volume",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BALTIC_OMI_SI_volume.png",
+      "digital_object_identifier": "10.48670/moi-00201",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "SMHI (Sweden)"
+    },
+    {
+      "title": "Baltic Sea Subsurface Salinity trend from Reanalysis",
+      "product_id": "BALTIC_OMI_TEMPSAL_Stz_trend",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BALTIC_OMI_TEMPSAL_Ttz_trend.png",
+      "digital_object_identifier": "10.48670/moi-00207",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "SMHI (Sweden)"
+    },
+    {
+      "title": "Baltic Sea Subsurface Temperature trend from Reanalysis",
+      "product_id": "BALTIC_OMI_TEMPSAL_Ttz_trend",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BALTIC_OMI_TEMPSAL_Ttz_trend.png",
+      "digital_object_identifier": "10.48670/moi-00208",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "SMHI (Sweden)"
+    },
+    {
+      "title": "Baltic Sea Major Baltic Inflow: bottom salinity from Reanalysis",
+      "product_id": "BALTIC_OMI_WMHE_mbi_bottom_salinity_arkona_bornholm",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BALTIC_OMI_WMHE_mbi_bottom_salinity_arkona_bornholm.png",
+      "digital_object_identifier": "10.48670/moi-00209",
+      "sources": [
+        "In-situ observations",
+        "Numerical models",
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "SMHI (Sweden)"
+    },
+    {
+      "title": "Baltic Sea Major Baltic Inflow: time/depth evolution S,T,O2 from Observations Reprocessing",
+      "product_id": "BALTIC_OMI_WMHE_mbi_sto2tz_gotland",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BALTIC_OMI_WMHE_mbi_sto2tz_gotland.png",
+      "digital_object_identifier": "10.48670/moi-00210",
+      "sources": [
+        "In-situ observations",
+        "Numerical models",
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "SMHI (Sweden)"
+    },
+    {
+      "title": "Black Sea Biogeochemistry Analysis and Forecast",
+      "product_id": "BLKSEA_ANALYSISFORECAST_BGC_007_010",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BLKSEA_ANALYSIS_FORECAST_BIO_007_010.png",
+      "digital_object_identifier": "10.25423/cmcc/blksea_analysisforecast_bgc_007_010",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "ULi\u00e8ge (Belgium)"
+    },
+    {
+      "title": "Black Sea Physics Analysis and Forecast",
+      "product_id": "BLKSEA_ANALYSISFORECAST_PHY_007_001",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BLKSEA_ANALYSISFORECAST_PHY_007_001.png",
+      "digital_object_identifier": "10.25423/cmcc/blksea_analysisforecast_phy_007_001_eas6",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CMCC (Italy)"
+    },
+    {
+      "title": "Black Sea Waves Analysis and Forecast",
+      "product_id": "BLKSEA_ANALYSISFORECAST_WAV_007_003",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BLKSEA_ANALYSISFORECAST_WAV_007_003.png",
+      "digital_object_identifier": "10.25423/cmcc/blksea_analysisforecast_wav_007_003_eas5",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Hereon (Germany)"
+    },
+    {
+      "title": "Black Sea Biogeochemistry Reanalysis",
+      "product_id": "BLKSEA_MULTIYEAR_BGC_007_005",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BLKSEA_REANALYSIS_BIO_007_005.png",
+      "digital_object_identifier": "10.25423/CMCC/BLKSEA_MULTIYEAR_BGC_007_005_BAMHBI",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "ULi\u00e8ge (Belgium)"
+    },
+    {
+      "title": "Black Sea Physics Reanalysis",
+      "product_id": "BLKSEA_MULTIYEAR_PHY_007_004",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BLKSEA_MULTIYEAR_PHY_007_004.png",
+      "digital_object_identifier": "10.25423/CMCC/BLKSEA_MULTIYEAR_PHY_007_004",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CMCC (Italy)"
+    },
+    {
+      "title": "Black Sea Waves Reanalysis",
+      "product_id": "BLKSEA_MULTIYEAR_WAV_007_006",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BLKSEA_MULTIYEAR_WAV_007_006.png",
+      "digital_object_identifier": "10.25423/cmcc/blksea_multiyear_wav_007_006_eas4",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Hereon (Germany)"
+    },
+    {
+      "title": "Black Sea Oxygen Trend from Observations Reprocessing",
+      "product_id": "BLKSEA_OMI_HEALTH_oxygen_trend",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BLKSEA_OMI_HEALTH_oxygen_trend.png",
+      "digital_object_identifier": "10.48670/moi-00213",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": null,
+      "production_center": "ULi\u00e8ge (Belgium)"
+    },
+    {
+      "title": "Black Sea Significant Wave Height extreme from Reanalysis",
+      "product_id": "BLKSEA_OMI_SEASTATE_extreme_var_swh_mean_and_anomaly",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BLKSEA_OMI_SEASTATE_extreme_var_swh_mean_and_anomaly.png",
+      "digital_object_identifier": "10.48670/moi-00214",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Black Sea Surface Temperature extreme from Reanalysis",
+      "product_id": "BLKSEA_OMI_TEMPSAL_extreme_var_temp_mean_and_anomaly",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BLKSEA_OMI_TEMPSAL_extreme_var_temp_mean_and_anomaly.png",
+      "digital_object_identifier": "10.48670/moi-00216",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Black Sea Surface Temperature time series and trend from Observations Reprocessing",
+      "product_id": "BLKSEA_OMI_TEMPSAL_sst_area_averaged_anomalies",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BLKSEA_OMI_TEMPSAL_sst_area_averaged_anomalies.png",
+      "digital_object_identifier": "10.48670/moi-00217",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Black Sea Surface Temperature cumulative trend map from Observations Reprocessing",
+      "product_id": "BLKSEA_OMI_TEMPSAL_sst_trend",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/BLKSEA_OMI_TEMPSAL_sst_trend.png",
+      "digital_object_identifier": "10.48670/moi-00218",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Global Ocean Biogeochemistry Analysis and Forecast",
+      "product_id": "GLOBAL_ANALYSISFORECAST_BGC_001_028",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_ANALYSISFORECAST_BGC_001_028.png",
+      "digital_object_identifier": "10.48670/moi-00015",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Global Ocean Physics Analysis and Forecast",
+      "product_id": "GLOBAL_ANALYSISFORECAST_PHY_001_024",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL-ANALYSIS-FORECAST-PHYS-001-024-c.gif",
+      "digital_object_identifier": "10.48670/moi-00016",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Global Ocean Waves Analysis and Forecast",
+      "product_id": "GLOBAL_ANALYSISFORECAST_WAV_001_027",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_ANALYSIS_FORECAST_WAV_001_027.png",
+      "digital_object_identifier": "10.48670/moi-00017",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Global Ocean Biogeochemistry Hindcast",
+      "product_id": "GLOBAL_MULTIYEAR_BGC_001_029",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_REANALYSIS_BIO_001_029.png",
+      "digital_object_identifier": "10.48670/moi-00019",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Global ocean low and mid trophic levels biomass content hindcast",
+      "product_id": "GLOBAL_MULTIYEAR_BGC_001_033",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_MULTIYEAR_BGC_001_033.png",
+      "digital_object_identifier": "10.48670/moi-00020",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Global Ocean Physics Reanalysis",
+      "product_id": "GLOBAL_MULTIYEAR_PHY_001_030",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL-ANALYSIS-FORECAST-PHY-001-030.gif",
+      "digital_object_identifier": "10.48670/moi-00021",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Global Ocean Ensemble Physics Reanalysis",
+      "product_id": "GLOBAL_MULTIYEAR_PHY_ENS_001_031",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_MULTIYEAR_PHY_ENS_001_031.png",
+      "digital_object_identifier": "10.48670/moi-00024",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Global Ocean Waves Reanalysis",
+      "product_id": "GLOBAL_MULTIYEAR_WAV_001_032",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_REANALYSIS_WAV_001_032.png",
+      "digital_object_identifier": "10.48670/moi-00022",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Nino 3.4 Temporal Evolution of Vertical Profile of Temperature from Reanalysis",
+      "product_id": "GLOBAL_OMI_CLIMVAR_enso_Tzt_anomaly",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_CLIMVAR_enso_Tzt_anomaly.png",
+      "digital_object_identifier": "10.48670/moi-00220",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Nino 3.4 Sea Surface Temperature time series from Reanalysis",
+      "product_id": "GLOBAL_OMI_CLIMVAR_enso_sst_area_averaged_anomalies",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_CLIMVAR_enso_sst_area_averaged_anomalies.png",
+      "digital_object_identifier": "10.48670/moi-00219",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Global Ocean Yearly CO2 Sink from Multi-Observations Reprocessing",
+      "product_id": "GLOBAL_OMI_HEALTH_carbon_co2_flux_integrated",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_HEALTH_carbon_co2_flux_integrated.png",
+      "digital_object_identifier": "10.48670/moi-00223",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": null,
+      "production_center": "LSCE (France)"
+    },
+    {
+      "title": "Global Ocean acidification - mean sea water pH time series and trend from Multi-Observations Reprocessing",
+      "product_id": "GLOBAL_OMI_HEALTH_carbon_ph_area_averaged",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_HEALTH_carbon_ph_area_averaged.png",
+      "digital_object_identifier": "10.48670/moi-00224",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": null,
+      "production_center": "LSCE (France)"
+    },
+    {
+      "title": "Global ocean acidification - mean sea water pH trend map from Multi-Observations Reprocessing",
+      "product_id": "GLOBAL_OMI_HEALTH_carbon_ph_trend",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_HEALTH_carbon_ph_trend.png",
+      "digital_object_identifier": "10.48670/moi-00277",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": null,
+      "production_center": "LSCE (France)"
+    },
+    {
+      "title": "Atlantic Meridional Overturning Circulation AMOC profile at 26N from Reanalysis",
+      "product_id": "GLOBAL_OMI_NATLANTIC_amoc_26N_profile",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_NATLANTIC_amoc_26N_profile.png",
+      "digital_object_identifier": "10.48670/moi-00231",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Atlantic Meridional Overturning Circulation AMOC timeseries at 26N from Reanalysis",
+      "product_id": "GLOBAL_OMI_NATLANTIC_amoc_max26N_timeseries",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_NATLANTIC_amoc_max26N_timeseries.png",
+      "digital_object_identifier": "10.48670/moi-00232",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Global Ocean Heat Content (0-2000m) time series and trend from Reanalysis & Multi-Observations Reprocessing",
+      "product_id": "GLOBAL_OMI_OHC_area_averaged_anomalies_0_2000",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_OHC_area_averaged_anomalies_0_2000.png",
+      "digital_object_identifier": "10.48670/moi-00235",
+      "sources": [
+        "In-situ observations",
+        "Numerical models",
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Global Ocean Heat Content (0-300m) from Reanalysis & Multi-Observations Reprocessing",
+      "product_id": "GLOBAL_OMI_OHC_area_averaged_anomalies_0_300",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_OHC_area_averaged_anomalies_0_300.png",
+      "digital_object_identifier": "10.48670/moi-00233",
+      "sources": [
+        "In-situ observations",
+        "Numerical models",
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Global Ocean Heat Content (0-700m) from Reanalysis & Multi-Observations Reprocessing",
+      "product_id": "GLOBAL_OMI_OHC_area_averaged_anomalies_0_700",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_OHC_area_averaged_anomalies_0_700.png",
+      "digital_object_identifier": "10.48670/moi-00234",
+      "sources": [
+        "In-situ observations",
+        "Numerical models",
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Global Ocean Heat Content trend map from Reanalysis & Multi-Observations Reprocessing",
+      "product_id": "GLOBAL_OMI_OHC_trend",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_OHC_trend.png",
+      "digital_object_identifier": "10.48670/moi-00236",
+      "sources": [
+        "In-situ observations",
+        "Numerical models",
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Global Ocean Thermosteric Sea Level anomaly (0-2000m) time series and trend from Reanalysis & Multi-Observations Reprocessing",
+      "product_id": "GLOBAL_OMI_SL_thsl_area_averaged_anomalies_0_2000",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_SL_thsl_area_averaged_anomalies_0_2000.png",
+      "digital_object_identifier": "10.48670/moi-00240",
+      "sources": [
+        "In-situ observations",
+        "Numerical models",
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Global Ocean Thermosteric Sea Level anomaly (0-700m) time series and trend from Reanalysis & Multi-Observations Reprocessing",
+      "product_id": "GLOBAL_OMI_SL_thsl_area_averaged_anomalies_0_700",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_SL_thsl_area_averaged_anomalies_0_700.png",
+      "digital_object_identifier": "10.48670/moi-00239",
+      "sources": [
+        "In-situ observations",
+        "Numerical models",
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Global Ocean Thermosteric Sea Level trend map from Reanalysis & Multi-Observations Reprocessing",
+      "product_id": "GLOBAL_OMI_SL_thsl_trend",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_SL_thsl_trend.png",
+      "digital_object_identifier": "10.48670/moi-00241",
+      "sources": [
+        "In-situ observations",
+        "Numerical models",
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Global Ocean Zonal Mean Subsurface Temperature cumulative trend from Multi-Observations Reprocessing",
+      "product_id": "GLOBAL_OMI_TEMPSAL_Tyz_trend",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_TEMPSAL_Tyz_trend.png",
+      "digital_object_identifier": "10.48670/moi-00244",
+      "sources": [
+        "In-situ observations",
+        "Numerical models",
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "Global Ocean Sea Surface Temperature time series and trend from Observations Reprocessing",
+      "product_id": "GLOBAL_OMI_TEMPSAL_sst_area_averaged_anomalies",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_TEMPSAL_sst_area_averaged_anomalies.png",
+      "digital_object_identifier": "10.48670/moi-00242",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "Met Office (UK)"
+    },
+    {
+      "title": "Global Ocean Sea Surface Temperature trend map from Observations Reprocessing",
+      "product_id": "GLOBAL_OMI_TEMPSAL_sst_trend",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_TEMPSAL_sst_trend.png",
+      "digital_object_identifier": "10.48670/moi-00243",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "Met Office (UK)"
+    },
+    {
+      "title": "Mean Heat Transport across sections from Reanalysis",
+      "product_id": "GLOBAL_OMI_WMHE_heattrp",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_WMHE_heattrp.png",
+      "digital_object_identifier": "10.48670/moi-00245",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Northward Heat Transport for Global Ocean, Atlantic and Indian+Pacific basins from Reanalysis",
+      "product_id": "GLOBAL_OMI_WMHE_northward_mht",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_WMHE_northward_mht.png",
+      "digital_object_identifier": "10.48670/moi-00246",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Mean Volume Transport across sections from Reanalysis",
+      "product_id": "GLOBAL_OMI_WMHE_voltrp",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_WMHE_voltrp.png",
+      "digital_object_identifier": "10.48670/moi-00247",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "Mercator Oc\u00e9an International"
+    },
+    {
+      "title": "Atlantic-Iberian Biscay Irish- Ocean Biogeochemical Analysis and Forecast",
+      "product_id": "IBI_ANALYSISFORECAST_BGC_005_004",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/IBI_ANALYSISFORECAST_BGC_005_004.jpg",
+      "digital_object_identifier": "10.48670/moi-00026",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "NOLOGIN"
+    },
+    {
+      "title": "Atlantic-Iberian Biscay Irish- Ocean Physics Analysis and Forecast",
+      "product_id": "IBI_ANALYSISFORECAST_PHY_005_001",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/IBI_ANALYSISFORECAST_PHY_005_001.jpg",
+      "digital_object_identifier": "10.48670/moi-00027",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "NOLOGIN"
+    },
+    {
+      "title": "Atlantic-Iberian Biscay Irish- Ocean Wave Analysis and Forecast",
+      "product_id": "IBI_ANALYSISFORECAST_WAV_005_005",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/IBI_ANALYSISFORECAST_WAV_005_005.jpg",
+      "digital_object_identifier": "10.48670/moi-00025",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "NOLOGIN"
+    },
+    {
+      "title": "Atlantic-Iberian Biscay Irish- Ocean BioGeoChemistry NON ASSIMILATIVE Hindcast",
+      "product_id": "IBI_MULTIYEAR_BGC_005_003",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/IBI_MULTIYEAR_BGC_005_003.jpg",
+      "digital_object_identifier": "10.48670/moi-00028",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "NOLOGIN"
+    },
+    {
+      "title": "Atlantic-Iberian Biscay Irish- Ocean Physics Reanalysis",
+      "product_id": "IBI_MULTIYEAR_PHY_005_002",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/IBI_MULTIYEAR_PHY_005_002.jpg",
+      "digital_object_identifier": "10.48670/moi-00029",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "NOLOGIN"
+    },
+    {
+      "title": "Atlantic -Iberian Biscay Irish- Ocean Wave Reanalysis",
+      "product_id": "IBI_MULTIYEAR_WAV_005_006",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/IBI_MULTIYEAR_WAV_005_006.jpg",
+      "digital_object_identifier": "10.48670/moi-00030",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "NOLOGIN"
+    },
+    {
+      "title": "Iberia Biscay Ireland Coastal Upwelling Index from Reanalysis",
+      "product_id": "IBI_OMI_CURRENTS_cui",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/IBI_OMI_CURRENTS_cui.png",
+      "digital_object_identifier": "10.48670/moi-00248",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Iberia Biscay Ireland Significant Wave Height extreme from Reanalysis",
+      "product_id": "IBI_OMI_SEASTATE_extreme_var_swh_mean_and_anomaly",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/IBI_OMI_SEASTATE_extreme_var_swh_mean_and_anomaly.png",
+      "digital_object_identifier": "10.48670/moi-00249",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Iberia Biscay Ireland Strong Wave Incidence index from Reanalysis",
+      "product_id": "IBI_OMI_SEASTATE_swi",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/IBI_OMI_SEASTATE_swi.png",
+      "digital_object_identifier": "10.48670/moi-00251",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Iberia Biscay Ireland Sea Surface Temperature extreme from Reanalysis",
+      "product_id": "IBI_OMI_TEMPSAL_extreme_var_temp_mean_and_anomaly",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/IBI_OMI_TEMPSAL_extreme_var_temp_mean_and_anomaly.png",
+      "digital_object_identifier": "10.48670/moi-00254",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Mediterrranean Outflow Water Index from Reanalysis & Multi-Observations Reprocessing",
+      "product_id": "IBI_OMI_WMHE_mow",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/IBI_OMI_WMHE_mow.png",
+      "digital_object_identifier": "10.48670/moi-00258",
+      "sources": [
+        "In-situ observations",
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Arctic Ocean- In Situ Near Real Time Observations",
+      "product_id": "INSITU_ARC_PHYBGCWAV_DISCRETE_MYNRT_013_031",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/INSITU_ARC_PHYBGCWAV_DISCRETE_MYNRT_013_031.png",
+      "digital_object_identifier": "10.48670/moi-00031",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": "Level 2",
+      "production_center": "IMR (Norway)"
+    },
+    {
+      "title": "Baltic Sea- In Situ Near Real Time Observations",
+      "product_id": "INSITU_BAL_PHYBGCWAV_DISCRETE_MYNRT_013_032",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/INSITU_BAL_PHYBGCWAV_DISCRETE_MYNRT_013_032.png",
+      "digital_object_identifier": "10.48670/moi-00032",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": "Level 2",
+      "production_center": "SMHI (Sweden)"
+    },
+    {
+      "title": "Black Sea- In-Situ Near Real Time Observations",
+      "product_id": "INSITU_BLK_PHYBGCWAV_DISCRETE_MYNRT_013_034",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/INSITU_BLK_PHYBGCWAV_DISCRETE_MYNRT_013_034.png",
+      "digital_object_identifier": "10.48670/moi-00033",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": "Level 2",
+      "production_center": "IO-BAS (Bulgaria)"
+    },
+    {
+      "title": "Global Ocean - In Situ reprocessed carbon observations - SOCATv2022 / GLODAPv2.2022",
+      "product_id": "INSITU_GLO_BGC_CARBON_DISCRETE_MY_013_050",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/INSITU_GLO_BGC_CARBON_DISCRETE_MY_013_050.png",
+      "digital_object_identifier": "10.48670/moi-00035",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "Uni Bergen (Norway)"
+    },
+    {
+      "title": "Global Ocean - Delayed Mode Biogeochemical product",
+      "product_id": "INSITU_GLO_BGC_DISCRETE_MY_013_046",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/INSITU_GLO_BGC_DISCRETE_MY_013_046.png",
+      "digital_object_identifier": "10.17882/86207",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": "Level 2",
+      "production_center": "IMR (Norway)"
+    },
+    {
+      "title": "Global Ocean- In-Situ Near-Real-Time Observations",
+      "product_id": "INSITU_GLO_PHYBGCWAV_DISCRETE_MYNRT_013_030",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/INSITU_GLO_PHYBGCWAV_DISCRETE_MYNRT_013_030.png",
+      "digital_object_identifier": "10.48670/moi-00036",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": "Level 2",
+      "production_center": "Ifremer (France)"
+    },
+    {
+      "title": "Global Ocean - Delayed Mode Sea level product",
+      "product_id": "INSITU_GLO_PHY_SSH_DISCRETE_MY_013_053",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/INSITU_GLO_PHY_SSH_DISCRETE_MY_013_053.png",
+      "digital_object_identifier": "10.17882/93670",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": "Level 2",
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Global Ocean- CORA- In-situ Observations Yearly Delivery in Delayed Mode",
+      "product_id": "INSITU_GLO_PHY_TS_DISCRETE_MY_013_001",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/INSITU_GLO_PHY_TS_DISCRETE_MY_013_001.png",
+      "digital_object_identifier": "10.17882/46219",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": "Level 2",
+      "production_center": "OceanScope (France)"
+    },
+    {
+      "title": "Global Ocean- Delayed Mode gridded CORA- In-situ Observations objective analysis in Delayed Mode",
+      "product_id": "INSITU_GLO_PHY_TS_OA_MY_013_052",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/INSITU_GLO_PHY_TS_OA_MY_013_052.png",
+      "digital_object_identifier": "10.17882/46219",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "OceanScope (France)"
+    },
+    {
+      "title": "Global Ocean- Real time in-situ observations objective analysis",
+      "product_id": "INSITU_GLO_PHY_TS_OA_NRT_013_002",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/INSITU_GLO_PHY_TS_OA_NRT_013_002.png",
+      "digital_object_identifier": "10.48670/moi-00037",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Ifremer (France)"
+    },
+    {
+      "title": "Global Ocean-Delayed Mode in-situ Observations of surface (drifters and HFR) and sub-surface (vessel-mounted ADCPs) water velocity",
+      "product_id": "INSITU_GLO_PHY_UV_DISCRETE_MY_013_044",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/INSITU_GLO_PHY_UV_DISCRETE_MY_013_044.png",
+      "digital_object_identifier": "10.17882/86236",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": "Level 2",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "Global Ocean- in-situ Near real time observations of ocean currents",
+      "product_id": "INSITU_GLO_PHY_UV_DISCRETE_NRT_013_048",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/INSITU_GLO_PHY_UV_DISCRETE_NRT_013_048.png",
+      "digital_object_identifier": "10.48670/moi-00041",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": "Level 2",
+      "production_center": "Ifremer (France)"
+    },
+    {
+      "title": "Global Ocean - Delayed Mode Wave product",
+      "product_id": "INSITU_GLO_WAV_DISCRETE_MY_013_045",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/INSITU_GLO_WAV_DISCRETE_MY_013_045.png",
+      "digital_object_identifier": "10.17882/70345",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": "Level 2",
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Atlantic Iberian Biscay Irish Ocean- In-Situ Near Real Time Observations",
+      "product_id": "INSITU_IBI_PHYBGCWAV_DISCRETE_MYNRT_013_033",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/INSITU_IBI_PHYBGCWAV_DISCRETE_MYNRT_013_033.png",
+      "digital_object_identifier": "10.48670/moi-00043",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": "Level 2",
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Mediterranean Sea- In-Situ Near Real Time Observations",
+      "product_id": "INSITU_MED_PHYBGCWAV_DISCRETE_MYNRT_013_035",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/INSITU_MED_PHYBGCWAV_DISCRETE_MYNRT_013_035.png",
+      "digital_object_identifier": "10.48670/moi-00044",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": "Level 2",
+      "production_center": "HCMR (Greece)"
+    },
+    {
+      "title": "Atlantic- European North West Shelf- Ocean In-Situ Near Real Time observations",
+      "product_id": "INSITU_NWS_PHYBGCWAV_DISCRETE_MYNRT_013_036",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/INSITU_NWS_PHYBGCWAV_DISCRETE_MYNRT_013_036.png",
+      "digital_object_identifier": "10.48670/moi-00045",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": "Level 2",
+      "production_center": "BSH (Germany)"
+    },
+    {
+      "title": "Mediterranean Sea Biogeochemistry Analysis and Forecast",
+      "product_id": "MEDSEA_ANALYSISFORECAST_BGC_006_014",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/MEDSEA_ANALYSISFORECAST_BGC_006_014.png",
+      "digital_object_identifier": "10.25423/cmcc/medsea_analysisforecast_bgc_006_014_medbfm4",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "OGS (Italy)"
+    },
+    {
+      "title": "Mediterranean Sea Physics Analysis and Forecast",
+      "product_id": "MEDSEA_ANALYSISFORECAST_PHY_006_013",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/MEDSEA_ANALYSISFORECAST_PHY_006_013.png",
+      "digital_object_identifier": "10.25423/CMCC/MEDSEA_ANALYSISFORECAST_PHY_006_013_EAS8",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CMCC (Italy)"
+    },
+    {
+      "title": "Mediterranean Sea Waves Analysis and Forecast",
+      "product_id": "MEDSEA_ANALYSISFORECAST_WAV_006_017",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/MEDSEA_ANALYSISFORECAST_WAV_006_017.png",
+      "digital_object_identifier": "10.25423/cmcc/medsea_analysisforecast_wav_006_017_medwam4",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "HCMR (Greece)"
+    },
+    {
+      "title": "Mediterranean Sea Biogechemistry Reanalysis",
+      "product_id": "MEDSEA_MULTIYEAR_BGC_006_008",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/MEDSEA_MULTIYEAR_BGC_006_008.png",
+      "digital_object_identifier": "10.25423/cmcc/medsea_multiyear_bgc_006_008_medbfm3",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "OGS (Italy)"
+    },
+    {
+      "title": "Mediterranean Sea Physics Reanalysis",
+      "product_id": "MEDSEA_MULTIYEAR_PHY_006_004",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/MEDSEA_MULTIYEAR_PHY_006_004.png",
+      "digital_object_identifier": "10.25423/CMCC/MEDSEA_MULTIYEAR_PHY_006_004_E3R1",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CMCC (Italy)"
+    },
+    {
+      "title": "Mediterranean Sea Waves Reanalysis",
+      "product_id": "MEDSEA_MULTIYEAR_WAV_006_012",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/MEDSEA_MULTIYEAR_WAV_006_012.png",
+      "digital_object_identifier": "10.25423/cmcc/medsea_multiyear_wav_006_012",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "HCMR (Greece)"
+    },
+    {
+      "title": "Mediterranean Ocean Heat Content Anomaly (0-700m) time series and trend from Reanalysis & Multi-Observations Reprocessing",
+      "product_id": "MEDSEA_OMI_OHC_area_averaged_anomalies",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/MEDSEA_OMI_OHC_area_averaged_anomalies.png",
+      "digital_object_identifier": "10.48670/moi-00261",
+      "sources": [
+        "In-situ observations",
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "CMCC (Italy)"
+    },
+    {
+      "title": "Mediterranean Sea Significant Wave Height extreme from Reanalysis",
+      "product_id": "MEDSEA_OMI_SEASTATE_extreme_var_swh_mean_and_anomaly",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/MEDSEA_OMI_SEASTATE_extreme_var_swh_mean_and_anomaly.png",
+      "digital_object_identifier": "10.48670/moi-00262",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Mediterranean Sea Surface Temperature extreme from Reanalysis",
+      "product_id": "MEDSEA_OMI_TEMPSAL_extreme_var_temp_mean_and_anomaly",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/MEDSEA_OMI_TEMPSAL_extreme_var_temp_mean_and_anomaly.png",
+      "digital_object_identifier": "10.48670/moi-00266",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Mediterranean Sea Surface Temperature time series and trend from Observations Reprocessing",
+      "product_id": "MEDSEA_OMI_TEMPSAL_sst_area_averaged_anomalies",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/MEDSEA_OMI_TEMPSAL_sst_area_averaged_anomalies.png",
+      "digital_object_identifier": "10.48670/moi-00268",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Mediterranean Sea Surface Temperature cumulative trend map from Observations Reprocessing",
+      "product_id": "MEDSEA_OMI_TEMPSAL_sst_trend",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/MEDSEA_OMI_TEMPSAL_sst_trend.png",
+      "digital_object_identifier": "10.48670/moi-00269",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Nutrient and carbon profiles vertical distribution",
+      "product_id": "MULTIOBS_GLO_BGC_NUTRIENTS_CARBON_PROFILES_MYNRT_015_009",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/MULTIOBS_GLO_BIO_NUTRIENTS_PROFILES_REP_015_009.png",
+      "digital_object_identifier": "10.48670/moi-00048",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "LOV (France)"
+    },
+    {
+      "title": "Global Ocean 3D Chlorophyll-a concentration, Particulate Backscattering coefficient and Particulate Organic Carbon",
+      "product_id": "MULTIOBS_GLO_BIO_BGC_3D_REP_015_010",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/MULTIOBS_GLO_BIO_BGC_3D_REP_015_010.png",
+      "digital_object_identifier": "10.48670/moi-00046",
+      "sources": [
+        "In-situ observations",
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "LOV (France)"
+    },
+    {
+      "title": "Global Ocean Surface Carbon",
+      "product_id": "MULTIOBS_GLO_BIO_CARBON_SURFACE_REP_015_008",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/MULTIOBS_GLO_BIO_CARBON_SURFACE_REP_015_008.png",
+      "digital_object_identifier": "10.48670/moi-00047",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "LSCE (France)"
+    },
+    {
+      "title": "Global Total (COPERNICUS-GLOBCURRENT), Ekman and Geostrophic currents at the Surface and 15m",
+      "product_id": "MULTIOBS_GLO_PHY_MYNRT_015_003",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/MULTIOBS_GLO_PHY_MYNRT_015_003.png",
+      "digital_object_identifier": "10.48670/mds-00327",
+      "sources": [
+        "In-situ observations",
+        "Numerical models",
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "SMOS CATDS Qualified (L2Q) Sea Surface Salinity product",
+      "product_id": "MULTIOBS_GLO_PHY_SSS_L3_MYNRT_015_014",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/MULTIOBS_GLO_PHY_SSS_L3_MYNRT_015_014.png",
+      "digital_object_identifier": "10.1016/j.rse.2016.02.061",
+      "sources": [
+        "In-situ observations",
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "CATDS (France)"
+    },
+    {
+      "title": "SSS SMOS L4 OI - LOPS-v2021",
+      "product_id": "MULTIOBS_GLO_PHY_SSS_L4_MY_015_015",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/MULTIOBS_GLO_PHY_SSS_L4_MY_015_015.png",
+      "digital_object_identifier": "10.1175/JTECH-D-20-0093.1",
+      "sources": [
+        "In-situ observations",
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CATDS (France)"
+    },
+    {
+      "title": "Multi Observation Global Ocean Sea Surface Salinity and Sea Surface Density",
+      "product_id": "MULTIOBS_GLO_PHY_S_SURFACE_MYNRT_015_013",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/CMEMS-MOB-015-013.jpg",
+      "digital_object_identifier": "10.48670/moi-00051",
+      "sources": [
+        "In-situ observations",
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Multi Observation Global Ocean 3D Temperature Salinity Height Geostrophic Current and MLD",
+      "product_id": "MULTIOBS_GLO_PHY_TSUV_3D_MYNRT_015_012",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/CMEMS-MOB-015-012.png",
+      "digital_object_identifier": "10.48670/moi-00052",
+      "sources": [
+        "In-situ observations",
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "Global Observed Ocean Physics 3D Quasi-Geostrophic Currents (OMEGA3D)",
+      "product_id": "MULTIOBS_GLO_PHY_W_3D_REP_015_007",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/CMEMS-MOB-015-007.jpg",
+      "digital_object_identifier": null,
+      "sources": [
+        "In-situ observations",
+        "Numerical models",
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "North West Shelf Sea Surface Temperature extreme from Reanalysis",
+      "product_id": "NORTHWESTSHELF_OMI_TEMPSAL_extreme_var_temp_mean_and_anomaly",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/NORTHWESTSHELF_OMI_TEMPSAL_extreme_var_temp_mean_and_anomaly.png",
+      "digital_object_identifier": "10.48670/moi-00273",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Atlantic - European North West Shelf - Ocean Biogeochemistry Analysis and Forecast",
+      "product_id": "NWSHELF_ANALYSISFORECAST_BGC_004_002",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/NWSHELF_ANALYSISFORECAST_BGC_004_002.png",
+      "digital_object_identifier": "10.48670/moi-00056",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "NOLOGIN"
+    },
+    {
+      "title": "Atlantic - European North West Shelf - Ocean Physics Analysis and Forecast",
+      "product_id": "NWSHELF_ANALYSISFORECAST_PHY_004_013",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/NORTHWESTSHELF_ANALYSIS_FORECAST_PHY_004_013.png",
+      "digital_object_identifier": "10.48670/moi-00054",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Met Office (UK)"
+    },
+    {
+      "title": "Atlantic - European North West Shelf - Ocean Wave Analysis and Forecast",
+      "product_id": "NWSHELF_ANALYSISFORECAST_WAV_004_014",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/NORTHWESTSHELF_ANALYSIS_FORECAST_WAV_004_014.png",
+      "digital_object_identifier": "10.48670/moi-00055",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Met Office (UK)"
+    },
+    {
+      "title": "Atlantic- European North West Shelf- Ocean Biogeochemistry Reanalysis",
+      "product_id": "NWSHELF_MULTIYEAR_BGC_004_011",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/NWSHELF_MULTIYEAR_BGC_004_011.png",
+      "digital_object_identifier": "10.48670/moi-00058",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Met Office (UK)"
+    },
+    {
+      "title": "Atlantic- European North West Shelf- Ocean Physics Reanalysis",
+      "product_id": "NWSHELF_MULTIYEAR_PHY_004_009",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/NWSHELF_MULTIYEAR_PHY_004_009.png",
+      "digital_object_identifier": "10.48670/moi-00059",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Met Office (UK)"
+    },
+    {
+      "title": "Atlantic- European North West Shelf- Wave Physics Reanalysis",
+      "product_id": "NWSHELF_REANALYSIS_WAV_004_015",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/NWSHELF_REANALYSIS_WAV_004_015.png",
+      "digital_object_identifier": "10.48670/moi-00060",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Met Office (UK)"
+    },
+    {
+      "title": "Arctic Region, Bio-Geo-Chemical, L3, daily observation",
+      "product_id": "OCEANCOLOUR_ARC_BGC_HR_L3_NRT_009_201",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_ARC_BGC_HR_L3_NRT_009_201.png",
+      "digital_object_identifier": "10.48670/moi-00061",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "BC (Germany)"
+    },
+    {
+      "title": "Arctic Region, Bio-Geo-Chemical, L4, monthly means and interpolated daily observation",
+      "product_id": "OCEANCOLOUR_ARC_BGC_HR_L4_NRT_009_207",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_ARC_BGC_HR_L4_NRT_009_207.png",
+      "digital_object_identifier": "10.48670/moi-00062",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "BC (Germany)"
+    },
+    {
+      "title": "Arctic Ocean Colour Plankton, Reflectance, Transparency and Optics MY L3 daily observations",
+      "product_id": "OCEANCOLOUR_ARC_BGC_L3_MY_009_123",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_ARC_BGC_L3_MY_009_123.png",
+      "digital_object_identifier": "10.48670/moi-00292",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Arctic Ocean Colour Plankton, Reflectance, Transparency and Optics L3 NRT daily observations",
+      "product_id": "OCEANCOLOUR_ARC_BGC_L3_NRT_009_121",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_ARC_BGC_L3_NRT_009_121.png",
+      "digital_object_identifier": "10.48670/moi-00290",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Arctic Ocean Colour Plankton MY L4 daily climatology and monthly observations",
+      "product_id": "OCEANCOLOUR_ARC_BGC_L4_MY_009_124",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_ARC_BGC_L4_MY_009_124.png",
+      "digital_object_identifier": "10.48670/moi-00293",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Arctic Ocean Colour Plankton and Transparency L4 NRT monthly observations",
+      "product_id": "OCEANCOLOUR_ARC_BGC_L4_NRT_009_122",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_ARC_BGC_L4_NRT_009_122.png",
+      "digital_object_identifier": "10.48670/moi-00291",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "North Atlantic Ocean Colour Plankton, Reflectance, Transparency and Optics MY L3 daily observations",
+      "product_id": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_ATL_BGC_L3_MY_009_113.jpg",
+      "digital_object_identifier": "10.48670/moi-00286",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "ACRI (France)"
+    },
+    {
+      "title": "North Atlantic Ocean Colour Plankton, Reflectance, Transparency and Optics L3 NRT daily observations",
+      "product_id": "OCEANCOLOUR_ATL_BGC_L3_NRT_009_111",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_ATL_BGC_L3_NRT_009_111.jpg",
+      "digital_object_identifier": "10.48670/moi-00284",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "ACRI (France)"
+    },
+    {
+      "title": "Atlantic Ocean Colour (Copernicus-GlobColour), Bio-Geo-Chemical, L4 (daily interpolated) from Satellite Observations (1997-ongoing)",
+      "product_id": "OCEANCOLOUR_ATL_BGC_L4_MY_009_118",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_ATL_BGC_L4_MY_009_118.jpg",
+      "digital_object_identifier": "10.48670/moi-00289",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "ACRI (France)"
+    },
+    {
+      "title": "Atlantic Ocean Colour (Copernicus-GlobColour), Bio-Geo-Chemical, L4 (daily interpolated) from Satellite Observations (Near Real Time)",
+      "product_id": "OCEANCOLOUR_ATL_BGC_L4_NRT_009_116",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_ATL_BGC_L4_NRT_009_116.jpg",
+      "digital_object_identifier": "10.48670/moi-00288",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "ACRI (France)"
+    },
+    {
+      "title": "Baltic Sea, Bio-Geo-Chemical, L3, daily observation",
+      "product_id": "OCEANCOLOUR_BAL_BGC_HR_L3_NRT_009_202",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_BAL_BGC_HR_L3_NRT_009_202.png",
+      "digital_object_identifier": "10.48670/moi-00079",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "BC (Germany)"
+    },
+    {
+      "title": "Baltic Sea, Bio-Geo-Chemical, L4, monthly means and interpolated daily observation",
+      "product_id": "OCEANCOLOUR_BAL_BGC_HR_L4_NRT_009_208",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_BAL_BGC_HR_L4_NRT_009_208.png",
+      "digital_object_identifier": "10.48670/moi-00080",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "BC (Germany)"
+    },
+    {
+      "title": "Baltic Sea Multiyear Ocean Colour Plankton, Reflectances and Transparency L3 daily observations",
+      "product_id": "OCEANCOLOUR_BAL_BGC_L3_MY_009_133",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_BAL_BGC_L3_MY_009_133.png",
+      "digital_object_identifier": "10.48670/moi-00296",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Baltic Sea Ocean Colour Plankton, Reflectances, Transparency and Optics L3 NRT daily observations",
+      "product_id": "OCEANCOLOUR_BAL_BGC_L3_NRT_009_131",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_BAL_BGC_L3_NRT_009_131.png",
+      "digital_object_identifier": "10.48670/moi-00294",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Baltic Sea Multiyear Ocean Colour Plankton monthly observations",
+      "product_id": "OCEANCOLOUR_BAL_BGC_L4_MY_009_134",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_BAL_BGC_L3_MY_009_133.png",
+      "digital_object_identifier": "10.48670/moi-00308",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Baltic Sea Surface Ocean Colour Plankton from Sentinel-3 OLCI L4 monthly observations",
+      "product_id": "OCEANCOLOUR_BAL_BGC_L4_NRT_009_132",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_BAL_BGC_L4_NRT_009_132.png",
+      "digital_object_identifier": "10.48670/moi-00295",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Black Sea, Bio-Geo-Chemical, L3, daily observation",
+      "product_id": "OCEANCOLOUR_BLK_BGC_HR_L3_NRT_009_206",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_BLK_BGC_HR_L3_NRT_009_206.png",
+      "digital_object_identifier": "10.48670/moi-00086",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "BC (Germany)"
+    },
+    {
+      "title": "Black Sea, Bio-Geo-Chemical, L4, monthly means and interpolated daily observation",
+      "product_id": "OCEANCOLOUR_BLK_BGC_HR_L4_NRT_009_212",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_BLK_BGC_HR_L4_NRT_009_212.png",
+      "digital_object_identifier": "10.48670/moi-00087",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "BC (Germany)"
+    },
+    {
+      "title": "Black Sea, Bio-Geo-Chemical, L3, daily Satellite Observations (1997-ongoing)",
+      "product_id": "OCEANCOLOUR_BLK_BGC_L3_MY_009_153",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_BLK_BGC_L3_MY_009_153.png",
+      "digital_object_identifier": "10.48670/moi-00303",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Black Sea, Bio-Geo-Chemical, L3, daily Satellite Observations (Near Real Time)",
+      "product_id": "OCEANCOLOUR_BLK_BGC_L3_NRT_009_151",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_BLK_BGC_L3_NRT_009_151.png",
+      "digital_object_identifier": "10.48670/moi-00301",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Black Sea, Bio-Geo-Chemical, L4, monthly means, daily gapfree and climatology Satellite Observations (1997-ongoing)",
+      "product_id": "OCEANCOLOUR_BLK_BGC_L4_MY_009_154",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_BLK_BGC_L4_MY_009_154.png",
+      "digital_object_identifier": "10.48670/moi-00304",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Black Sea, Bio-Geo-Chemical, L4, monthly means, daily gapfree and climatology Satellite Observations (Near Real Time)",
+      "product_id": "OCEANCOLOUR_BLK_BGC_L4_NRT_009_152",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_BLK_BGC_L4_NRT_009_152.png",
+      "digital_object_identifier": "10.48670/moi-00302",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Global Ocean Colour (Copernicus-GlobColour), Bio-Geo-Chemical, L3 (daily) from Satellite Observations (1997-ongoing)",
+      "product_id": "OCEANCOLOUR_GLO_BGC_L3_MY_009_103",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_GLO_BGC_L3_MY_009_103.jpg",
+      "digital_object_identifier": "10.48670/moi-00280",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "ACRI (France)"
+    },
+    {
+      "title": "Global Ocean Colour Plankton and Reflectances MY L3 daily observations",
+      "product_id": "OCEANCOLOUR_GLO_BGC_L3_MY_009_107",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_GLO_BGC_L3_MY_009_107.png",
+      "digital_object_identifier": "10.48670/moi-00282",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "BC (Germany)"
+    },
+    {
+      "title": "Global Ocean Colour (Copernicus-GlobColour), Bio-Geo-Chemical, L3 (daily) from Satellite Observations (Near Real Time)",
+      "product_id": "OCEANCOLOUR_GLO_BGC_L3_NRT_009_101",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_GLO_BGC_L3_NRT_009_101.jpg",
+      "digital_object_identifier": "10.48670/moi-00278",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "ACRI (France)"
+    },
+    {
+      "title": "Global Ocean Colour (Copernicus-GlobColour), Bio-Geo-Chemical, L4 (monthly and interpolated) from Satellite Observations (1997-ongoing)",
+      "product_id": "OCEANCOLOUR_GLO_BGC_L4_MY_009_104",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_GLO_BGC_L4_MY_009_104.jpg",
+      "digital_object_identifier": "10.48670/moi-00281",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "ACRI (France)"
+    },
+    {
+      "title": "Global Ocean Colour Plankton MY L4 monthly observations",
+      "product_id": "OCEANCOLOUR_GLO_BGC_L4_MY_009_108",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_GLO_BGC_L4_MY_009_108.png",
+      "digital_object_identifier": "10.48670/moi-00283",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "BC (Germany)"
+    },
+    {
+      "title": "Global Ocean Colour (Copernicus-GlobColour), Bio-Geo-Chemical, L4 (monthly and interpolated) from Satellite Observations (Near Real Time)",
+      "product_id": "OCEANCOLOUR_GLO_BGC_L4_NRT_009_102",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_GLO_BGC_L4_NRT_009_102.jpg",
+      "digital_object_identifier": "10.48670/moi-00279",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "ACRI (France)"
+    },
+    {
+      "title": "Iberic Sea, Bio-Geo-Chemical, L3, daily observation",
+      "product_id": "OCEANCOLOUR_IBI_BGC_HR_L3_NRT_009_204",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_IBI_BGC_HR_L3_NRT_009_204.png",
+      "digital_object_identifier": "10.48670/moi-00107",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "BC (Germany)"
+    },
+    {
+      "title": "Iberic Sea, Bio-Geo-Chemical, L4, monthly means and interpolated daily observation",
+      "product_id": "OCEANCOLOUR_IBI_BGC_HR_L4_NRT_009_210",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_IBI_BGC_HR_L4_NRT_009_210.png",
+      "digital_object_identifier": "10.48670/moi-00108",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "BC (Germany)"
+    },
+    {
+      "title": "Mediterranean Sea, Bio-Geo-Chemical, L3, daily observation",
+      "product_id": "OCEANCOLOUR_MED_BGC_HR_L3_NRT_009_205",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_MED_BGC_HR_L3_NRT_009_205.png",
+      "digital_object_identifier": "10.48670/moi-00109",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "BC (Germany)"
+    },
+    {
+      "title": "Mediterranean Sea, Bio-Geo-Chemical, L4, monthly means and interpolated daily observation",
+      "product_id": "OCEANCOLOUR_MED_BGC_HR_L4_NRT_009_211",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_MED_BGC_HR_L4_NRT_009_211.png",
+      "digital_object_identifier": "10.48670/moi-00110",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "BC (Germany)"
+    },
+    {
+      "title": "Mediterranean Sea, Bio-Geo-Chemical, L3, daily Satellite Observations (1997-ongoing)",
+      "product_id": "OCEANCOLOUR_MED_BGC_L3_MY_009_143",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_MED_BGC_L3_MY_009_143.png",
+      "digital_object_identifier": "10.48670/moi-00299",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Mediterranean Sea, Bio-Geo-Chemical, L3, daily Satellite Observations (Near Real Time)",
+      "product_id": "OCEANCOLOUR_MED_BGC_L3_NRT_009_141",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_MED_BGC_L3_NRT_009_141.png",
+      "digital_object_identifier": "10.48670/moi-00297",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Mediterranean Sea, Bio-Geo-Chemical, L4, monthly means, daily gapfree and climatology Satellite Observations (1997-ongoing)",
+      "product_id": "OCEANCOLOUR_MED_BGC_L4_MY_009_144",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_MED_BGC_L4_MY_009_144.png",
+      "digital_object_identifier": "10.48670/moi-00300",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Mediterranean Sea, Bio-Geo-Chemical, L4, monthly means, daily gapfree and climatology Satellite Observations (Near Real Time)",
+      "product_id": "OCEANCOLOUR_MED_BGC_L4_NRT_009_142",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_MED_BGC_L4_NRT_009_142.png",
+      "digital_object_identifier": "10.48670/moi-00298",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "North West Shelf Region, Bio-Geo-Chemical, L3, daily observation",
+      "product_id": "OCEANCOLOUR_NWS_BGC_HR_L3_NRT_009_203",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_NWS_BGC_HR_L3_NRT_009_203.png",
+      "digital_object_identifier": "10.48670/moi-00118",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "BC (Germany)"
+    },
+    {
+      "title": "North West Shelf Region, Bio-Geo-Chemical, L4, monthly means and interpolated daily observation",
+      "product_id": "OCEANCOLOUR_NWS_BGC_HR_L4_NRT_009_209",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OCEANCOLOUR_NWS_BGC_HR_L4_NRT_009_209.png",
+      "digital_object_identifier": "10.48670/moi-00119",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "BC (Germany)"
+    },
+    {
+      "title": "Black Sea Rim Current Intensity Index",
+      "product_id": "OMI_CIRCULATION_BOUNDARY_BLKSEA_rim_current_index",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_CIRCULATION_BOUNDARY_BLKSEA_rim_current_index.png",
+      "digital_object_identifier": "10.48670/mds-00326",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "CMCC (Italy)"
+    },
+    {
+      "title": "Kuroshio Phase from Observations Reprocessing",
+      "product_id": "OMI_CIRCULATION_BOUNDARY_PACIFIC_kuroshio_phase_area_averaged",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_CIRCULATION_BOUNDARY_PACIFIC_kuroshio_phase_area_averaged.png",
+      "digital_object_identifier": "10.48670/moi-00222",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "Mediterranean Meridional Overturning Circulation Index from Reanalysis",
+      "product_id": "OMI_CIRCULATION_MOC_MEDSEA_area_averaged_mean",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_CIRCULATION_MOC_MEDSEA_area_averaged_mean.png",
+      "digital_object_identifier": "10.48670/mds-00317",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "CMCC (Italy)"
+    },
+    {
+      "title": "Nordic Seas Volume Transports from Reanalysis",
+      "product_id": "OMI_CIRCULATION_VOLTRANS_ARCTIC_averaged",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/ARCTIC_OMI_NATLANTIC_NordicSeas.png",
+      "digital_object_identifier": "10.48670/moi-00189",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "NERSC (Norway)"
+    },
+    {
+      "title": "Black Sea Ocean Heat Content Anomaly (0-300m) time series and trend from Reanalysis & Multi-Observations Reprocessing",
+      "product_id": "OMI_CLIMATE_OHC_BLKSEA_area_averaged_anomalies",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_CLIMATE_OHC_BLKSEA_area_averaged_anomalies.png",
+      "digital_object_identifier": "10.48670/moi-00306",
+      "sources": [
+        "In-situ observations",
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "CMCC (Italy)"
+    },
+    {
+      "title": "Iberia Biscay Ireland Ocean Heat Content Anomaly (0-2000m) time series and trend from Reanalysis & Multi-Observations Reprocessing",
+      "product_id": "OMI_CLIMATE_OHC_IBI_area_averaged_anomalies",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_CLIMATE_OHC_BLKSEA_area_averaged_anomalies.png",
+      "digital_object_identifier": "10.48670/mds-00316",
+      "sources": [
+        "In-situ observations",
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "NOLOGIN"
+    },
+    {
+      "title": "Mediterranean Ocean Salt Content (0-300m)",
+      "product_id": "OMI_CLIMATE_OSC_MEDSEA_volume_mean",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_CLIMATE_OSC_MEDSEA_volume_mean.png",
+      "digital_object_identifier": "10.48670/mds-00325",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "CMCC (Italy)"
+    },
+    {
+      "title": "Baltic Sea Mean Sea Level time series and trend from Observations Reprocessing",
+      "product_id": "OMI_CLIMATE_SL_BALTIC_area_averaged_anomalies",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_CLIMATE_SL_BALTIC_area_averaged_anomalies.png",
+      "digital_object_identifier": "10.48670/moi-00202",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "Black Sea Mean Sea Level time series and trend from Observations Reprocessing",
+      "product_id": "OMI_CLIMATE_SL_BLKSEA_area_averaged_anomalies",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_CLIMATE_SL_BLKSEA_area_averaged_anomalies.png",
+      "digital_object_identifier": "10.48670/moi-00215",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "Global Ocean Mean Sea Level time series and trend from Observations Reprocessing",
+      "product_id": "OMI_CLIMATE_SL_GLOBAL_area_averaged_anomalies",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_SL_area_averaged_anomalies.png",
+      "digital_object_identifier": "10.48670/moi-00237",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "Global Ocean Mean Sea Level trend map from Observations Reprocessing",
+      "product_id": "OMI_CLIMATE_SL_GLOBAL_regional_trends",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/GLOBAL_OMI_SL_regional_trends.png",
+      "digital_object_identifier": "10.48670/moi-00238",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "Atlantic Iberian Biscay Mean Sea Level time series and trend from Observations Reprocessing",
+      "product_id": "OMI_CLIMATE_SL_IBI_regional_trends",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_CLIMATE_SL_IBI_regional_trends.png",
+      "digital_object_identifier": "10.48670/moi-00252",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "Mediterranean Sea Mean Sea Level time series and trend from Observations Reprocessing",
+      "product_id": "OMI_CLIMATE_SL_MEDSEA_area_averaged_anomalies",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_CLIMATE_SL_MEDSEA_area_averaged_anomalies.png",
+      "digital_object_identifier": "10.48670/moi-00264",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "North West Atlantic Shelf Mean Sea Level time series and trend from Observations Reprocessing",
+      "product_id": "OMI_CLIMATE_SL_NORTHWESTSHELF_area_averaged_anomalies",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_CLIMATE_SL_NORTHWESTSHELF_area_averaged_anomalies.png",
+      "digital_object_identifier": "10.48670/moi-00271",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "Baltic Sea Surface Temperature anomaly time series and trend from Observations Reprocessing",
+      "product_id": "OMI_CLIMATE_SST_BAL_area_averaged_anomalies",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_CLIMATE_SST_BAL_area_averaged_anomalies.png",
+      "digital_object_identifier": "10.48670/moi-00205",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "DMI (Denmark)"
+    },
+    {
+      "title": "Baltic Sea Surface Temperature cumulative trend map from Observations Reprocessing",
+      "product_id": "OMI_CLIMATE_SST_BAL_trend",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_CLIMATE_SST_BAL_trend.png",
+      "digital_object_identifier": "10.48670/moi-00206",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "DMI (Denmark)"
+    },
+    {
+      "title": "Iberia Biscay Ireland Sea Surface Temperature time series and trend from Observations Reprocessing",
+      "product_id": "OMI_CLIMATE_SST_IBI_area_averaged_anomalies",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_CLIMATE_SST_IBI_area_averaged_anomalies.png",
+      "digital_object_identifier": "10.48670/moi-00256",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "Ifremer (France)"
+    },
+    {
+      "title": "Iberia Biscay Ireland Sea Surface Temperature trend map from Observations Reprocessing",
+      "product_id": "OMI_CLIMATE_SST_IBI_trend",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_CLIMATE_SST_IBI_trend.png",
+      "digital_object_identifier": "10.48670/moi-00257",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "Ifremer (France)"
+    },
+    {
+      "title": "Arctic Sea and Sea Ice Surface Temperature anomaly time series based on reprocessed observations",
+      "product_id": "OMI_CLIMATE_SST_IST_ARCTIC_area_averaged_anomalies",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_CLIMATE_SST_IST_ARCTIC_area_averaged_anomalies.png",
+      "digital_object_identifier": "10.48670/mds-00323",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "DMI (Denmark)"
+    },
+    {
+      "title": "Arctic Sea and Sea Ice Surface Temperature 2D trend from climatology based on reprocessed observations",
+      "product_id": "OMI_CLIMATE_SST_IST_ARCTIC_trend",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_CLIMATE_SST_IST_ARCTIC_trend.png",
+      "digital_object_identifier": "10.48670/mds-00324",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "MET Norway"
+    },
+    {
+      "title": "European North West Shelf Sea Surface Temperature time series and trend from Observations Reprocessing",
+      "product_id": "OMI_CLIMATE_SST_NORTHWESTSHELF_area_averaged_anomalies",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_CLIMATE_SST_NORTHWESTSHELF_area_averaged_anomalies.png",
+      "digital_object_identifier": "10.48670/moi-00275",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "Ifremer (France)"
+    },
+    {
+      "title": "European North West Shelf Sea Surface Temperature trend map from Observations Reprocessing",
+      "product_id": "OMI_CLIMATE_SST_NORTHWESTSHELF_trend",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_CLIMATE_SST_NORTHWESTSHELF_trend.png",
+      "digital_object_identifier": "10.48670/moi-00276",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "Ifremer (France)"
+    },
+    {
+      "title": "North Pacific Gyre Oscillation from Observations Reprocessing",
+      "product_id": "OMI_EXTREME_CLIMVAR_PACIFIC_npgo_sla_eof_mode_projection",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_EXTREME_CLIMVAR_PACIFIC_npgo_sla_eof_mode_projection.png",
+      "digital_object_identifier": "10.48670/moi-00221",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": null,
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "Baltic Sea Level extreme from Observations Reprocessing",
+      "product_id": "OMI_EXTREME_SL_BALTIC_slev_mean_and_anomaly_obs",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_EXTREME_SL_BALTIC_slev_mean_and_anomaly_obs.png",
+      "digital_object_identifier": "10.48670/moi-00203",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Iberia Biscay Ireland Sea Level extreme from Observations Reprocessing",
+      "product_id": "OMI_EXTREME_SL_IBI_slev_mean_and_anomaly_obs",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_EXTREME_SL_IBI_slev_mean_and_anomaly_obs.png",
+      "digital_object_identifier": "10.48670/moi-00253",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Mediterranean Sea Mean Sea Level extreme from Observations Reprocessing",
+      "product_id": "OMI_EXTREME_SL_MEDSEA_slev_mean_and_anomaly_obs",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_EXTREME_SL_MEDSEA_slev_mean_and_anomaly_obs.png",
+      "digital_object_identifier": "10.48670/moi-00265",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "North West Shelf Mean Sea Level extreme from Observations Reprocessing",
+      "product_id": "OMI_EXTREME_SL_NORTHWESTSHELF_slev_mean_and_anomaly_obs",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_EXTREME_SL_NORTHWESTSHELF_slev_mean_and_anomaly_obs.png",
+      "digital_object_identifier": "10.48670/moi-00272",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Baltic Sea Surface Temperature extreme from Observations Reprocessing",
+      "product_id": "OMI_EXTREME_SST_BALTIC_sst_mean_and_anomaly_obs",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_EXTREME_SST_BALTIC_sst_mean_and_anomaly_obs.png",
+      "digital_object_identifier": "10.48670/moi-00204",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Iberia Biscay Ireland Sea Surface Temperature extreme from Observations Reprocessing",
+      "product_id": "OMI_EXTREME_SST_IBI_sst_mean_and_anomaly_obs",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_EXTREME_SST_IBI_sst_mean_and_anomaly_obs.png",
+      "digital_object_identifier": "10.48670/moi-00255",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Mediterranean Sea Surface Temperature extreme from Observations Reprocessing",
+      "product_id": "OMI_EXTREME_SST_MEDSEA_sst_mean_and_anomaly_obs",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_EXTREME_SST_MEDSEA_sst_mean_and_anomaly_obs.png",
+      "digital_object_identifier": "10.48670/moi-00267",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "North West Shelf Sea Surface Temperature extreme from Observations Reprocessing",
+      "product_id": "OMI_EXTREME_SST_NORTHWESTSHELF_sst_mean_and_anomaly_obs",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_EXTREME_SST_NORTHWESTSHELF_sst_mean_and_anomaly_obs.png",
+      "digital_object_identifier": "10.48670/moi-00274",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Baltic Sea Significant Wave Height extreme from Observations Reprocessing",
+      "product_id": "OMI_EXTREME_WAVE_BALTIC_swh_mean_and_anomaly_obs",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_EXTREME_WAVE_BALTIC_swh_mean_and_anomaly_obs.png",
+      "digital_object_identifier": "10.48670/moi-00199",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Iberia Biscay Ireland Significant Wave Height extreme from Observations Reprocessing",
+      "product_id": "OMI_EXTREME_WAVE_IBI_swh_mean_and_anomaly_obs",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_EXTREME_WAVE_IBI_swh_mean_and_anomaly_obs.png",
+      "digital_object_identifier": "10.48670/moi-00250",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Mediterranean Sea Significant Wave Height extreme from Observations Reprocessing",
+      "product_id": "OMI_EXTREME_WAVE_MEDSEA_swh_mean_and_anomaly_obs",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_EXTREME_WAVE_MEDSEA_swh_mean_and_anomaly_obs.png",
+      "digital_object_identifier": "10.48670/moi-00263",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "North West Shelf Significant Wave Height extreme from Observations Reprocessing",
+      "product_id": "OMI_EXTREME_WAVE_NORTHWESTSHELF_swh_mean_and_anomaly_obs",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_EXTREME_WAVE_NORTHWESTSHELF_swh_mean_and_anomaly_obs.png",
+      "digital_object_identifier": "10.48670/moi-00270",
+      "sources": [
+        "In-situ observations"
+      ],
+      "processing_level": null,
+      "production_center": "Puertos del Estado (Spain)"
+    },
+    {
+      "title": "Arctic Ocean Chlorophyll-a time series and trend from Observations Reprocessing",
+      "product_id": "OMI_HEALTH_CHL_ARCTIC_OCEANCOLOUR_area_averaged_mean",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_HEALTH_CHL_ARCTIC_OCEANCOLOUR_area_averaged_mean.png",
+      "digital_object_identifier": "10.48670/moi-00188",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "PML (UK)"
+    },
+    {
+      "title": "North Atlantic Ocean Chlorophyll-a time series and trend from Observations Reprocessing",
+      "product_id": "OMI_HEALTH_CHL_ATLANTIC_OCEANCOLOUR_area_averaged_mean",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_HEALTH_CHL_ATLANTIC_OCEANCOLOUR_area_averaged_mean.png",
+      "digital_object_identifier": "10.48670/moi-00194",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "PML (UK)"
+    },
+    {
+      "title": "North Atlantic Ocean Eutrophication from Observations Reprocessing",
+      "product_id": "OMI_HEALTH_CHL_ATLANTIC_OCEANCOLOUR_eutrophication",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_HEALTH_CHL_ATLANTIC_OCEANCOLOUR_eutrophication.png",
+      "digital_object_identifier": "10.48670/moi-00195",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "PML (UK)"
+    },
+    {
+      "title": "Baltic Sea Chlorophyll-a time series and trend from Observations Reprocessing",
+      "product_id": "OMI_HEALTH_CHL_BALTIC_OCEANCOLOUR_area_averaged_mean",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_HEALTH_CHL_BALTIC_OCEANCOLOUR_area_averaged_mean.png",
+      "digital_object_identifier": "10.48670/moi-00197",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Baltic Sea Chlorophyll-a trend map from Observations Reprocessing",
+      "product_id": "OMI_HEALTH_CHL_BALTIC_OCEANCOLOUR_trend",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_HEALTH_CHL_BALTIC_OCEANCOLOUR_trend.png",
+      "digital_object_identifier": "10.48670/moi-00198",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Black Sea Chlorophyll-a time series and trend from Observations Reprocessing",
+      "product_id": "OMI_HEALTH_CHL_BLKSEA_OCEANCOLOUR_area_averaged_mean",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_HEALTH_CHL_BLKSEA_OCEANCOLOUR_area_averaged_mean.png",
+      "digital_object_identifier": "10.48670/moi-00211",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Black Sea Chlorophyll-a trend map from Observations Reprocessing",
+      "product_id": "OMI_HEALTH_CHL_BLKSEA_OCEANCOLOUR_trend",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_HEALTH_CHL_BLKSEA_OCEANCOLOUR_trend.png",
+      "digital_object_identifier": "10.48670/moi-00212",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "North Atlantic Gyre Area Chlorophyll-a time series and trend from Observations Reprocessing",
+      "product_id": "OMI_HEALTH_CHL_GLOBAL_OCEANCOLOUR_oligo_nag_area_mean",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_HEALTH_CHL_GLOBAL_OCEANCOLOUR_oligo_nag_area_mean.png",
+      "digital_object_identifier": "10.48670/moi-00226",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "PML (UK)"
+    },
+    {
+      "title": "North Pacific Gyre Area Chlorophyll-a time series and trend from Observations Reprocessing",
+      "product_id": "OMI_HEALTH_CHL_GLOBAL_OCEANCOLOUR_oligo_npg_area_mean",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_HEALTH_CHL_GLOBAL_OCEANCOLOUR_oligo_npg_area_mean.png",
+      "digital_object_identifier": "10.48670/moi-00227",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "PML (UK)"
+    },
+    {
+      "title": "South Atlantic Gyre Area Chlorophyll-a time series and trend from Observations Reprocessing",
+      "product_id": "OMI_HEALTH_CHL_GLOBAL_OCEANCOLOUR_oligo_sag_area_mean",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_HEALTH_CHL_GLOBAL_OCEANCOLOUR_oligo_sag_area_mean.png",
+      "digital_object_identifier": "10.48670/moi-00228",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "PML (UK)"
+    },
+    {
+      "title": "South Pacific Gyre Area Chlorophyll-a time series and trend from Observations Reprocessing",
+      "product_id": "OMI_HEALTH_CHL_GLOBAL_OCEANCOLOUR_oligo_spg_area_mean",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_HEALTH_CHL_GLOBAL_OCEANCOLOUR_oligo_spg_area_mean.png",
+      "digital_object_identifier": "10.48670/moi-00229",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "PML (UK)"
+    },
+    {
+      "title": "Global Ocean Chlorophyll-a trend map from Observations Reprocessing",
+      "product_id": "OMI_HEALTH_CHL_GLOBAL_OCEANCOLOUR_trend",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_HEALTH_CHL_GLOBAL_OCEANCOLOUR_trend.png",
+      "digital_object_identifier": "10.48670/moi-00230",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "PML (UK)"
+    },
+    {
+      "title": "Mediterranean Sea Chlorophyll-a time series and trend from Observations Reprocessing",
+      "product_id": "OMI_HEALTH_CHL_MEDSEA_OCEANCOLOUR_area_averaged_mean",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_HEALTH_CHL_MEDSEA_OCEANCOLOUR_area_averaged_mean.png",
+      "digital_object_identifier": "10.48670/moi-00259",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Mediterranean Sea Chlorophyll-a trend map from Observations Reprocessing",
+      "product_id": "OMI_HEALTH_CHL_MEDSEA_OCEANCOLOUR_trend",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_HEALTH_CHL_MEDSEA_OCEANCOLOUR_trend.png",
+      "digital_object_identifier": "10.48670/moi-00260",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Mediterranean Water Mass Formation Rates from Reanalysis",
+      "product_id": "OMI_VAR_EXTREME_WMF_MEDSEA_area_averaged_mean",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/OMI_VAR_EXTREME_WMF_MEDSEA_area_averaged_mean.png",
+      "digital_object_identifier": "10.48670/mds-00318",
+      "sources": [
+        "Numerical models"
+      ],
+      "processing_level": null,
+      "production_center": "CMCC (Italy)"
+    },
+    {
+      "title": "Antarctic Ocean - High Resolution Sea Ice Information",
+      "product_id": "SEAICE_ANT_PHY_AUTO_L3_NRT_011_012",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEAICE_ANT_PHY_AUTO_L3_NRT_011_012.png",
+      "digital_object_identifier": "10.48670/mds-00320",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "DMI (Denmark)"
+    },
+    {
+      "title": "Antarctic Ocean Sea Ice Drift REPROCESSED",
+      "product_id": "SEAICE_ANT_PHY_L3_MY_011_018",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEAICE_ANT_PHY_L3_MY_011_018.png",
+      "digital_object_identifier": "10.48670/moi-00120",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "Ifremer (France)"
+    },
+    {
+      "title": "Arctic Ocean - High resolution Sea Ice Concentration and Sea Ice Type",
+      "product_id": "SEAICE_ARC_PHY_AUTO_L4_NRT_011_015",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEAICE_ARC_PHY_AUTO_L4_NRT_011_015.png",
+      "digital_object_identifier": "10.48670/moi-00122",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "MET Norway"
+    },
+    {
+      "title": "Arctic Ocean - Sea and Ice Surface Temperature REPROCESSED",
+      "product_id": "SEAICE_ARC_PHY_CLIMATE_L3_MY_011_021",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEAICE_ARC_PHY_CLIMATE_L3_MY_011_021.png",
+      "digital_object_identifier": "10.48670/moi-00315",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "DMI (Denmark)"
+    },
+    {
+      "title": "Arctic Ocean - Sea and Ice Surface Temperature REPROCESSED",
+      "product_id": "SEAICE_ARC_PHY_CLIMATE_L4_MY_011_016",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEAICE_ARC_PHY_CLIMATE_L4_MY_011_016.png",
+      "digital_object_identifier": "10.48670/moi-00123",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "DMI (Denmark)"
+    },
+    {
+      "title": "ARCTIC Ocean and Sea-Ice Sigma-Nought",
+      "product_id": "SEAICE_ARC_PHY_L3M_NRT_011_017",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEAICE_ARC_PHY_L3M_NRT_011_017.png",
+      "digital_object_identifier": "10.48670/moi-00124",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "MET Norway"
+    },
+    {
+      "title": "Sea Ice Thickness derived from merging CryoSat-2 and SMOS ice thickness",
+      "product_id": "SEAICE_ARC_PHY_L4_NRT_011_014",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/CMEMS-SI-NRT-SIT.gif",
+      "digital_object_identifier": "10.48670/moi-00125",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "FMI (Finland)"
+    },
+    {
+      "title": "Arctic Ocean Sea Ice Drift REPROCESSED",
+      "product_id": "SEAICE_ARC_SEAICE_L3_REP_OBSERVATIONS_011_010",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEAICE_ARC_SEAICE_REP_OBSERVATIONS_011_010.png",
+      "digital_object_identifier": "10.48670/moi-00126",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "Ifremer (France)"
+    },
+    {
+      "title": "Arctic Ocean - Sea Ice Concentration Charts - Svalbard and Greenland",
+      "product_id": "SEAICE_ARC_SEAICE_L4_NRT_OBSERVATIONS_011_002",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEAICE_ARC_SEAICE_L4_NRT_OBSERVATIONS_011_002.jpg",
+      "digital_object_identifier": "10.48670/moi-00128",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "MET Norway"
+    },
+    {
+      "title": "SAR Sea Ice Berg Concentration and Individual Icebergs Observed with Sentinel-1",
+      "product_id": "SEAICE_ARC_SEAICE_L4_NRT_OBSERVATIONS_011_007",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEAICE_ARC_SEAICE_L4_NRT_OBSERVATIONS_011_007.gif",
+      "digital_object_identifier": "10.48670/moi-00129",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "DMI (Denmark)"
+    },
+    {
+      "title": "Arctic Ocean - Sea and Ice Surface Temperature",
+      "product_id": "SEAICE_ARC_SEAICE_L4_NRT_OBSERVATIONS_011_008",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEAICE_ARC_SEAICE_L4_NRT_OBSERVATIONS_011_008.png",
+      "digital_object_identifier": "10.48670/moi-00130",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "DMI (Denmark)"
+    },
+    {
+      "title": "Baltic Sea ice concentration, extent, and classification time series",
+      "product_id": "SEAICE_BAL_PHY_L4_MY_011_019",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEAICE_BAL_PHY_L4_MY_011_019.png",
+      "digital_object_identifier": "10.48670/moi-00131",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Ifremer (France)"
+    },
+    {
+      "title": "Baltic Sea - Sea Ice Concentration and Thickness Charts",
+      "product_id": "SEAICE_BAL_SEAICE_L4_NRT_OBSERVATIONS_011_004",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEAICE_BAL_SEAICE_L4_NRT_OBSERVATIONS_011_004.jpg",
+      "digital_object_identifier": "10.48670/moi-00132",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "FMI (Finland)"
+    },
+    {
+      "title": "Baltic Sea - SAR Sea Ice Thickness and Drift, Multisensor Sea Ice Concentration",
+      "product_id": "SEAICE_BAL_SEAICE_L4_NRT_OBSERVATIONS_011_011",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEAICE_BAL_SEAICE_L4_NRT_OBSERVATIONS_011_011.png",
+      "digital_object_identifier": "10.48670/moi-00133",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "FMI (Finland)"
+    },
+    {
+      "title": "Arctic Ocean - Sea Ice Thickness REPROCESSED",
+      "product_id": "SEAICE_GLO_PHY_CLIMATE_L3_MY_011_013",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEAICE_ARC_SEAICE_L3_REP_OBSERVATIONS_011_013.png",
+      "digital_object_identifier": "10.48670/moi-00127",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "MET Norway"
+    },
+    {
+      "title": "Global Ocean - High Resolution SAR Sea Ice Drift Time Series",
+      "product_id": "SEAICE_GLO_PHY_L4_MY_011_020",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEAICE_GLO_PHY_L4_MY_011_020.png",
+      "digital_object_identifier": "10.48670/mds-00328",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "DTU Space (Denmark)"
+    },
+    {
+      "title": "Global Ocean - Arctic and Antarctic - Sea Ice Concentration, Edge, Type and Drift (OSI-SAF)",
+      "product_id": "SEAICE_GLO_SEAICE_L4_NRT_OBSERVATIONS_011_001",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEAICE_GLO_SEAICE_L4_NRT_OBSERVATIONS_011_001.jpg",
+      "digital_object_identifier": "10.48670/moi-00134",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "MET Norway"
+    },
+    {
+      "title": "Global Ocean - High Resolution SAR Sea Ice Drift",
+      "product_id": "SEAICE_GLO_SEAICE_L4_NRT_OBSERVATIONS_011_006",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEAICE_GLO_SEAICE_L4_NRT_OBSERVATIONS_011_006.png",
+      "digital_object_identifier": "10.48670/moi-00135",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "DTU Space (Denmark)"
+    },
+    {
+      "title": "Global Ocean Sea Ice Concentration Time Series REPROCESSED (OSI-SAF)",
+      "product_id": "SEAICE_GLO_SEAICE_L4_REP_OBSERVATIONS_011_009",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SIW-METNO-GLO-SEAICE_CONC_TIMESERIES-OBS-PLINE.png",
+      "digital_object_identifier": "10.48670/moi-00136",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "MET Norway"
+    },
+    {
+      "title": "BLACK SEA MEAN DYNAMIC TOPOGRAPHY",
+      "product_id": "SEALEVEL_BLK_PHY_MDT_L4_STATIC_008_067",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEALEVEL_BLK_PHY_MDT_L4_STATIC_008_067.png",
+      "digital_object_identifier": "10.48670/moi-00138",
+      "sources": [],
+      "processing_level": "Level 4",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "EUROPEAN SEAS ALONG-TRACK L3 SEA SURFACE HEIGHTS REPROCESSED (1993-ONGOING) TAILORED FOR DATA ASSIMILATION",
+      "product_id": "SEALEVEL_EUR_PHY_L3_MY_008_061",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEALEVEL_EUR_PHY_L3_MY_008_061.png",
+      "digital_object_identifier": "10.48670/moi-00139",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "EUROPEAN SEAS ALONG-TRACK L3 SEA LEVEL ANOMALIES NRT",
+      "product_id": "SEALEVEL_EUR_PHY_L3_NRT_008_059",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEALEVEL_EUR_SLA_L3_NRT_OBSERVATIONS_008_059.png",
+      "digital_object_identifier": "10.48670/moi-00140",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "EUROPEAN SEAS GRIDDED L4 SEA SURFACE HEIGHTS AND DERIVED VARIABLES REPROCESSED (1993-ONGOING)",
+      "product_id": "SEALEVEL_EUR_PHY_L4_MY_008_068",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEALEVEL_EUR_PHY_L4_MY_008_068.png",
+      "digital_object_identifier": "10.48670/moi-00141",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "EUROPEAN SEAS GRIDDED L4 SEA SURFACE HEIGHTS AND DERIVED VARIABLES NRT",
+      "product_id": "SEALEVEL_EUR_PHY_L4_NRT_008_060",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEALEVEL_EUR_PHY_L4_NRT_OBSERVATIONS_008_060.png",
+      "digital_object_identifier": "10.48670/moi-00142",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "GLOBAL OCEAN GRIDDED L4 SEA SURFACE HEIGHTS AND DERIVED VARIABLES REPROCESSED (COPERNICUS CLIMATE SERVICE)",
+      "product_id": "SEALEVEL_GLO_PHY_CLIMATE_L4_MY_008_057",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEALEVEL_GLO_PHY_CLIMATE_L4_MY_008_057.png",
+      "digital_object_identifier": "10.48670/moi-00145",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "GLOBAL OCEAN ALONG-TRACK L3 SEA SURFACE HEIGHTS REPROCESSED (1993-ONGOING) TAILORED FOR DATA ASSIMILATION",
+      "product_id": "SEALEVEL_GLO_PHY_L3_MY_008_062",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEALEVEL_GLO_PHY_L3_MY_008_062.png",
+      "digital_object_identifier": "10.48670/moi-00146",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "GLOBAL OCEAN ALONG-TRACK L3 SEA SURFACE HEIGHTS NRT",
+      "product_id": "SEALEVEL_GLO_PHY_L3_NRT_008_044",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEALEVEL_GLO_SLA_L3_NRT_OBSERVATIONS_008_001_a.jpg",
+      "digital_object_identifier": "10.48670/moi-00147",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "GLOBAL OCEAN GRIDDED L4 SEA SURFACE HEIGHTS AND DERIVED VARIABLES REPROCESSED (1993-ONGOING)",
+      "product_id": "SEALEVEL_GLO_PHY_L4_MY_008_047",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEALEVEL_GLO_PHY_L4_MY_008_047.png",
+      "digital_object_identifier": "10.48670/moi-00148",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "GLOBAL OCEAN GRIDDED L4 SEA SURFACE HEIGHTS AND DERIVED VARIABLES NRT",
+      "product_id": "SEALEVEL_GLO_PHY_L4_NRT_008_046",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEALEVEL_GLO_SLA_MAP_L4_NRT_OBSERVATIONS_008_026.png",
+      "digital_object_identifier": "10.48670/moi-00149",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "GLOBAL OCEAN MEAN DYNAMIC TOPOGRAPHY",
+      "product_id": "SEALEVEL_GLO_PHY_MDT_008_063",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEALEVEL_GLO_PHY_MDT_008_063.png",
+      "digital_object_identifier": "10.48670/moi-00150",
+      "sources": [],
+      "processing_level": "Level 4",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "GLOBAL OCEAN GRIDDED NORMALIZED MEASUREMENT NOISE OF SEA LEVEL ANOMALIES",
+      "product_id": "SEALEVEL_GLO_PHY_NOISE_L4_STATIC_008_033",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEALEVEL_GLO_NOISE_L4_OBSERVATIONS_008_032_033.png",
+      "digital_object_identifier": "10.48670/moi-00144",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "MEDITERRANEAN SEA MEAN DYNAMIC TOPOGRAPHY",
+      "product_id": "SEALEVEL_MED_PHY_MDT_L4_STATIC_008_066",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SEALEVEL_MED_PHY_MDT_L4_STATIC_008_066.png",
+      "digital_object_identifier": "10.48670/moi-00151",
+      "sources": [],
+      "processing_level": "Level 4",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "European North West Shelf/Iberia Biscay Irish Seas \u2013 High Resolution ODYSSEA Sea Surface Temperature Multi-sensor L3 Observations Reprocessed",
+      "product_id": "SST_ATL_PHY_L3S_MY_010_038",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_ATL_PHY_L3S_MY_010_038.png",
+      "digital_object_identifier": "10.48670/moi-00311",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "Ifremer (France)"
+    },
+    {
+      "title": "European North West Shelf/Iberia Biscay Irish Seas \u2013 High Resolution ODYSSEA Sea Surface Temperature Multi-sensor L3 Observations",
+      "product_id": "SST_ATL_PHY_L3S_NRT_010_037",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_ATL_PHY_L3S_NRT_010_037.png",
+      "digital_object_identifier": "10.48670/moi-00310",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "Ifremer (France)"
+    },
+    {
+      "title": "European North West Shelf/Iberia Biscay Irish Seas \u2013 High Resolution ODYSSEA L4 Sea Surface Temperature Analysis",
+      "product_id": "SST_ATL_SST_L4_NRT_OBSERVATIONS_010_025",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_ATL_SST_L4_NRT_OBSERVATIONS_010_025.png",
+      "digital_object_identifier": "10.48670/moi-00152",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Ifremer (France)"
+    },
+    {
+      "title": "European North West Shelf/Iberia Biscay Irish Seas - High Resolution L4 Sea Surface Temperature Reprocessed",
+      "product_id": "SST_ATL_SST_L4_REP_OBSERVATIONS_010_026",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_ATL_SST_L4_REP_OBSERVATIONS_010_026.png",
+      "digital_object_identifier": "10.48670/moi-00153",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Ifremer (France)"
+    },
+    {
+      "title": "Baltic Sea - L3S Sea Surface Temperature Reprocessed",
+      "product_id": "SST_BAL_PHY_L3S_MY_010_040",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_BAL_PHY_L3S_MY_010_040.png",
+      "digital_object_identifier": "10.48670/moi-00312",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "DMI (Denmark)"
+    },
+    {
+      "title": "Baltic Sea - Diurnal Subskin Sea Surface Temperature Analysis",
+      "product_id": "SST_BAL_PHY_SUBSKIN_L4_NRT_010_034",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_BAL_PHY_SUBSKIN_L4_NRT_010_034.png",
+      "digital_object_identifier": "10.48670/moi-00309",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "DMI (Denmark)"
+    },
+    {
+      "title": "North Sea/Baltic Sea - Sea Surface Temperature Analysis L3S",
+      "product_id": "SST_BAL_SST_L3S_NRT_OBSERVATIONS_010_032",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_BAL_SST_L3S_NRT_OBSERVATIONS_010_032.png",
+      "digital_object_identifier": "10.48670/moi-00154",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "DMI (Denmark)"
+    },
+    {
+      "title": "Baltic Sea- Sea Surface Temperature Analysis L4",
+      "product_id": "SST_BAL_SST_L4_NRT_OBSERVATIONS_010_007_b",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_BAL_SST_L4_NRT_OBSERVATIONS_010_007_b.jpg",
+      "digital_object_identifier": "10.48670/moi-00155",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "DMI (Denmark)"
+    },
+    {
+      "title": "Baltic Sea- Sea Surface Temperature Reprocessed",
+      "product_id": "SST_BAL_SST_L4_REP_OBSERVATIONS_010_016",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_BAL_SST_L4_REP_OBSERVATIONS_010_016.png",
+      "digital_object_identifier": "10.48670/moi-00156",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "DMI (Denmark)"
+    },
+    {
+      "title": "Black Sea - High Resolution L3S Sea Surface Temperature Reprocessed",
+      "product_id": "SST_BS_PHY_L3S_MY_010_041",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_BS_PHY_SUBSKIN_L4_NRT_010_035.jpg",
+      "digital_object_identifier": "10.48670/moi-00313",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Black Sea - High Resolution Diurnal Subskin Sea Surface Temperature Analysis",
+      "product_id": "SST_BS_PHY_SUBSKIN_L4_NRT_010_035",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_BS_PHY_SUBSKIN_L4_NRT_010_035.jpg",
+      "digital_object_identifier": "10.48670/moi-00157",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Black Sea - High Resolution and Ultra High Resolution L3S Sea Surface Temperature",
+      "product_id": "SST_BS_SST_L3S_NRT_OBSERVATIONS_010_013",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_BS_SST_L3S_NRT_OBSERVATIONS_010_013.jpg",
+      "digital_object_identifier": "10.48670/moi-00158",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Black Sea High Resolution and Ultra High Resolution Sea Surface Temperature Analysis",
+      "product_id": "SST_BS_SST_L4_NRT_OBSERVATIONS_010_006",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_BS_SST_L4_NRT_OBSERVATIONS_010_006.png",
+      "digital_object_identifier": "10.48670/moi-00159",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Black Sea - High Resolution L4 Sea Surface Temperature Reprocessed",
+      "product_id": "SST_BS_SST_L4_REP_OBSERVATIONS_010_022",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_BS_SST_L4_REP_OBSERVATIONS_010_022_s.png",
+      "digital_object_identifier": "10.48670/moi-00160",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Global High Resolution ODYSSEA Sea Surface Temperature Multi-sensor L3 Observations",
+      "product_id": "SST_GLO_PHY_L3S_MY_010_039",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_GLO_PHY_L3S_MY_010_039.png",
+      "digital_object_identifier": "10.48670/mds-00329",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "Ifremer (France)"
+    },
+    {
+      "title": "ODYSSEA Global Sea Surface Temperature Gridded Level 4 Daily Multi-Sensor Observations",
+      "product_id": "SST_GLO_PHY_L4_NRT_010_043",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_GLO_PHY_L4_NRT_010_043.png",
+      "digital_object_identifier": "10.48670/mds-00321",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Ifremer (France)"
+    },
+    {
+      "title": "ODYSSEA Global Ocean - Sea Surface Temperature Multi-sensor L3 Observations",
+      "product_id": "SST_GLO_SST_L3S_NRT_OBSERVATIONS_010_010",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_GLO_SST_L3S_NRT_OBSERVATIONS_010_010.png",
+      "digital_object_identifier": "10.48670/moi-00164",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "Ifremer (France)"
+    },
+    {
+      "title": "Global Ocean OSTIA Sea Surface Temperature and Sea Ice Analysis",
+      "product_id": "SST_GLO_SST_L4_NRT_OBSERVATIONS_010_001",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_GLO_SST_L4_NRT_OBSERVATIONS_010_001.png",
+      "digital_object_identifier": "10.48670/moi-00165",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Met Office (UK)"
+    },
+    {
+      "title": "Global Ocean OSTIA Sea Surface Temperature and Sea Ice Reprocessed",
+      "product_id": "SST_GLO_SST_L4_REP_OBSERVATIONS_010_011",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_GLO_SST_L4_REP_OBSERVATIONS_010_011.png",
+      "digital_object_identifier": "10.48670/moi-00168",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Met Office (UK)"
+    },
+    {
+      "title": "ESA SST CCI and C3S reprocessed sea surface temperature analyses",
+      "product_id": "SST_GLO_SST_L4_REP_OBSERVATIONS_010_024",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_GLO_SST_L4_REP_OBSERVATIONS_010_024.png",
+      "digital_object_identifier": "10.48670/moi-00169",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "Met Office (UK)"
+    },
+    {
+      "title": "Mediterranean Sea - High Resolution L3S Sea Surface Temperature Reprocessed",
+      "product_id": "SST_MED_PHY_L3S_MY_010_042",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_MED_PHY_L3S_MY_010_042.png",
+      "digital_object_identifier": "10.48670/moi-00314",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Mediterranean Sea - High Resolution Diurnal Subskin Sea Surface Temperature Analysis",
+      "product_id": "SST_MED_PHY_SUBSKIN_L4_NRT_010_036",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_MED_PHY_SUBSKIN_L4_NRT_010_036.jpg",
+      "digital_object_identifier": "10.48670/moi-00170",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Mediterranean Sea - High Resolution and Ultra High Resolution L3S Sea Surface Temperature",
+      "product_id": "SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_MED_SST_L3S_NRT_OBSERVATIONS_010_012.jpg",
+      "digital_object_identifier": "10.48670/moi-00171",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Mediterranean Sea High Resolution and Ultra High Resolution Sea Surface Temperature Analysis",
+      "product_id": "SST_MED_SST_L4_NRT_OBSERVATIONS_010_004",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_MED_SST_L4_NRT_OBSERVATIONS_010_004.png",
+      "digital_object_identifier": "10.48670/moi-00172",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "Mediterranean Sea - High Resolution L4 Sea Surface Temperature Reprocessed",
+      "product_id": "SST_MED_SST_L4_REP_OBSERVATIONS_010_021",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SST_MED_SST_L4_REP_OBSERVATIONS_010_021_s.png",
+      "digital_object_identifier": "10.48670/moi-00173",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CNR (Italy)"
+    },
+    {
+      "title": "GLOBAL OCEAN L3 SPECTRAL PARAMETERS FROM REPROCESSED SATELLITE MEASUREMENTS",
+      "product_id": "WAVE_GLO_PHY_SPC_L3_MY_014_006",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/WAVE_GLO_PHY_SPC_L3_MY_014_006.png",
+      "digital_object_identifier": "10.48670/moi-00174",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "GLOBAL OCEAN L4 SPECTRAL PARAMETERS FROM NRT SATELLITE MEASUREMENTS",
+      "product_id": "WAVE_GLO_PHY_SPC_L4_NRT_014_004",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/WAVE_GLO_PHY_SPC_L4_NRT_014_004.png",
+      "digital_object_identifier": "10.48670/moi-00175",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "GLOBAL OCEAN L3 SIGNIFICANT WAVE HEIGHT FROM REPROCESSED SATELLITE MEASUREMENTS",
+      "product_id": "WAVE_GLO_PHY_SWH_L3_MY_014_005",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/WAVE_GLO_PHY_SWH_L3_MY_014_005.png",
+      "digital_object_identifier": "10.48670/moi-00176",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "GLOBAL OCEAN L3 SIGNIFICANT WAVE HEIGHT FROM NRT SATELLITE MEASUREMENTS",
+      "product_id": "WAVE_GLO_PHY_SWH_L3_NRT_014_001",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/WAVE_GLO_WAV_L3_SWH_NRT_OBSERVATIONS_014_001.png",
+      "digital_object_identifier": "10.48670/moi-00179",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "GLOBAL OCEAN L4 SIGNIFICANT WAVE HEIGHT FROM REPROCESSED SATELLITE MEASUREMENTS",
+      "product_id": "WAVE_GLO_PHY_SWH_L4_MY_014_007",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/WAVE_GLO_PHY_SWH_L4_MY_014_007.png",
+      "digital_object_identifier": "10.48670/moi-00177",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "GLOBAL OCEAN L4 SIGNIFICANT WAVE HEIGHT FROM NRT SATELLITE MEASUREMENTS",
+      "product_id": "WAVE_GLO_PHY_SWH_L4_NRT_014_003",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/WAVE_GLO_WAV_L4_SWH_NRT_OBSERVATIONS_014_003.png",
+      "digital_object_identifier": "10.48670/moi-00180",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "GLOBAL OCEAN L3 SPECTRAL PARAMETERS FROM NRT SATELLITE MEASUREMENTS",
+      "product_id": "WAVE_GLO_WAV_L3_SPC_NRT_OBSERVATIONS_014_002",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/WAVE_GLO_WAV_L3_SPC_NRT_OBSERVATIONS_014_002.png",
+      "digital_object_identifier": "10.48670/moi-00178",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "CLS (France)"
+    },
+    {
+      "title": "Global Ocean Monthly Mean Sea Surface Wind and Stress from Scatterometer and Model",
+      "product_id": "WIND_GLO_PHY_CLIMATE_L4_MY_012_003",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/WIND_GLO_PHY_L4_CLIMATE_MY_012_003.png",
+      "digital_object_identifier": "10.48670/moi-00181",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "KNMI (The Netherlands)"
+    },
+    {
+      "title": "Global Ocean Daily Gridded Reprocessed L3 Sea Surface Winds from Scatterometer",
+      "product_id": "WIND_GLO_PHY_L3_MY_012_005",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SIW-KNMI-GLO-WIND_L3-OBS.png",
+      "digital_object_identifier": "10.48670/moi-00183",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "KNMI (The Netherlands)"
+    },
+    {
+      "title": "Global Ocean Daily Gridded Sea Surface Winds from Scatterometer",
+      "product_id": "WIND_GLO_PHY_L3_NRT_012_002",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/SIW-KNMI-GLO-WIND_L3-OBS.png",
+      "digital_object_identifier": "10.48670/moi-00182",
+      "sources": [
+        "Satellite observations"
+      ],
+      "processing_level": "Level 3",
+      "production_center": "KNMI (The Netherlands)"
+    },
+    {
+      "title": "Global Ocean Hourly Reprocessed Sea Surface Wind and Stress from Scatterometer and Model",
+      "product_id": "WIND_GLO_PHY_L4_MY_012_006",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/WIND_GLO_PHY_L4_NRT_012_004.png",
+      "digital_object_identifier": "10.48670/moi-00185",
+      "sources": [
+        "Numerical models",
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "KNMI (The Netherlands)"
+    },
+    {
+      "title": "Global Ocean Hourly Sea Surface Wind and Stress from Scatterometer and Model",
+      "product_id": "WIND_GLO_PHY_L4_NRT_012_004",
+      "thumbnail_url": "https://catalogue.marine.copernicus.eu/documents/IMG/WIND_GLO_PHY_L4_NRT_012_004.png",
+      "digital_object_identifier": "10.48670/moi-00305",
+      "sources": [
+        "Numerical models",
+        "Satellite observations"
+      ],
+      "processing_level": "Level 4",
+      "production_center": "KNMI (The Netherlands)"
+    }
+  ]
+}
