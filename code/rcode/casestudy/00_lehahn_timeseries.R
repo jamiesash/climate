@@ -1,12 +1,17 @@
 
 #load functions and libraries
-source("code\\functions.R")
-source("code\\libraries.R")
-source("code\\blooms.R")
-rasterOptions(maxmemory = 120e+10, memfrac = 0.9)
-knitr::opts_chunk$set(echo = TRUE)
+source("../functions.R")
+# source("libraries.R")
+# source("code\\blooms.R")
+# rasterOptions(maxmemory = 120e+10, memfrac = 0.9)
+# knitr::opts_chunk$set(echo = TRUE)
+library(terra)
+library("rerddap")
+library("ncdf4")
 
-# ------------------------------------------------------------------------------
+setwd("/home/jamie/projects/climate/code/rcode/casestudy")
+
+# Functions --------------------------------------------------------------------
 # I added a few funcions here because its an older script and I changed the 
 # functions in my lararies R file
 
@@ -246,71 +251,58 @@ jamie_theme <- function(x,
   title(ylab = ylab, cex.lab = 1, line = 2.5)
   title(xlab = xlab, cex.lab = 1, line = 2.25)
 }
+# Load Data --------------------------------------------------------------------
+# # loading data via opendap had issues with over engineered function
+lons = c(-175, -125)
+lats = c(18,   40)
+e = ext(lons, lats)
+sdate = as.Date("2018-07-05")
+edate = as.Date("2018-10-15")
+
+chl    = rast("/home/jamie/projects/climate/data/chl/chl_day_l3_2017_2023_20240804.nc")
+chla   = rast("/home/jamie/projects/climate/data/chl/chla_day_l3_2017_2023_20240804.nc")
+blooms = rast("/home/jamie/projects/climate/data/chl/blooms_day_l3_2017_2023_20240806.nc") 
+
 # ------------------------------------------------------------------------------
-# loading data via opendap had issues with over engineered function
-sdate = as.Date("2018-01-01")
-edate = as.Date("2019-01-01") 
+# # removing coastal effects
+# subset spacial polygon like a data frame. 
+eez = terra::vect("../../../data/eez/USMaritimeLimitsNBoundaries.shp")
+idx = which(eez$REGION == 'Hawaiian Islands')
+hawaii = eez[idx,]
+idx = hawaii$CZ + hawaii$TS
+idx = which(idx == 1)
+hawaii = hawaii[idx,]
 
-lons = c(-160, -125)
-lats = c( 18,   37)
-e = extent(lons, lats)
+# ------------------------------------------------------------------------------
+# Subset time-span of interest: 2018 summer bloom
+# I could also just load using errdap. This is faster tho
+#ppp_2018  = timesnip(ppp,  as.Date(sdate), as.Date(edate)
 
-# cache_list()
-cache_delete_all(force = FALSE)
+sdate = sdate - 16
+edate = edate + 15
 
-# Set variables
-lat_varid = "lat"
-lon_varid = "lon"
-var = "CHL"
-url = "https://jash:5.Pellegrino@my.cmems-du.eu/thredds/dodsC/cmems_obs-oc_glo_bgc-plankton_my_l3-multi-4km_P1D?"
+chl_2018  = timesnip(chl,  as.Date(sdate), as.Date(edate))
+chla_2018 = timesnip(chla, as.Date(sdate), as.Date(edate))
+chlb_2018 = timesnip(chlb, as.Date(sdate), as.Date(edate))
 
-origin = "1900-01-01"
+# ------------------------------------------------------------------------------
+# Calculate patch area
+# integrated = depth integrated
+tsa = bloom_area(chlb_2018)
 
-data = nc_open(url, verbose = FALSE, write = FALSE)
-lat  = ncvar_get(data, varid = lat_varid)
-lon  = ncvar_get(data, varid = lon_varid)
-time = ncvar_get(data, varid = "time")
-time = as.Date(time, origin = origin)
+# magnitude might like the raw CHL
+tsc = bloom_con(chl_2018, chlb_2018, stat = "mean")
 
-idx_lat  = which(lat > lats[1] & lat < lats[2])
-idx_lon  = which(lon > lons[1] & lon < lons[2])
-idx_time = which(time >= sdate & time <= edate)
+#tsa = area_ts(chla, sdate = sdate, edate = edate, stat = "mean")
+bloom_2018 = data.frame(area = tsa$area, 
+                        con  = tsc$con, 
+                        time = tsa$time)
 
-idx_ras = paste("CHL",
-                paste("[", range(idx_time)[1], ":1:", range(idx_time)[2], "]", sep = ""),
-                paste("[", range(idx_lat)[1],  ":1:", range(idx_lat)[2],  "]", sep = ""),
-                paste("[", range(idx_lon)[1],  ":1:", range(idx_lon)[2],  "]", sep = ""),
-                sep = "")
+# cleaning work space
+rm(tsa, tsc)
 
-idx_time = paste("time", paste("[", range(idx_time)[1], ":1:",range(idx_time)[2], "]", sep = ""), sep = "")
-idx_lat  = paste(lat_varid, paste("[", range(idx_lat)[1], ":1:",range(idx_lat)[2],  "]", sep = ""), sep = "")
-idx_lon  = paste(lon_varid, paste("[", range(idx_lon)[1], ":1:",range(idx_lon)[2],  "]", sep = ""), sep = "")
-idx = paste(idx_lat, idx_lon, idx_time, idx_ras, sep = ",")
-
-url = paste(url, idx, sep = "")
-
-nc_close(data)
-rm(data)
-
-data = nc_open(url, verbose = FALSE, write = FALSE)
-
-lat  = ncvar_get(data, varid = lat_varid)
-lon  = ncvar_get(data, varid = lon_varid)
-time = ncvar_get(data, varid = "time")
-time = as.Date(time, origin = origin)
-ras  = ncvar_get(data)
-nc_close(data)
-
-s   = dim(ras)
-ras = raster::brick(ras)
-ras = t(ras)
-ras = setZ(ras, z = as.Date(time, origin = org), name = "time")
-extent(ras) = extent(min(lons), max(lons), min(lats), max(lats))
-
-chl = ras
-rm(ras)
-gc() 
-
+# ------------------------------------------------------------------------------
+# Process float data
 # ------------------------------------------------------------------------------
 # Loading the float data using ERDDAP
 
@@ -335,53 +327,8 @@ float = loadfloat(sdate  = sdate,
                   id = "ArgoFloats")
 gc()
 
-# ------------------------------------------------------------------------------
-# removing coastal effects
-chl = bufcoast(chl, 
-               region = "Hawaiian Islands", 
-               path = "data/USMaritimeLimitsAndBoundariesSHP")
-gc()
 
-# ------------------------------------------------------------------------------
-# Calculate CHL anomaly
-chla = anomalize(chl, detrend = TRUE)
-chlb = bool(chla)
-gc()
 
-# ------------------------------------------------------------------------------
-# checking how well the filter did
-# c_time = cellStats(chla, stat='mean', na.rm=TRUE)
-# plot(1:length(c_time), c_time)
-
-# ------------------------------------------------------------------------------
-# Subset time-span of interest: 2018 summer bloom
-# I could also just load using errdap. This is faster tho
-#ppp_2018  = timesnip(ppp,  as.Date(sdate), as.Date(edate)
-idx = year(blooms$sdate) == 2018
-sdate = as.Date(blooms$sdate[idx]) - 16
-edate = as.Date(blooms$edate[idx]) + 15
-
-chl_2018  = timesnip(chl,  as.Date(sdate), as.Date(edate))
-chla_2018 = timesnip(chla, as.Date(sdate), as.Date(edate))
-chlb_2018 = timesnip(chlb, as.Date(sdate), as.Date(edate))
-
-# ------------------------------------------------------------------------------
-# Calculate patch area
-# integrated = depth integrated
-tsa = bloom_area(chlb_2018)
-# magnitude might like the raw CHL
-tsc = bloom_con(chl_2018, chlb_2018, stat = "mean")
-
-#tsa = area_ts(chla, sdate = sdate, edate = edate, stat = "mean")
-bloom_2018 = data.frame(area = tsa$area, 
-                        con  = tsc$con, 
-                        time = tsa$time)
-
-# cleaning work space
-rm(tsa, tsc)
-
-# ------------------------------------------------------------------------------
-# Process float data
 # time-series of the mixed layer depth for the 
 # Converting all columns to numeric
 float$time = as.numeric(as.Date(float$time))
@@ -425,6 +372,7 @@ rm(badcy, badid, badf)
 # I changed the region so floats suck
 
 # Density Calculation: function from the oce package and calc. density
+# I think I removed the mixed depth function like a fool. 
 float$rho = swRho(salinity = float$psal,
                   temperature = float$temp,
                   pressure = float$pres,
@@ -498,12 +446,13 @@ bloom_2018$con = bloom_2018$con # in mg/m^3
 elephants = max(bloom_2018$bio*1000)/ 5.98742 # elephant in t
 
 # ------------------------------------------------------------------------------
-# saving the data to harddisck
+# saving the data to hard disck
 # write.csv(bloom_2018, 
 #           file = paste("data/fig_data/lehan", Sys.Date(), ".csv", sep = ""))
 
 bloom_2018 = read.csv("data/fig_data/lehan2023-05-06.csv")
 bloom_2018$time = as.Date(bloom_2018$time)
+
 # ------------------------------------------------------------------------------
 
 # ------------------------------- FIGURES --------------------------------------

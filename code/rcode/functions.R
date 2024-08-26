@@ -26,7 +26,7 @@
 #    rem:   Should the remainder be saved? If false the seasonal cycle is saved.
 stlfilter = function(ras, np = 91, subst = 1, ot = 4, wind = 7, rem = TRUE) {
   ## set the memory to handle larger matrices
-  rasterOptions(maxmemory = 100e+10)
+  rasterOptions(maxmemory = 14e+10)
   ## initialize an empty vector of the same size.
   s     <- dim(ras) ## dimensions
   sdate <- getZ(ras) ## fake datetime vector for stl input
