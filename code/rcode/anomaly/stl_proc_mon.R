@@ -35,7 +35,7 @@ stlfilter = function(ras, trend = FALSE, anom = FALSE, seas = FALSE) {
   }
   gc()
   
-  y = ras(y)
+  y = rast(y)
   gc()
   
   # y[na_id]  <- NA #X and Y are not same dim()
@@ -80,6 +80,11 @@ chl = rast("../../../data/chl/chl_1998_2023_l4_month_multi_4k.nc")
 
 print("3. Data loaded")
 
+# Subset smaller area.
+
+# ------------------------------------------------------------------------------
+# removing coastal effects
+
 # subset spacial polygon like a data frame. 
 eez = terra::vect("../../../data/eez/USMaritimeLimitsNBoundaries.shp")
 idx = which(eez$REGION == 'Hawaiian Islands')
@@ -88,40 +93,49 @@ idx = hawaii$CZ + hawaii$TS
 idx = which(idx == 1)
 hawaii = hawaii[idx,]
 
-# ------------------------------------------------------------------------------
-# removing coastal effects
+# mask land.
 chl = terra::mask(chl, hawaii, inverse = TRUE)
+gc()
 
 # ------------------------------------------------------------------------------
 # remove the seasonal climatologist signal. 
 
 # calculate the climate trend
 clim = stlfilter(chl, trend = TRUE)
-clim = global(clim, "mean", na.rm = TRUE)
-clim = unlist(unname(clim))
+clim_map = mean(clim, na.rm = TRUE)
+clim_ts = global(clim, "mean", na.rm = TRUE)
+clim_ts = unlist(unname(clim_ts))
 gc()
-
-# calculate the seasonal trend 
-seas = stlfilter(chl, seas = TRUE)
-seas = global(seas, "mean", na.rm = TRUE)
-seas = unlist(unname(seas))
-gc()
-
-# calculate the remainder trend
-anom = stlfilter(chl, anom = TRUE)
-anom = global(anom, "mean", na.rm = TRUE)
-anom = unlist(unname(anom))
-gc()
-
-raw = global(chl, "mean", na.rm=TRUE)
-raw = unlist(unname(raw))
-
-df = data.frame(t, raw, seas, anom, clim)
 
 print("4. Decomposed.")
 
-# ------------------------------------------------------------------------------
-### Save Raster
-dt = gsub("-", "", as.character(Sys.Date()))
+df = data.frame(t, clim_ts)
 
+dt = gsub("-", "", as.character(Sys.Date()))
 write.csv(df, filename = paste("/home/jamesash/climate/data/", "stl_mon_", dt, ".csv", sep = ""))
+
+# 
+# # calculate the seasonal trend 
+# seas = stlfilter(chl, seas = TRUE)
+# seas = global(seas, "mean", na.rm = TRUE)
+# seas = unlist(unname(seas))
+# gc()
+# 
+# # calculate the remainder trend
+# anom = stlfilter(chl, anom = TRUE)
+# anom = global(anom, "mean", na.rm = TRUE)
+# anom = unlist(unname(anom))
+# gc()
+# 
+# raw = global(chl, "mean", na.rm=TRUE)
+# raw = unlist(unname(raw))
+# 
+# df = data.frame(t, raw, seas, anom, clim)
+# 
+# print("4. Decomposed.")
+# 
+# # ------------------------------------------------------------------------------
+# ### Save Raster
+# dt = gsub("-", "", as.character(Sys.Date()))
+# 
+# write.csv(df, filename = paste("/home/jamesash/climate/data/", "stl_mon_", dt, ".csv", sep = ""))
