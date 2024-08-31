@@ -1,6 +1,0 @@
-Loading required package: sp
-### Welcome to rworldmap ###
-For a short introduction type : 	 vignette('rworldmap')
-terra 1.7.65
-Warning message:
-[rast] unknown calendar (assuming standard): Gregorian 
