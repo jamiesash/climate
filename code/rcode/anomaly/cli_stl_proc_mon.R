@@ -1,3 +1,11 @@
+# ------------------------------------------------------------------------------
+### Liraries and functions
+library(terra)
+library(lubridate)
+library(stlplus)
+
+print("1. Functions loaded.")
+
 # functions --------------------------------------------------------------------
 
 stlfilter = function(ras, trend = FALSE, anom = FALSE, seas = FALSE) {
@@ -26,7 +34,6 @@ stlfilter = function(ras, trend = FALSE, anom = FALSE, seas = FALSE) {
         if (anom  == TRUE) y[i,j,] = peaces$data$remainder  #keep the seasonal
         if (seas  == TRUE) y[i,j,] = peaces$data$seasonal  #keep the seasonal
         if (trend == TRUE) y[i,j,] = peaces$data$trend #keep the residual
-        gc()
       }, error=function(e){
         #skips to next iteration if there's an error  
       }) 
@@ -34,7 +41,6 @@ stlfilter = function(ras, trend = FALSE, anom = FALSE, seas = FALSE) {
     if (i == max(s[1])) print("Finish!")
   }
   gc()
-  
   y = rast(y)
   gc()
   
@@ -44,33 +50,7 @@ stlfilter = function(ras, trend = FALSE, anom = FALSE, seas = FALSE) {
   y  
 } 
 
-print("1. Functions loaded.")
-
-# -----------------------------------------------------------------------------
-### testing
-# t = time(ras)
-# chlu = global(ras, "mean", na.rm=TRUE)
-# chlu = unlist(unname(chlu))
-# start = c(year(t[1]), month(t[1]))
-# end = c(year(t[length(t)]), month(t[length(t)]))
-# 
-# chl_dec = ts(data = chlu,
-#              start = start,
-#              end = end,
-#              frequency = 12)
-# peaces = stl(chl_dec, s.window = "periodic", s.degree = 0, t.degree = 0, l.degree=0, robust=TRUE)
-# gc()
-# 
-# test = chl_dec - peaces$time.series[,2]  
-# plot(test)
-
-# ------------------------------------------------------------------------------
-### Liraries and functions
-library(terra)
-library(lubridate)
-library(stlplus)
-
-print("2. Librares loaded.")
+print("2. Funcitons loaded.")
 
 # ------------------------------------------------------------------------------
 ### Loading the dataset
@@ -78,8 +58,6 @@ print("2. Librares loaded.")
 chl = rast("/home/jamesash/climate/data/chl/chl_1998_2023_l4_month_multi_4k.nc")
 
 print("3. Data loaded")
-
-# Subset smaller area.
 
 # ------------------------------------------------------------------------------
 # removing coastal effects
@@ -96,33 +74,20 @@ hawaii = hawaii[idx,]
 chl = terra::mask(chl, hawaii, inverse = TRUE)
 gc()
 
-# ------------------------------------------------------------------------------
-# remove the seasonal climatologist signal. 
+print("3. Masked")
 
-# calculate the climate trend
+# ------------------------------------------------------------------------------
+# apply the stl filter. 
+
 clim = stlfilter(chl, trend = TRUE)
 
-clim_map = mean(clim, na.rm = TRUE)
-clim_ts = global(clim, "mean", na.rm = TRUE)
-clim_ts = unlist(unname(clim_ts))
-gc()
-
 print("4. Decomposed.")
-
-t = time(chl)
-df = data.frame(t, clim_ts)
-colnames(df) = c("time", "clim")
 
 # ------------------------------------------------------------------------------
 ### the data
 dt = gsub("-", "", as.character(Sys.Date()))
-
-write.csv(df, 
-          paste("/home/jamesash/climate/data/chl", "stl_ts_mon_", dt, ".csv", sep = ""), 
-          row.names = FALSE)
-
 writeCDF(clim, 
-         filename = paste("/home/jamesash/climate/data/chl", "stl_mon_", dt, ".nc",sep = ""), 
+         filename = paste("/home/jamesash/koa_scratch/", "clim_stl_mon_", dt, ".nc",sep = ""), 
          overwrite = TRUE,
          varname = "CHL")
 
