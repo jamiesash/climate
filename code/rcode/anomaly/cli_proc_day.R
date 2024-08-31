@@ -95,7 +95,7 @@ print("3. Data loaded")
 
 # ------------------------------------------------------------------------------
 
-# remove the seasonal climatologic signal. 
+# remove the seasonal climatologist signal. 
 chl = anomalize(chl)
 gc()
 
