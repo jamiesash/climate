@@ -71,10 +71,10 @@ idx = which(idx == 1)
 hawaii = hawaii[idx,]
 
 # mask land.
-chl = terra::mask(chl, hawaii, inverse = TRUE)
-gc()
+# chl = terra::mask(chl, hawaii, inverse = TRUE)
+# gc()
 
-print("3. Masked")
+# print("3. Masked")
 
 # ------------------------------------------------------------------------------
 # apply the stl filter. 

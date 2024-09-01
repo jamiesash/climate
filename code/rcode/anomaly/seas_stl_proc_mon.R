@@ -69,7 +69,6 @@ hawaii = eez[idx,]
 idx = hawaii$CZ + hawaii$TS
 idx = which(idx == 1)
 hawaii = hawaii[idx,]
-
 # mask land.
 # chl = terra::mask(chl, hawaii, inverse = TRUE)
 # gc()
@@ -79,7 +78,7 @@ print("3. Masked")
 # ------------------------------------------------------------------------------
 # apply the stl filter. 
 
-clim = stlfilter(chl, anom = TRUE)
+clim = stlfilter(chl, seas = TRUE)
 
 print("4. Decomposed.")
 
@@ -87,7 +86,7 @@ print("4. Decomposed.")
 ### the data
 dt = gsub("-", "", as.character(Sys.Date()))
 writeCDF(clim, 
-         filename = paste("/home/jamesash/koa_scratch/", "chla_stl_mon_", dt, ".nc",sep = ""), 
+         filename = paste("/home/jamesash/koa_scratch/", "seas_stl_mon_", dt, ".nc",sep = ""), 
          overwrite = TRUE,
          varname = "CHL")
 
