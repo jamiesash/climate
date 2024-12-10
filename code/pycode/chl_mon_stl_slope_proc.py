@@ -13,7 +13,7 @@ lat = file_id.variables["latitude"][:]
 lon = file_id.variables["longitude"][:]
 file_id.close()
 
-ras_downsampled = ras[:, ::50, ::50]  # Select every 10th value for both latitude and longitude
+ras_downsampled = ras[:, ::20, ::20]  # Select every 10th value for both latitude and longitude
 
 # Initialize arrays to hold the slopes and p-values for the seascli component
 seascli_slopes = np.zeros((ras_downsampled.shape[1], ras_downsampled.shape[2]))
