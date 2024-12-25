@@ -20,9 +20,9 @@ for i in range(ras.shape[1]):  # Loop over rows
         # Perform linear regression for the (i, j) cell over time
         ts = ras[:, i, j]
         pix = pd.Series(ts, index=pd.date_range("1-1-1998", periods=len(ts), freq="M"), name="chl")
-        stl = STL(pix, seasonal = 13, robust = True)
+        stl = STL(pix.ffill(), seasonal = 13, robust = True)
         fit = stl.fit()
-        tmp[:, i, j] = fit.resid  # Store the slope in the 2D array
+        tmp[:, i, j] = fit.resid  # store resifuals in 2D array. 
 
 # Create a new NetCDF file
 ds = nc.Dataset('chla_stl_mon_20240902.nc', 'w', format='NETCDF4')
