@@ -14,7 +14,6 @@ lat = file_id.variables["latitude"][:]
 lon = file_id.variables["longitude"][:]
 file_id.close()
 
-
 # convert to xarray. 
 ras = xr.DataArray(ras, 
                    coords={'x': lat, 'y':lon}, 
