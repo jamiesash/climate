@@ -25,7 +25,7 @@ for i in range(ras.shape[1]):  # Loop over rows
         tmp[:, i, j] = fit.resid  # store resifuals in 2D array. 
 
 # Create a new NetCDF file
-ds = nc.Dataset('chla_stl_mon_20240902.nc', 'w', format='NETCDF4')
+ds = nc.Dataset('/home/jamesash/koa_scratch/chla_stl_mon_20240902.nc', 'w', format='NETCDF4')
 
 # Create dimensions
 ds.createDimension('time', len(time))
