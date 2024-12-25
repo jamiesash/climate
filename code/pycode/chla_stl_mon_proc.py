@@ -4,7 +4,7 @@ import pandas as pd
 from statsmodels.tsa.seasonal import STL
 
 # Global Ocean Colour (Copernicus-GlobColour), Bio-Geo-Chemical, L4 (monthly and interpolated) from Satellite Observations (Near Real Time)
-file_id = nc.Dataset('/home/jamie/projects/climate/data/chl/chl_1998_2023_l4_month_multi_4k.nc')
+file_id = nc.Dataset('../../data/chl/chl_1998_2023_l4_month_multi_4k.nc')
 ras = file_id.variables["CHL"][:]
 time = file_id.variables["time"][:]
 lat = file_id.variables["latitude"][:]
