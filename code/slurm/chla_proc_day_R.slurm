@@ -21,7 +21,7 @@ eval "$(conda shell.bash hook)"
 conda activate rblooms
 
 # Change to the script directory
-cd /home/jamesash/climate/code/rcode
+cd /home/jamesash/climate/code/rcode/anomaly
 
 # Run the Python script
 Rscript chla_proc_day.R
