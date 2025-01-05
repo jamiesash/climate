@@ -85,7 +85,7 @@ print("2. Librares loaded.")
 
 # ------------------------------------------------------------------------------
 ### Loading the dataset
-chl = rast("/home/jamesash/climate/data/chl/chl_2017_2023_glob_day_multi_l3_4k.nc")
+chl = rast("/home/jamesash/climate/data/chl/chl_1998_2023_l3_multi_4k.nc")
 
 print("3. Data loaded")
 
@@ -103,7 +103,7 @@ print("4. anomalized")
 dt = gsub("-", "", as.character(Sys.Date()))
 
 writeCDF(chl, 
-	filename = paste("/home/jamesash/koa_scratch/", "chla_day_l3_2017_2023_", dt, ".nc",sep = ""), 
+	filename = paste("/home/jamesash/koa_scratch/", "chla_day_l3_1998_2023_", dt, ".nc",sep = ""), 
 	overwrite = TRUE,
 	varname = "CHL")
 
