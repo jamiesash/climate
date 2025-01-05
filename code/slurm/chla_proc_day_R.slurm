@@ -2,9 +2,9 @@
 #SBATCH --job-name=stl_anomaly_monthly
 #SBATCH --ntasks=1
 #SBATCH --partition=shared
-#SBATCH --time=0-12:00:00
+#SBATCH --time=1-12:00:00
 #SBATCH --cpus-per-task=4
-#SBATCH --mem=100G
+#SBATCH --mem=300G
 #SBATCH --error=error-%A_%a.err
 #SBATCH --output=output-%A_%a.out
 #SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,TIME_LIMIT_80
@@ -24,5 +24,5 @@ conda activate rblooms
 cd /home/jamesash/climate/code/rcode
 
 # Run the Python script
-Rscript chla_proc_day.py
+Rscript chla_proc_day.R
 
