@@ -27,6 +27,7 @@ bloomclim = function(x) {
   clim[[2:13]]
 }
 
+
 # The terra version of anomalize. I think. 
 anomalize = function(ras){
   themonths <- c("January","February", "March", "April", "May","June",  "July",
@@ -34,7 +35,6 @@ anomalize = function(ras){
   
   # find the monthly climotology of the data set 
   ras_clim = bloomclim(ras)
-  gc()
   
   # subtract each month from corresponding daily data set
   ogt = time(ras)
@@ -45,20 +45,19 @@ anomalize = function(ras){
   # placeholder raster
   chla  = ras[[1]] 
   j    = 0 # start j at 0 to count loops. i is a string
+  
   for (mon in themonths) {
     j = j + 1
     ind  = which(mon_raw == mon)
     temp = ras[[ind]] - ras_clim[[j]]
     chla = c(chla, temp)
   }
-  rm(temp, ras_clim)
-  gc()
   
+  rm(temp)
   chla = chla[[2:nlyr(chla)]]
-  gc()
   idx = order(time(chla))
-  gc()
   chla = chla[[idx]]
+  
   chla
 }
 
@@ -77,38 +76,42 @@ subsum    = function(x, mnths = 7:10) {
   time(x) = sdate
   x
 }
-
-print("1. Functions loaded.")
 # ------------------------------------------------------------------------------
 ### Liraries and functions
 library(anytime)
 library(terra)
-setwd("/home/jamie/projects/climate/code/rcode/casestudy")
 
-print("2. Librares loaded.")
+print("1. Librares loaded.")
 
 # ------------------------------------------------------------------------------
 ### Loading the dataset
-chl = rast("../../../data/chl/chl_2017_2023_glob_day_multi_l4_4k.nc")
+# chl = rast("/home/jamesash/climate/data/chl_1998_2023_l4_month_multi_4k.nc")
+chl = rast("/home/jamesash/climate/data/chl/chl_1998_2023_l4_month_multi_4k.nc")
 
-print("3. Data loaded")
+print("2. Data loaded")
 
 # ------------------------------------------------------------------------------
-
-# remove the seasonal climatologist signal. 
+# remove the seasonal climatologic signal. 
 chl = anomalize(chl)
 gc()
+
+# remove all but the summer months.
+chl = subsum(chl, mnths = 6:10)
+gc()
+
+print("3. Anamolized and summer subset.")
+
+# ------------------------------------------------------------------------------
+# Perform find the climatology. 
+cli = app(chl, fun = mean, na.rm = TRUE)
+
+print("4. Averaged.")
 
 # ------------------------------------------------------------------------------
 
 ### Save Raster
-dt = gsub("-", "", as.character(Sys.Date()))
-
-writeCDF(chl, 
-	filename = paste("/home/jamesash/climate/data/", "chla_day_", dt, ".nc",sep = ""), 
+writeCDF(cli, 
+	filename = paste("/mnt/lustre/koa/scratch/jamesash/", "climatology_mon_sum", ".nc", sep = ""), 
 	overwrite = TRUE,
 	varname = "CHL")
-		#longname="cllimatology of chl from monthly data", 
-		#unit="mg/m^3", 
-		#split=FALSE)
 

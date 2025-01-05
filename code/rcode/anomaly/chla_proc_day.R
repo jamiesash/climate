@@ -103,7 +103,7 @@ print("4. anomalized")
 dt = gsub("-", "", as.character(Sys.Date()))
 
 writeCDF(chl, 
-	filename = paste("/home/jamesash/climate/data/", "chla_day_l3_2017_2023_", dt, ".nc",sep = ""), 
+	filename = paste("/home/jamesash/koa_scratch/", "chla_day_l3_2017_2023_", dt, ".nc",sep = ""), 
 	overwrite = TRUE,
 	varname = "CHL")
 
