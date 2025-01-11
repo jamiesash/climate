@@ -80,6 +80,7 @@ subsum    = function(x, mnths = 7:10) {
 ### Liraries and functions
 library(anytime)
 library(terra)
+library(ncdf4)
 
 print("2. Librares loaded.")
 
@@ -88,6 +89,21 @@ print("2. Librares loaded.")
 chl = rast("/home/jamesash/climate/data/chl/chl_1998_2023_l3_multi_4k.nc")
 
 print("3. Data loaded")
+
+# Get the number of time steps
+ntime = nlyr(chl)
+nlat  = nrow(chl)
+nlon  = ncol(chl)
+
+# Calculate half the number of time steps
+half_time = ceiling(ntime / 3)
+half_lat  = ceiling(nlat / 3)
+half_lon  = ceiling(nlon / 3)
+
+# Subset the raster to the first half of the time dimension
+chl = chl[1:half_lat, 1:half_lon, 1:half_time]
+
+print("3. Cut data down")
 
 # ------------------------------------------------------------------------------
 
@@ -103,7 +119,7 @@ print("4. anomalized")
 dt = gsub("-", "", as.character(Sys.Date()))
 
 writeCDF(chl, 
-	filename = paste("/home/jamesash/koa_scratch/", "chla_day_l3_1998_2023_", dt, ".nc",sep = ""), 
-	overwrite = TRUE,
-	varname = "CHL")
+	 zname="time",
+	 filename = paste("/home/jamesash/koa_scratch/", "chla_day_l3_1998_2023_", dt, ".nc",sep = ""), 
+	 overwrite = TRUE)
 

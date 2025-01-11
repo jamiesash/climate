@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=stl_anomaly_monthly
+#SBATCH --job-name=anom_chl
 #SBATCH --ntasks=1
 #SBATCH --partition=shared
 #SBATCH --time=1-12:00:00
