@@ -8,7 +8,7 @@ print("1. Functions loaded.")
 
 # functions --------------------------------------------------------------------
 
-stlfilter = function(ras, trend = FALSE, anom = FALSE, seas = FALSE) {
+stlfilter = function(ras) {
   ## initialize an empty vector of the same size.
   s = dim(ras) ## dimensions
   t = time(ras) ## fake datetime vector for stl input
@@ -20,9 +20,6 @@ stlfilter = function(ras, trend = FALSE, anom = FALSE, seas = FALSE) {
   end = c(year(t[length(t)]), month(t[length(t)]))
   
   for (i in 1:s[1]) {
-    if (i == round((s[1]/5)))   print("So much more to go")
-    if (i == round(s[1]/2))     print("You're half way there")
-    if (i == round((s[1]/5)*4)) print("Last leg")
     for (j in 1:s[2]) {
       tryCatch({
         pix = unlist(unname(ras[i,j,]))
@@ -31,9 +28,7 @@ stlfilter = function(ras, trend = FALSE, anom = FALSE, seas = FALSE) {
                  end = end, 
                  frequency = 12)
         peaces = stlplus(pix, s.window = "periodic")
-        if (anom  == TRUE) y[i,j,] = peaces$data$remainder  #keep the seasonal
-        if (seas  == TRUE) y[i,j,] = peaces$data$seasonal  #keep the seasonal
-        if (trend == TRUE) y[i,j,] = peaces$data$trend #keep the residual
+        y[i,j,] = peaces$data$remainder  #keep the seasonal
       }, error=function(e){
         #skips to next iteration if there's an error  
       }) 
@@ -42,8 +37,6 @@ stlfilter = function(ras, trend = FALSE, anom = FALSE, seas = FALSE) {
   }
   gc()
   y = rast(y)
-  gc()
-  
   # y[na_id]  <- NA #X and Y are not same dim()
   time(y) = t
   ext(y)  = e
@@ -55,39 +48,24 @@ print("2. Funcitons loaded.")
 # ------------------------------------------------------------------------------
 ### Loading the dataset
 # setwd("/home/jamie/projects/climate/code/rcode/anomaly")
-chl = rast("/home/jamie/projects/climate/data/chl/chl_1999_2023_day_small_l3.nc")
+chl = rast("/home/jamesash/climate/data/chl/chl_1998_2023_l3_multi_4k.nc")
 
 print("3. Data loaded")
 
 # ------------------------------------------------------------------------------
-# removing coastal effects
-
-# subset spacial polygon like a data frame. 
-# eez = terra::vect("/home/jamesash/climate/data/eez/USMaritimeLimitsNBoundaries.shp")
-# idx = which(eez$REGION == 'Hawaiian Islands')
-# hawaii = eez[idx,]
-# idx = hawaii$CZ + hawaii$TS
-# idx = which(idx == 1)
-# hawaii = hawaii[idx,]
-
-# mask land.
-# chl = terra::mask(chl, hawaii, inverse = TRUE)
-# gc()
-
-print("3. Masked")
-
-# ------------------------------------------------------------------------------
 # apply the stl filter. 
 
-clim = stlfilter(chl, anom = TRUE)
+clim = stlfilter(chl)
 
-print("4. Decomposed.")
+print("4. Decomposed")
 
 # ------------------------------------------------------------------------------
 ### the data
+
 dt = gsub("-", "", as.character(Sys.Date()))
 writeCDF(clim, 
-         filename = paste("/home/jamesash/koa_scratch/", "chla_stl_mon_", dt, ".nc",sep = ""), 
+         filename = paste("/home/jamesash/koa_scratch/", "chla_stl_day_", dt, ".nc",sep = ""), 
          overwrite = TRUE,
          varname = "CHL")
 
+print("5. Saved")

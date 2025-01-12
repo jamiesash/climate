@@ -28,13 +28,12 @@ bloomclim = function(x) {
 }
 
 # The terra version of anomalize. I think. 
-anomalize = function(ras){
+anomalize = function(ras, detrend = FALSE, f = 0.6){
   themonths <- c("January","February", "March", "April", "May","June",  "July",
                  "August", "September", "October", "November","December")
   
   # find the monthly climotology of the data set 
   ras_clim = bloomclim(ras)
-  gc()
   
   # subtract each month from corresponding daily data set
   ogt = time(ras)
@@ -45,20 +44,25 @@ anomalize = function(ras){
   # placeholder raster
   chla  = ras[[1]] 
   j    = 0 # start j at 0 to count loops. i is a string
+  
   for (mon in themonths) {
     j = j + 1
     ind  = which(mon_raw == mon)
     temp = ras[[ind]] - ras_clim[[j]]
     chla = c(chla, temp)
   }
-  rm(temp, ras_clim)
-  gc()
   
+  rm(temp)
   chla = chla[[2:nlyr(chla)]]
-  gc()
   idx = order(time(chla))
-  gc()
   chla = chla[[idx]]
+  
+  if(detrend == TRUE) {
+    clim = smooth.time.series(chla, f = f, smooth.data = TRUE)
+    chla = chla - clim
+    # chla = setZ(chla, z = anydate(t), name = "time")
+  }
+  
   chla
 }
 
@@ -78,26 +82,29 @@ subsum    = function(x, mnths = 7:10) {
   x
 }
 
-print("1. Functions loaded.")
-# ------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 ### Liraries and functions
+
 library(anytime)
 library(terra)
-setwd("/home/jamie/projects/climate/code/rcode/casestudy")
+library(ncdf4)
+library(spatialEco)
 
 print("2. Librares loaded.")
 
 # ------------------------------------------------------------------------------
 ### Loading the dataset
-chl = rast("../../../data/chl/chl_2017_2023_glob_day_multi_l4_4k.nc")
+chl = rast("/home/jamie/projects/climate/data/chl/chl_1999_2024_small_daily_multi_l3_4k.nc")
 
 print("3. Data loaded")
 
 # ------------------------------------------------------------------------------
 
-# remove the seasonal climatologist signal. 
-chl = anomalize(chl)
+# remove the seasonal climatologic signal. 
+chl = anomalize(chl, detrend = TRUE)
 gc()
+
+print("4. anomalized")
 
 # ------------------------------------------------------------------------------
 
@@ -105,10 +112,6 @@ gc()
 dt = gsub("-", "", as.character(Sys.Date()))
 
 writeCDF(chl, 
-	filename = paste("/home/jamesash/climate/data/", "chla_day_", dt, ".nc",sep = ""), 
-	overwrite = TRUE,
-	varname = "CHL")
-		#longname="cllimatology of chl from monthly data", 
-		#unit="mg/m^3", 
-		#split=FALSE)
+         filename = paste("/home/jamie/projects/climate/data/chl/", "chla_day_l3_1998_2023_", dt, ".nc",sep = ""), 
+         overwrite = TRUE)
 
