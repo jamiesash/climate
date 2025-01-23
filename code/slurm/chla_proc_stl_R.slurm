@@ -24,5 +24,5 @@ conda activate rblooms
 cd /home/jamesash/climate/code/rcode/anomaly
 
 # Run the Python script
-Rscript chla_proc_day.R
+Rscript chla_stl_proc.R
 
