@@ -3,7 +3,7 @@
 #SBATCH --ntasks=1
 #SBATCH --partition=shared
 #SBATCH --time=1-12:00:00
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=10
 #SBATCH --mem=300G
 #SBATCH --error=error-%A_%a.err
 #SBATCH --output=output-%A_%a.out
@@ -24,5 +24,5 @@ conda activate rblooms
 cd /home/jamesash/climate/code/rcode/anomaly
 
 # Run the Python script
-Rscript chla_stl_proc.R
+Rscript test_par_stl.R 
 
