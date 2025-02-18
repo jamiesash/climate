@@ -69,7 +69,7 @@ print("2. Functions loaded.")
 # ------------------------------------------------------------------------------
 ### Loading the dataset
 # chl <- rast("/home/jamie/projects/climate/data/chl/chl_1999_2023_day_small_l3.nc")
-chl <- rast("/home/jamesash/climate/data/chl/chl_1999_2023_day_small_l3.nc")
+chl <- rast("/home/jamesash/climate/data/chl/chl_1999_2024_small_daily_multi_l3_4k.nc")
 
 print("3. Data loaded")
 
