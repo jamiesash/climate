@@ -2,9 +2,9 @@
 #SBATCH --job-name=anom_chl
 #SBATCH --ntasks=1
 #SBATCH --partition=shared
-#SBATCH --time=1-12:00:00
-#SBATCH --cpus-per-task=5
-#SBATCH --mem=100G
+#SBATCH --time=3-00:00:00
+#SBATCH --cpus-per-task=10
+#SBATCH --mem=500G
 #SBATCH --error=error-%A_%a.err
 #SBATCH --output=output-%A_%a.out
 #SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,TIME_LIMIT_80
@@ -24,5 +24,5 @@ conda activate rblooms
 cd /home/jamesash/climate/code/rcode/anomaly
 
 # Run the Python script
-Rscript test_par_stl.R 
+Rscript chla_stl_par_proc.R 
 
