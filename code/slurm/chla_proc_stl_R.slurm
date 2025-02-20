@@ -3,8 +3,8 @@
 #SBATCH --ntasks=1
 #SBATCH --partition=shared
 #SBATCH --time=3-00:00:00
-#SBATCH --cpus-per-task=10
-#SBATCH --mem=500G
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=300G
 #SBATCH --error=error-%A_%a.err
 #SBATCH --output=output-%A_%a.out
 #SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,TIME_LIMIT_80
