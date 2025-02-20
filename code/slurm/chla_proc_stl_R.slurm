@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=anom_chl
+#SBATCH --job-name=stl_chla
 #SBATCH --ntasks=1
 #SBATCH --partition=shared
 #SBATCH --time=3-00:00:00
