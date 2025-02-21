@@ -46,8 +46,6 @@ stlfilter_parallel <- function(ras) {
         }
     y
   }
- 
-  gc()
 
   ## Combine results into a 3D array
   y <- array(NA, c(s[1], s[2], s[3]))
