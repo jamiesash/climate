@@ -3,7 +3,7 @@
 #SBATCH --ntasks=1
 #SBATCH --partition=shared
 #SBATCH --time=3-00:00:00
-#SBATCH --cpus-per-task=8
+#SBATCH --cpus-per-task=5
 #SBATCH --mem=800G
 #SBATCH --error=error-%A_%a.err
 #SBATCH --output=output-%A_%a.out

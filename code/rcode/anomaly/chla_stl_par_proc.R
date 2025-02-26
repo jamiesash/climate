@@ -24,7 +24,8 @@ stlfilter_parallel <- function(ras) {
   
   ## Set up parallel backend
   num_cores <- detectCores() - 1  # Leave one core free
-  cl <- makeCluster(num_cores)
+  # cl <- makeCluster(num_cores)
+  cl <- makeCluster(3)
   registerDoParallel(cl)
   
   ## Perform STL decomposition in parallel
@@ -35,9 +36,11 @@ stlfilter_parallel <- function(ras) {
       tryCatch({
         pix <- unlist(unname(ras[i, j, ])) 
         pix_ts <- ts(data = pix, start = start, end = end, frequency = 365.24)
+        # pix_ts <- ts(data = pix, start = start, end = end, frequency = 12)
         # setting the window to 13 should speed this up. Right now it estimates the window. 
         # t.window: harder to know. it is calculated as nextodd(ceiling((1.5*period) / (1-(1.5/s.window))))
         # use s.jump, t.jump, l.jump for speed. will let the window jump rather than one every step. 
+        # peaces <- stlplus(pix_ts, s.window = "periodic", s.jump = 10, t.jump = 10)
         peaces <- stlplus(pix_ts, s.window = "periodic", s.jump = 10, t.jump = 10)
         y[j, ] <- peaces$data$remainder  # Keep the remainder
         }, error=function(e){
@@ -68,9 +71,9 @@ print("2. Functions loaded.")
 
 # ------------------------------------------------------------------------------
 ### Loading the dataset
-# chl <- rast("/home/jamie/projects/climate/data/chl/chl_1999_2023_day_small_l3.nc")
 # chl <- rast("/home/jamesash/climate/data/chl/chl_1999_2024_small_daily_multi_l3_4k.nc")
 chl <- rast("/home/jamesash/climate/data/chl/chl_1998_2023_l3_multi_4k.nc")
+# chl <- rast("/home/jamesash/climate/data/chl/chl_1998_2023_l4_month_multi_4k.nc")
 
 print("3. Data loaded")
 
