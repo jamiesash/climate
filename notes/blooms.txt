@@ -317,3 +317,5 @@ copernicusmarine subset -i cmems_obs-oc_glo_bgc-plankton_my_l3-multi-4km_P1D -y 
 
 copernicusmarine subset -i cmems_obs-oc_glo_bgc-plankton_my_l3-multi-4km_P1D -y 34.0 -Y 35.0 -x -170.0 -X -169.0 -v CHL -t 1999-01-01 -T 2024-01-01 -o . -f chl_1999_2023_day_small_l3.nc
 
+copernicusmarine subset -i cmems_obs-oc_glo_bgc-plankton_my_l3-multi-4km_P1D -y 16.0 -Y 40.0 -x -175.0 -X -130.0 -v CHL -t 1999-01-01 -T 2023-12-30 -o . -f chl_1999_2023_day_l3_20250227.nc
+
