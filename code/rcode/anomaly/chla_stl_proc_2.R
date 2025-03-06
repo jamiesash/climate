@@ -48,15 +48,15 @@ print("2. Funcitons loaded.")
 ### Loading the dataset
 # setwd("/home/jamie/projects/climate/code/rcode/anomaly"
 
-chl = rast("/home/jamesash/climate/data/chl/chl_1999_2024_small_daily_multi_l3_4k.nc")
-#chl = rast("/home/jamesash/climate/data/chl/chl_1998_2023_l3_multi_4k.nc")
+# chl = rast("/home/jamesash/climate/data/chl/chl_1999_2024_small_daily_multi_l3_4k.nc")
+chl = rast("/home/jamesash/climate/data/chl/chl_1998_2023_l3_multi_4k.nc")
 
 print("3. Data loaded")
 
 # ------------------------------------------------------------------------------
 # apply the stl filter. 
 
-chl = focal(chl, w=5, fun=mean, na.policy="only", na.rm=TRUE)
+chl = focal(chl, w=31, fun=mean, na.policy="only", na.rm=T)
 gc()
 print("4. Pre-smoothed")
 
@@ -69,7 +69,7 @@ print("5. Decomposed")
 
 dt = gsub("-", "", as.character(Sys.Date()))
 writeCDF(clim, 
-         filename = paste("/home/jamesash/koa_scratch/", "chla_stl_day_small", dt, ".nc",sep = ""), 
+         filename = paste("/home/jamesash/koa_scratch/", "chla_stl_day_2", dt, ".nc",sep = ""), 
          overwrite = TRUE,
          varname = "CHL")
 

@@ -1,93 +1,113 @@
 # ------------------------------------------------------------------------------
 ### Libraries and functions
+library(zoo)
 library(terra)
 library(lubridate)
 library(stlplus)
 library(doParallel)
 library(foreach)
+terraOptions(memmax = 250)  # mmemfrac=.98)
 
 print("1. Functions and libraries loaded.")
 
 # Parallel STL filter function
-stlfilter_parallel <- function(ras) {
+stlfilter_parallel = function(ras) {
   
   ## Initialize variables
-  s <- dim(ras)  ## Dimensions
-  ras_time <- time(ras)  ## Fake datetime vector for STL input
-  ras_ext <- ext(ras)  ## Raster extent
-  start <- c(year(ras_time[1]), month(ras_time[1]))
-  end <- c(year(ras_time[length(ras_time)]), month(ras_time[length(ras_time)]))
+  s = dim(ras) 
+  ras_time = time(ras)  
+  ras_ext = ext(ras) 
+  start = c(year(ras_time[1]), month(ras_time[1]))
+  end = c(year(ras_time[length(ras_time)]), month(ras_time[length(ras_time)]))
   
-  ras = focal(ras, w=21, fun=mean, na.policy="only", na.rm=T)
-  ras = array(ras, s) # convert to array. DoParrellel does not like
-  gc()
+  ras = array(ras, s) # DoParrellel does not like rasters
+  gc(verbose = TRUE)
+  
+  print("converted to array.")
+  
+  # Store NA indices and interpolate only missing values before the loop
+  na_masks = array(FALSE, dim(ras))  # Track original NA locations
+  
+  for (i in 1:s[1]) {
+    for (j in 1:s[2]) {
+      pix = ras[i, j, ]
+      na_masks[i, j, ] = is.na(pix)  # Store NA locations
+      ras[i, j, ] = na.approx(pix, rule = 2, na.rm = FALSE)  # Interpolate
+    }
+  }
+  gc(verbose = TRUE)
+
+  print("Nan's filled, and nanmask found.")
   
   ## Set up parallel backend
-  num_cores <- detectCores() - 1  # Leave one core free
-  # cl <- makeCluster(num_cores)
-  cl <- makeCluster(3)
+  cl = makeCluster(4)
   registerDoParallel(cl)
   
+  print("clustered.")
+
   ## Perform STL decomposition in parallel
-  results <- foreach(i = 1:s[1], .packages = c('terra', 'lubridate', 'stlplus')) %dopar% {
-    y <- array(NA, c(s[2], s[3]))  # Temporary array for this row
+  results <- foreach(slice = iter(ras, by = "row"), .packages = c('terra', 'lubridate', 'stlplus', 'zoo')) %dopar% {
+    y = array(NA, c(s[2], s[3]))  # Temporary array for this row
     
     for (j in 1:s[2]) {
       tryCatch({
-        pix <- unlist(unname(ras[i, j, ])) 
-        pix_ts <- ts(data = pix, start = start, end = end, frequency = 365.24)
-        # pix_ts <- ts(data = pix, start = start, end = end, frequency = 12)
-        # setting the window to 13 should speed this up. Right now it estimates the window. 
-        # t.window: harder to know. it is calculated as nextodd(ceiling((1.5*period) / (1-(1.5/s.window))))
+        pix = unlist(unname(slice[j, ])) 
+	pix_ts = ts(data = pix, start = start, end = end, frequency = 365.24)
         # use s.jump, t.jump, l.jump for speed. will let the window jump rather than one every step. 
-        # peaces <- stlplus(pix_ts, s.window = "periodic", s.jump = 10, t.jump = 10)
-        peaces <- stlplus(pix_ts, s.window = "periodic", s.jump = 10, t.jump = 10)
-        y[j, ] <- peaces$data$remainder  # Keep the remainder
+        peaces = stlplus(pix_ts, s.window = "periodic", s.jump = 20, l.jump = 20, t.jump = 20)
+        y[j, ] = peaces$data$remainder  # Keep the remainder
         }, error=function(e){
           #skips to next iteration if there's an error  
           }) 
         }
     y
   }
+    
+  print("loop ended.")
 
-  ## Combine results into a 3D array
-  y <- array(NA, c(s[1], s[2], s[3]))
+  # Convert list of results back to array
+  output_array = array(NA, c(s[1], s[2], s[3]))
   for (i in 1:s[1]) {
-    y[i, , ] <- results[[i]]
+    output_array[i, , ] = results[[i]]
   }
-  
-  ## Finalize raster
-  y_rast <- rast(y)
-  time(y_rast) <- ras_time
-  ext(y_rast) <- ras_ext
-  
+   
   ## Stop the parallel backend
   stopCluster(cl)
+  gc(verbose = TRUE)  
   
-  y_rast
+  print("cluster stopped.")
+  
+  # Restore NA values to original positions
+  output_array[na_masks] = NA
+  # get back the extent and time
+  output_array = rast(output_array)
+  time(output_array) = ras_time
+  ext(output_array) = ras_ext
+  gc()
+
+  output_array
 }
 
 print("2. Functions loaded.")
 
 # ------------------------------------------------------------------------------
 ### Loading the dataset
-# chl <- rast("/home/jamesash/climate/data/chl/chl_1999_2024_small_daily_multi_l3_4k.nc")
-chl <- rast("/home/jamesash/climate/data/chl/chl_1998_2023_l3_multi_4k.nc")
+chl <- rast("/home/jamesash/climate/data/chl/chl_1999_2024_small_daily_multi_l3_4k.nc")
+# chl <- rast("/home/jamesash/climate/data/chl/chl_1998_2023_l3_multi_4k.nc")
 # chl <- rast("/home/jamesash/climate/data/chl/chl_1998_2023_l4_month_multi_4k.nc")
-
 print("3. Data loaded")
 
 # ------------------------------------------------------------------------------
 # Apply the STL filter in parallel
 clim <- stlfilter_parallel(chl)
 
-print("4. Decomposed")
+print("5. Decomposed")
 
 # ------------------------------------------------------------------------------
 ### Save the data
 dt <- gsub("-", "", as.character(Sys.Date()))
 writeCDF(clim, 
-         filename = paste("/home/jamesash/koa_scratch/", "chla_stl_day", dt, ".nc", sep = ""), 
+         filename = paste("/home/jamesash/koa_scratch/", "chla_stl_day_small", dt, ".nc", sep = ""), 
          overwrite = TRUE,
          varname = "CHL")
 
