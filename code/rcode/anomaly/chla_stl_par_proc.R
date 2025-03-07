@@ -6,7 +6,7 @@ library(lubridate)
 library(stlplus)
 library(doParallel)
 library(foreach)
-terraOptions(memmax = 250)  # mmemfrac=.98)
+terraOptions(memmax = 125)  # mmemfrac=.98)
 
 print("1. Functions and libraries loaded.")
 
@@ -40,7 +40,9 @@ stlfilter_parallel = function(ras) {
   print("Nan's filled, and nanmask found.")
   
   ## Set up parallel backend
-  cl = makeCluster(4)
+  print("number of cores is...")
+  detectCores()
+  cl = makeCluster(detectCores())
   registerDoParallel(cl)
   
   print("clustered.")
@@ -49,6 +51,7 @@ stlfilter_parallel = function(ras) {
   results <- foreach(slice = iter(ras, by = "row"), .packages = c('terra', 'lubridate', 'stlplus', 'zoo')) %dopar% {
     y = array(NA, c(s[2], s[3]))  # Temporary array for this row
     
+    print("inside the clustered.")
     for (j in 1:s[2]) {
       tryCatch({
         pix = unlist(unname(slice[j, ])) 
@@ -92,7 +95,7 @@ print("2. Functions loaded.")
 
 # ------------------------------------------------------------------------------
 ### Loading the dataset
-chl <- rast("/home/jamesash/climate/data/chl/chl_1999_2024_small_daily_multi_l3_4k.nc")
+chl <- rast("/home/jamesash/climate/data/chl/chl_1999_2023_day_small_l3.nc")
 # chl <- rast("/home/jamesash/climate/data/chl/chl_1998_2023_l3_multi_4k.nc")
 # chl <- rast("/home/jamesash/climate/data/chl/chl_1998_2023_l4_month_multi_4k.nc")
 print("3. Data loaded")
