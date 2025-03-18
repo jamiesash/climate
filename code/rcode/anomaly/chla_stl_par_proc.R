@@ -6,7 +6,7 @@ library(lubridate)
 library(stlplus)
 library(doParallel)
 library(foreach)
-terraOptions(memmax = 125)  # mmemfrac=.98)
+terraOptions(memfrac=0.97)  # mmemfrac=.98)
 
 print("1. Functions and libraries loaded.")
 
@@ -16,49 +16,44 @@ stlfilter_parallel = function(ras) {
   ## Initialize variables
   s = dim(ras) 
   ras_time = time(ras)  
-  ras_ext = ext(ras) 
+  ras_ext = ext(ras)
+  ras_crs = crs(ras) 
+  ras_names = names(ras)
   start = c(year(ras_time[1]), month(ras_time[1]))
   end = c(year(ras_time[length(ras_time)]), month(ras_time[length(ras_time)]))
   
   ras = array(ras, s) # DoParrellel does not like rasters
-  gc(verbose = TRUE)
-  
-  print("converted to array.")
-  
-  # Store NA indices and interpolate only missing values before the loop
-  na_masks = array(FALSE, dim(ras))  # Track original NA locations
-  
-  for (i in 1:s[1]) {
-    for (j in 1:s[2]) {
-      pix = ras[i, j, ]
-      na_masks[i, j, ] = is.na(pix)  # Store NA locations
-      ras[i, j, ] = na.approx(pix, rule = 2, na.rm = FALSE)  # Interpolate
-    }
-  }
-  gc(verbose = TRUE)
+  slices = list()
+  for (i in 1:s[1]) slices[[i]] = ras[i,,]
+  rm(ras)
+  gc()
+  print("converted to array and sliced.")
 
-  print("Nan's filled, and nanmask found.")
-  
   ## Set up parallel backend
   print("number of cores is...")
-  detectCores()
-  cl = makeCluster(detectCores())
+  cores = detectCores()
+  print(as.character(cores))
+  
+  print("requesting 10 cores")
+  cl = makeCluster(10)
   registerDoParallel(cl)
   
   print("clustered.")
 
   ## Perform STL decomposition in parallel
-  results <- foreach(slice = iter(ras, by = "row"), .packages = c('terra', 'lubridate', 'stlplus', 'zoo')) %dopar% {
+  results <- foreach(slice = slices, .packages = c('lubridate', 'stlplus', 'zoo')) %dopar% {
     y = array(NA, c(s[2], s[3]))  # Temporary array for this row
-    
-    print("inside the clustered.")
     for (j in 1:s[2]) {
       tryCatch({
-        pix = unlist(unname(slice[j, ])) 
+        pix = slice[j, ] 
+        na_mask = is.na(pix)
+        pix = na.approx(pix, rule = 2, na.rm = FALSE)
 	pix_ts = ts(data = pix, start = start, end = end, frequency = 365.24)
         # use s.jump, t.jump, l.jump for speed. will let the window jump rather than one every step. 
-        peaces = stlplus(pix_ts, s.window = "periodic", s.jump = 20, l.jump = 20, t.jump = 20)
-        y[j, ] = peaces$data$remainder  # Keep the remainder
+        peaces = stlplus(pix_ts, s.window = "periodic", s.jump = 30, l.jump = 30, t.jump = 30)
+        anom = peaces$data$remainder
+        anom[na_mask] = NA
+        y[j, ] = anom  
         }, error=function(e){
           #skips to next iteration if there's an error  
           }) 
@@ -79,12 +74,11 @@ stlfilter_parallel = function(ras) {
   gc(verbose = TRUE)  
   
   print("cluster stopped.")
-  
-  # Restore NA values to original positions
-  output_array[na_masks] = NA
   # get back the extent and time
   output_array = rast(output_array)
-  time(output_array) = ras_time
+  terra::time(output_array) = ras_time
+  crs(output_array) = ras_crs
+  names(output_array) = ras_names
   ext(output_array) = ras_ext
   gc()
 
