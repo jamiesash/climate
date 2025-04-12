@@ -299,7 +299,9 @@ lon_varid = "lon"
 sdate = as.Date("1997-01-01")
 edate = as.Date("2022-12-31")
 var = "CHL"
-url = "https://jash:5.Pellegrino@my.cmems-du.eu/thredds/dodsC/cmems_obs-oc_glo_bgc-plankton_my_l4-multi-4km_P1M?"
+# smaller data set for testing. 
+# url = "https://jash:5.Pellegrino@my.cmems-du.eu/thredds/dodsC/cmems_obs-oc_glo_bgc-plankton_my_l4-multi-4km_P1M?" 
+url = "https://jash:5.Pellegrino@my.cmems-du.eu/thredds/dodsC/cmems_obs-oc_glo_bgc-plankton_my_l3-multi-4km_P1D?"
 origin = "1900-01-01"
 
 data = nc_open(url, verbose = FALSE, write = FALSE)
