@@ -3,6 +3,7 @@
 .Rapp.history
 
 # large data sets
+*.csv
 *.nc
 *.dbf  
 *.prj  
@@ -10,6 +11,7 @@
 *.shx
 *.out
 *.err
+*.gz
 
 # Session Data files
 .RData
