@@ -3,6 +3,7 @@
 .Rapp.history
 
 # large data sets
+*.pdf
 *.csv
 *.nc
 *.dbf  
