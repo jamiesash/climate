@@ -1,0 +1,93 @@
+import numpy as np
+import pandas as pd
+from netCDF4 import Dataset
+from scipy.ndimage import center_of_mass
+
+# -- Load cropped and masked anomaly data --
+file_id = Dataset('../../data/chl/chl_anomaly_cropped_masked_20260328.nc')
+ras  = file_id.variables["CHL_anom"][:]
+lat  = file_id.variables["latitude"][:]
+lon  = file_id.variables["longitude"][:]
+time = file_id.variables["time"][:]
+file_id.close()
+
+# -- Build date vector --
+timedelta_vector = (time * np.timedelta64(1, 'D')).astype('timedelta64[ns]')
+base_date   = np.datetime64('1900-01-01')
+date_vector = base_date + timedelta_vector
+
+# -- Compute per-pixel mean and std, then mask extremes --
+pixel_mean = np.nanmean(ras, axis=0)
+pixel_std  = np.nanstd(ras, axis=0)
+
+ras_mask = np.zeros_like(ras)
+ras_mask[ras > pixel_mean + pixel_std * 2] = 1
+
+ras_extreme = np.where(ras_mask == 1, ras, np.nan)
+
+# -- Define bloom date windows --
+start_dates = [
+    '1998-07-08', '1999-08-01', '2000-08-15', '2001-07-18',
+    '2002-06-15', '2003-07-26', '2004-06-03', '2005-07-02', '2006-07-22',
+    '2007-08-15', '2008-08-10', '2009-06-13', '2010-07-01', '2011-09-07',
+    '2012-09-01', '2013-07-10', '2014-06-14', '2015-08-01', '2016-08-02',
+    '2017-07-15', '2018-07-16', '2019-06-11', '2020-08-10', '2021-08-01',
+    '2022-07-01'
+]
+end_dates = [
+    '1998-10-06', '1999-10-12', '2000-11-15', '2001-08-04',
+    '2002-09-10', '2003-10-08', '2004-08-11', '2005-10-02', '2006-11-11',
+    '2007-11-07', '2008-10-22', '2009-10-10', '2010-09-28', '2011-11-12',
+    '2012-11-06', '2013-10-02', '2014-09-01', '2015-10-01', '2016-09-25',
+    '2017-09-05', '2018-10-27', '2019-09-08', '2020-09-08', '2021-10-01',
+    '2022-10-10'
+]
+
+start_dates = np.array(start_dates, dtype='datetime64[D]')
+end_dates   = np.array(end_dates, dtype='datetime64[D]')
+
+# -- Compute magnitude and center of mass for each bloom --
+results = []
+for s, e in zip(start_dates, end_dates):
+    tmask = (date_vector >= s) & (date_vector <= e)
+    subset_dates = date_vector[tmask]
+    subset_extreme = ras_extreme[tmask, :, :]
+
+    # Magnitude
+    u = np.nanmean(subset_extreme)
+    o = np.nanstd(subset_extreme)
+    mag = u + 2 * o
+
+    # Center of mass
+    subset_com = np.where(np.isnan(subset_extreme), 0, subset_extreme)
+
+    if np.sum(subset_com) == 0:
+        results.append({
+            'start': str(s),
+            'end': str(e),
+            'center_date': 'N/A',
+            'center_lat': np.nan,
+            'center_lon': np.nan,
+            'magnitude': np.nan
+        })
+        continue
+
+    t_idx, lat_idx, lon_idx = center_of_mass(subset_com)
+    t_round = min(int(round(t_idx)), len(subset_dates) - 1)
+    center_date = str(subset_dates[t_round])[:10]
+
+    results.append({
+        'start': str(s),
+        'end': str(e),
+        'center_date': center_date,
+        'center_lat': float(lat[int(round(lat_idx))]),
+        'center_lon': float(lon[int(round(lon_idx))]),
+        'magnitude': mag
+    })
+
+# -- Save to CSV --
+df = pd.DataFrame(results)
+out_csv = '../../data/chl/bloom_summary_20260328.csv'
+df.to_csv(out_csv, index=False)
+print(f'Saved: {out_csv}')
+print(df.to_string())
