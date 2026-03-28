@@ -76,9 +76,70 @@ subsum    = function(x, mnths = 7:10) {
   x
 }
 
+lm_ras = function(ras) {
+  # Load metadata from the raster
+  ras_time <- terra::time(ras)
+  ras_ext <- terra::ext(ras)
+  ras_crs <- terra::crs(ras)
+  ras_names <- terra::names(ras)
+  s <- dim(ras)
+  print("Got all the metadata")
+  # Time information
+  start <- c(year(ras_time[1]), month(ras_time[1]))
+  end <- c(year(ras_time[length(ras_time)]), month(ras_time[length(ras_time)]))
+  print("Initial setup complete.")
+  slope_matrix = matrix(NA, nrow = s[1], ncol = s[2]) 
+  pvalue_matrix = matrix(NA, nrow = s[1], ncol = s[2]) 
+  months = month(ras_time)
+  month_idx = months %in% c(6,7,8,9,10)
+  lm_time = 1:s[3]
+  # Process each slice in a loop, keeping raster format as long as possible
+  for (i in 1:s[1]) {
+    slice = ras[i,, drop = FALSE]
+    slice = as.matrix(slice)  # Convert only 1 slice at a time
+    print(paste("Processing slice:", i))
+    gc()
+    for (j in 1:s[2]) {
+      tryCatch({
+        pix = slice[j, ]  # Extract time series
+        # print("sliced")
+        pix = unname(unlist(pix))
+        if (all(is.na(pix))) {
+          next  # Skip empty time series
+        }
+        na_mask = is.na(pix)  # Store NA locations
+        pix = na.approx(pix, rule = 2, na.rm = FALSE)  # Fill NAs
+
+        # Perform linear regression on the residuals
+        model = lm(pix[month_idx] ~ lm_time[month_idx]) 
+        model_summary = summary(model)   # Get the summary of the model
+        # Extract the p-value for the slope coefficient (second coefficient)
+        p_value = coef(model_summary)[2, 4]  # p-value is in the 4th column
+        slope = coef(model)[2]  
+        # Store the slope in the corresponding grid cell
+        slope_matrix[i, j] = slope
+        pvalue_matrix[i, j] = p_value      
+      }, error = function(e) {
+        print(paste("Skipped pixel:", i, j))
+      })
+    }
+  }
+  print("stl filtered.")
+  slope_ras = rast(slope_matrix)
+  pvalue_ras = rast(pvalue_matrix)
+  crs(slope_ras) = ras_crs
+  ext(slope_ras)  = ras_ext
+  ext(pvalue_ras)  = ras_ext
+  crs(pvalue_ras) = ras_crs
+  c(slope_ras, pvalue_ras)
+} 
+
 # ------------------------------------------------------------------------------
 ### Liraries and functions
 library(anytime)
+
+library(zoo)
+library(lubridate)
 library(terra)
 library(ncdf4)
 
@@ -112,6 +173,8 @@ print("3. Cut data down")
 chl = anomalize(chl)
 gc()
 
+chl = anomalize(chl)
+slopes = lm_ras(chl)
 print("4. anomalized")
 
 # ------------------------------------------------------------------------------

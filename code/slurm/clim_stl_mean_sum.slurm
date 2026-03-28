@@ -2,7 +2,7 @@
 #SBATCH --job-name=stl_large
 #SBATCH --ntasks=1
 #SBATCH --partition=shared
-#SBATCH --time=2-20:00:00
+#SBATCH --time=2-23:00:00
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=125G
 #SBATCH --error=error-%A_%a.err
@@ -24,5 +24,5 @@ conda activate rblooms
 cd /home/jamesash/climate/code/rcode/anomaly
 
 # Run the Python script
-Rscript chla_stl_proc.R 
+Rscript clim_stl_proc.R 
 

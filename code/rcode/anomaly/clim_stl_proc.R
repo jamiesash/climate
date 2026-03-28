@@ -22,11 +22,9 @@ stlfilter = function(ras) {
   end <- c(year(ras_time[length(ras_time)]), month(ras_time[length(ras_time)]))
   print("Initial setup complete.")
  
-  slope_matrix = matrix(NA, nrow = s[1], ncol = s[2]) 
-  pvalue_matrix = matrix(NA, nrow = s[1], ncol = s[2]) 
+  u_matrix = matrix(NA, nrow = s[1], ncol = s[2]) 
   months = month(ras_time)
   month_idx = months %in% c(6,7,8,9,10)
-  lm_time = 1:s[3]
   # Process each slice in a loop, keeping raster format as long as possible
   for (i in 1:s[1]) {
     slice = ras[i,, drop = FALSE]
@@ -50,23 +48,15 @@ stlfilter = function(ras) {
         # print("timeseried")
         peaces = stlplus(pix_ts, s.window = "periodic", s.jump = 3, l.jump = 3, t.jump = 3)
         # print("stled")
-        anom = peaces$data$remainder
         trend = peaces$data$trend
-        anom =  trend + anom
 
-        anom[na_mask] = NA  # Restore original NAs
-
-        # Perform linear regression on the residuals
-        model = lm(anom[month_idx] ~ lm_time[month_idx]) 
-        model_summary = summary(model)   # Get the summary of the model
-       
-        # Extract the p-value for the slope coefficient (second coefficient)
-        p_value = coef(model_summary)[2, 4]  # p-value is in the 4th column
-        slope = coef(model)[2]  
-
+        trend[na_mask] = NA  # Restore original NAs
+        trend = trend[month_idx]
+        u = mean(trend, na.rm = TRUE)
+        
         # Store the slope in the corresponding grid cell
-        slope_matrix[i, j] = slope
-        pvalue_matrix[i, j] = p_value      
+        u_matrix[i, j] = u
+
       }, error = function(e) {
         print(paste("Skipped pixel:", i, j))
       })
@@ -74,15 +64,11 @@ stlfilter = function(ras) {
   }
 
   print("stl filtered.")
-  slope_ras = rast(slope_matrix)
-  pvalue_ras = rast(pvalue_matrix)
-  crs(slope_ras) = ras_crs
-  ext(slope_ras)  = ras_ext
+  u_ras = rast(u_matrix)
+  crs(u_ras) = ras_crs
+  ext(u_ras)  = ras_ext
 
-  ext(pvalue_ras)  = ras_ext
-  crs(pvalue_ras) = ras_crs
-
-  c(slope_ras, pvalue_ras)
+  u_ras
 } 
 
 print("2. Funcitons loaded.")
@@ -105,7 +91,7 @@ print("5. Decomposed")
 
 dt = gsub("-", "", as.character(Sys.Date()))
 writeCDF(clim, 
-         filename = paste("/home/jamesash/koa_scratch/", "chla_stl_slope_", dt, ".nc", sep = ""), 
+         filename = paste("/home/jamesash/koa_scratch/", "clim_sum_stl_mean_", dt, ".nc", sep = ""), 
          overwrite = TRUE,
          varname = "CHL")
 
