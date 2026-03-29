@@ -2,9 +2,9 @@
 #SBATCH --job-name=summer_stats
 #SBATCH --ntasks=1
 #SBATCH --partition=shared
-#SBATCH --time=0-01:00:00
+#SBATCH --time=0-06:00:00
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=25G
+#SBATCH --mem=175G
 #SBATCH --error=error-%A_%a.err
 #SBATCH --output=output-%A_%a.out
 #SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,TIME_LIMIT_80

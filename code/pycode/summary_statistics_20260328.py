@@ -5,10 +5,10 @@ from scipy.ndimage import center_of_mass
 
 # -- Load cropped and masked anomaly data --
 file_id = Dataset('/home/jamesash/koa_scratch/chl_anomaly_cropped_masked_20260328.nc')
-ras  = file_id.variables["CHL_anom"][:]
-lat  = file_id.variables["latitude"][:]
-lon  = file_id.variables["longitude"][:]
-time = file_id.variables["time"][:]
+ras  = file_id.variables["CHL_anom"][:].copy()
+lat  = file_id.variables["latitude"][:].copy()
+lon  = file_id.variables["longitude"][:].copy()
+time = file_id.variables["time"][:].copy()
 file_id.close()
 
 # -- Build date vector --
@@ -16,12 +16,13 @@ timedelta_vector = (time * np.timedelta64(1, 'D')).astype('timedelta64[ns]')
 base_date   = np.datetime64('1900-01-01')
 date_vector = base_date + timedelta_vector
 
-# -- Compute per-pixel mean and std, then mask extremes --
-pixel_mean = np.nanmean(ras, axis=0)
-pixel_std  = np.nanstd(ras, axis=0)
-
+# -- Compute per-pixel median and MAD, then mask extremes --
+pixel_median = np.nanmedian(ras, axis=0)
+pixel_mad    = np.nanmedian(np.abs(ras - pixel_median), axis=0)
+# Scaled MAD (consistent estimator of std for normal data)
+pixel_mad_scaled = pixel_mad * 1.4826
 ras_mask = np.zeros_like(ras)
-ras_mask[ras > pixel_mean + pixel_std * 2] = 1
+ras_mask[ras > pixel_median + pixel_mad_scaled] = 1
 
 ras_extreme = np.where(ras_mask == 1, ras, np.nan)
 
@@ -90,5 +91,3 @@ for s, e in zip(start_dates, end_dates):
 df = pd.DataFrame(results)
 out_csv = '/home/jamesash/koa_scratch/bloom_summary_20260328.csv'
 df.to_csv(out_csv, index=False)
-print(f'Saved: {out_csv}')
-print(df.to_string())
