@@ -16,7 +16,7 @@ time_calendar = getattr(file_id.variables["time"], 'calendar', 'standard')
 file_id.close()
 
 # -- Replace fill values --
-ras[ras > 900] = np.nan
+ras[ras > 50] = np.nan
 
 # -- Crop to region of interest: 18N-35N, 170W-130W --
 lat_mask = (lat >= 18) & (lat <= 35)
