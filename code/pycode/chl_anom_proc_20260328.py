@@ -4,7 +4,7 @@ import numpy as np
 import geopandas as gpd
 
 # -- Load data --
-file_id = Dataset('../../data/chl/chl_1997_2025_l4_month_multi_4k.nc')
+file_id = Dataset('../../data/chl/chl_1997_2025_day_l3_20260327.nc')
 ras  = file_id.variables["CHL"][:]
 lat  = file_id.variables["latitude"][:]
 lon  = file_id.variables["longitude"][:]
@@ -32,7 +32,7 @@ for i in range(ras.shape[0]):
     ras_anom[i, :, :] = ras[i, :, :] - monthly_clim[months[i] - 1, :, :]
 
 # -- Save anomaly raster as NetCDF --
-out_path = '/home/jamesash/koa_scratch/chl_anomaly_20260328.nc'
+out_path = '/home/jamesash/koa_scratch/chla_day_med_month_1997_2025_20260328.nc'
 out = Dataset(out_path, 'w', format='NETCDF4')
 
 # Dimensions
