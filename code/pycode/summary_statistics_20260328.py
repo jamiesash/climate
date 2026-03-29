@@ -5,11 +5,15 @@ from scipy.ndimage import center_of_mass
 
 # -- Load cropped and masked anomaly data --
 file_id = Dataset('/home/jamesash/koa_scratch/chl_anomaly_cropped_masked_20260328.nc')
-ras  = file_id.variables["CHL_anom"][:].copy()
-lat  = file_id.variables["latitude"][:].copy()
-lon  = file_id.variables["longitude"][:].copy()
-time = file_id.variables["time"][:].copy()
+# ras  = file_id.variables["CHL_anom"][:].copy()
+ras  = file_id.variables["CHL_anom"][:].filled(np.nan).astype('float64')
+lat  = file_id.variables["latitude"][:]
+lon  = file_id.variables["longitude"][:]
+time = file_id.variables["time"][:]
 file_id.close()
+
+# fix the 999 fill value
+ras[ras > 50] = np.nan
 
 # -- Build date vector --
 timedelta_vector = (time * np.timedelta64(1, 'D')).astype('timedelta64[ns]')
@@ -22,7 +26,7 @@ pixel_mad    = np.nanmedian(np.abs(ras - pixel_median), axis=0)
 # Scaled MAD (consistent estimator of std for normal data)
 pixel_mad_scaled = pixel_mad * 1.4826
 ras_mask = np.zeros_like(ras)
-ras_mask[ras > pixel_median + pixel_mad_scaled] = 1
+ras_mask[ras > pixel_median + pixel_mad_scaled*2] = 1
 
 ras_extreme = np.where(ras_mask == 1, ras, np.nan)
 
