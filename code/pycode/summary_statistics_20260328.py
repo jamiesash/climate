@@ -54,9 +54,10 @@ for s, e in zip(start_dates, end_dates):
     subset_extreme = ras_extreme[tmask, :, :]
 
     # Magnitude
-    u = np.nanmean(subset_extreme)
-    o = np.nanstd(subset_extreme)
-    mag = u + 2 * o
+    # u = np.nanmean(subset_extreme)
+    # o = np.nanstd(subset_extreme)
+    # mag = u + 2 * o
+    mag = np.nanpercentile(subset_extreme, 95)
 
     # Center of mass
     subset_com = np.where(np.isnan(subset_extreme), 0, subset_extreme)
