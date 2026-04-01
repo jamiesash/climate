@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH --job-name=summer_stats
+#SBATCH --job-name=stl_large
 #SBATCH --ntasks=1
 #SBATCH --partition=shared
-#SBATCH --time=0-06:00:00
+#SBATCH --time=0-01:30:00
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=175G
 #SBATCH --error=error-%A_%a.err
@@ -24,6 +24,6 @@ conda activate blooms
 cd /home/jamesash/climate/code/pycode
 
 # Run the Python script
-#python3 summary_statistics_20260328.py
-python3 summer_statistics_updated.py
+# python3 chl_anom_crop_mask_20260328.py
+python3 chl_raw_mask_crop.py
 

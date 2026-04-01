@@ -6,6 +6,7 @@ from scipy.ndimage import center_of_mass
 # -- Load cropped and masked anomaly data --
 file_id = Dataset('/home/jamesash/koa_scratch/chl_anomaly_cropped_masked_20260328.nc')
 ras  = file_id.variables["CHL_anom"][:].filled(np.nan).astype('float64')
+cz_mask = file_id.variables["CZ_mask"][:].astype(bool)  # True = inside CZ
 lat  = file_id.variables["latitude"][:].copy()
 lon  = file_id.variables["longitude"][:].copy()
 time = file_id.variables["time"][:].copy()
@@ -29,11 +30,21 @@ date_vector = base_date + timedelta_vector
 pixel_mean = np.nanmean(ras, axis=0)
 pixel_std  = np.nanstd(ras, axis=0)
 ras_mask = np.zeros_like(ras)
-ras_mask[ras > pixel_mean + pixel_std * 2] = 1
+ras_mask[ras > pixel_mean + pixel_std] = 1
 
 # Apply the anomaly-derived mask to BOTH datasets
 ras_extreme_anom = np.where(ras_mask == 1, ras, np.nan)
 ras_extreme_raw  = np.where(ras_mask == 1, ras_raw, np.nan)
+
+# -- Precompute pixel areas (km²) accounting for latitude --
+dlat = np.abs(np.median(np.diff(lat)))
+dlon = np.abs(np.median(np.diff(lon)))
+km_per_deg_lat = 111.32
+lat_rad = np.deg2rad(lat)
+pixel_area_km2 = (dlat * km_per_deg_lat) * (dlon * km_per_deg_lat * np.cos(lat_rad))
+
+# -- Precompute ocean pixel count (excluding CZ) for cloud cover --
+ocean_pixels = np.sum(~cz_mask)  # total non-CZ pixels
 
 # -- Define bloom date windows --
 start_dates = [
@@ -55,13 +66,15 @@ end_dates = [
 start_dates = np.array(start_dates, dtype='datetime64[D]')
 end_dates   = np.array(end_dates, dtype='datetime64[D]')
 
-# -- Compute magnitude and center of mass for each bloom --
+# -- Compute magnitude, center of mass, max area, and cloud cover --
 results = []
 for s, e in zip(start_dates, end_dates):
     tmask = (date_vector >= s) & (date_vector <= e)
     subset_dates = date_vector[tmask]
     subset_extreme_anom = ras_extreme_anom[tmask, :, :]
     subset_extreme_raw  = ras_extreme_raw[tmask, :, :]
+    subset_mask = ras_mask[tmask, :, :]
+    subset_raw  = ras_raw[tmask, :, :]
 
     # Magnitude from RAW CHL at extreme pixels
     mag = np.nanpercentile(subset_extreme_raw, 95)
@@ -76,7 +89,10 @@ for s, e in zip(start_dates, end_dates):
             'center_date': 'N/A',
             'center_lat': np.nan,
             'center_lon': np.nan,
-            'magnitude': np.nan
+            'magnitude': np.nan,
+            'max_area_km2': np.nan,
+            'max_area_date': 'N/A',
+            'cloud_pct': np.nan
         })
         continue
 
@@ -84,13 +100,32 @@ for s, e in zip(start_dates, end_dates):
     t_round = min(int(round(t_idx)), len(subset_dates) - 1)
     center_date = str(subset_dates[t_round])[:10]
 
+    # Area for each day in the window
+    daily_areas = np.array([
+        np.sum(subset_mask[t, :, :] * pixel_area_km2[:, np.newaxis])
+        for t in range(subset_mask.shape[0])
+    ])
+
+    # Day with the largest bloom area
+    max_t = np.argmax(daily_areas)
+    max_area = daily_areas[max_t]
+    max_area_date = str(subset_dates[max_t])[:10]
+
+    # Cloud cover on the max area day (NaN in ocean pixels = cloud)
+    day_slice = subset_raw[max_t, :, :]
+    nan_in_ocean = np.isnan(day_slice) & (~cz_mask)
+    cloud_pct = (np.sum(nan_in_ocean) / ocean_pixels) * 100.0
+
     results.append({
         'start': str(s),
         'end': str(e),
         'center_date': center_date,
         'center_lat': float(lat[int(round(lat_idx))]),
         'center_lon': float(lon[int(round(lon_idx))]),
-        'magnitude': mag
+        'magnitude': mag,
+        'max_area_km2': float(max_area),
+        'max_area_date': max_area_date,
+        'cloud_pct': round(float(cloud_pct), 2)
     })
 
 # -- Save to CSV --
