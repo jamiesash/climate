@@ -12,7 +12,7 @@ time_units    = file_id.variables["time"].units
 time_calendar = getattr(file_id.variables["time"], 'calendar', 'standard')
 file_id.close()
 
-ras[ras > 900] = np.nan
+ras[ras > 50] = np.nan
 
 # -- Build date vector --
 timedelta_vector = (time * np.timedelta64(1, 'D')).astype('timedelta64[ns]')
