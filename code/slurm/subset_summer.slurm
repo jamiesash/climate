@@ -4,7 +4,7 @@
 #SBATCH --partition=shared
 #SBATCH --time=0-01:00:00
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=50G
+#SBATCH --mem=125G
 #SBATCH --error=error-%A_%a.err
 #SBATCH --output=output-%A_%a.out
 #SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,TIME_LIMIT_80
