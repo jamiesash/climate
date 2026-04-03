@@ -24,5 +24,5 @@ conda activate blooms
 cd /home/jamesash/climate/code/pycode
 
 # Run the Python script
-python3 remove_summers.py
+python3 remove_summer_no_mask.py
 

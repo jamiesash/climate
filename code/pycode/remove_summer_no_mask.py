@@ -31,7 +31,7 @@ print(f'Summer time steps: {len(date_summer)}')
 print(f'First: {str(date_summer[0])[:10]}, Last: {str(date_summer[-1])[:10]}')
 
 # -- Save summer-only data as NetCDF --
-out_path = '/home/jamesash/koa_scratch/chla_day_med_month_summer_20260328.nc'
+out_path = '/home/jamesash/koa_scratch/chla_day_summer_20260403.nc'
 out = Dataset(out_path, 'w', format='NETCDF4')
 
 out.createDimension('time', ras_summer.shape[0])
