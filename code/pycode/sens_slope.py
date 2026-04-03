@@ -3,7 +3,7 @@ from netCDF4 import Dataset
 from scipy.stats import mstats
 
 # -- Load summer anomaly data --
-file_id = Dataset('/home/jamesash/koa_scratch/chl_anomaly_summer_20260328.nc')
+file_id = Dataset('/home/jamesash/koa_scratch/chla_day_med_month_summer_20260328.nc')
 ras  = file_id.variables["CHL_anom"][:].filled(np.nan).astype('float64')
 lat  = file_id.variables["latitude"][:].copy()
 lon  = file_id.variables["longitude"][:].copy()
@@ -12,7 +12,7 @@ time_units    = file_id.variables["time"].units
 time_calendar = getattr(file_id.variables["time"], 'calendar', 'standard')
 file_id.close()
 
-ras[ras > 100] = np.nan
+ras[ras > 150] = np.nan
 
 # -- Build date vector --
 timedelta_vector = (time * np.timedelta64(1, 'D')).astype('timedelta64[ns]')
