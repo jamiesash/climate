@@ -3,7 +3,7 @@ from netCDF4 import Dataset
 from scipy.stats import mstats
 
 # -- Load summer anomaly data --
-file_id = Dataset('/home/jamesash/koa_scratch/chla_day_med_month_summer_20260328.nc')
+file_id = Dataset('/home/jamesash/koa_scratch/chla_day_summer_20260403.nc')
 ras  = file_id.variables["CHL_anom"][:].filled(np.nan).astype('float64')
 lat  = file_id.variables["latitude"][:].copy()
 lon  = file_id.variables["longitude"][:].copy()
