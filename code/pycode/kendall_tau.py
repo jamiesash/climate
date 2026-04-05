@@ -3,7 +3,7 @@ from netCDF4 import Dataset
 from scipy.stats import kendalltau
 
 # -- Load summer anomaly data --
-file_id = Dataset('/home/jamesash/koa_scratch/chl_anomaly_summer_20260328.nc')
+file_id = Dataset('/home/jamesash/koa_scratch/chla_day_summer_20260403.nc')
 ras  = file_id.variables["CHL_anom"][:].filled(np.nan).astype('float64')
 lat  = file_id.variables["latitude"][:].copy()
 lon  = file_id.variables["longitude"][:].copy()
@@ -49,7 +49,7 @@ for i in range(nlat):
 print('Done.')
 
 # -- Save results as NetCDF --
-out_path = '/home/jamesash/koa_scratch/chl_kendall_summer_20260328.nc'
+out_path = '/home/jamesash/koa_scratch/chl_kendall_20260405.nc'
 out = Dataset(out_path, 'w', format='NETCDF4')
 
 out.createDimension('latitude', nlat)
