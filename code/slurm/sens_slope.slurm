@@ -2,9 +2,9 @@
 #SBATCH --job-name=chl_proc
 #SBATCH --ntasks=1
 #SBATCH --partition=shared
-#SBATCH --time=0-12:00:00
+#SBATCH --time=1-00:00:00
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=225G
+#SBATCH --mem=175G
 #SBATCH --error=error-%A_%a.err
 #SBATCH --output=output-%A_%a.out
 #SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,TIME_LIMIT_80
