@@ -2,7 +2,7 @@
 #SBATCH --job-name=chl_proc
 #SBATCH --ntasks=1
 #SBATCH --partition=shared
-#SBATCH --time=0-08:00:00
+#SBATCH --time=0-06:00:00
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=175G
 #SBATCH --error=error-%A_%a.err
