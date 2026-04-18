@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH --job-name=summer_stats
+#SBATCH --job-name=summer_stats_2p_exp
 #SBATCH --ntasks=1
 #SBATCH --partition=shared
-#SBATCH --time=0-06:00:00
+#SBATCH --time=0-01:00:00
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=175G
+#SBATCH --mem=250G
 #SBATCH --error=error-%A_%a.err
 #SBATCH --output=output-%A_%a.out
 #SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,TIME_LIMIT_80

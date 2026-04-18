@@ -18,8 +18,8 @@ ras_raw = file_id.variables["CHL"][:].filled(np.nan).astype('float64')
 file_id.close()
 
 # Replace fill values
-ras[ras > 50] = np.nan
-ras_raw[ras_raw > 50] = np.nan
+ras[ras > 80] = np.nan
+ras_raw[ras_raw > 80] = np.nan
 
 # -- Build date vector --
 timedelta_vector = (time * np.timedelta64(1, 'D')).astype('timedelta64[ns]')
@@ -27,10 +27,18 @@ base_date   = np.datetime64('1900-01-01')
 date_vector = base_date + timedelta_vector
 
 # -- Compute per-pixel mean and std on anomaly, then create mask --
-pixel_mean = np.nanmean(ras, axis=0)
-pixel_std  = np.nanstd(ras, axis=0)
+# pixel_mean = np.nanmean(ras, axis=0)
+# pixel_std  = np.nanstd(ras, axis=0)
+# ras_mask = np.zeros_like(ras)
+# ras_mask[ras > pixel_mean + pixel_std] = 1
+
+# -- Compute per-pixel median and MAD, then mask extremes --
+pixel_median = np.nanmedian(ras, axis=0)
+pixel_mad    = np.nanmedian(np.abs(ras - pixel_median), axis=0)
+# Scaled MAD (consistent estimator of std for normal data)
+pixel_mad_scaled = pixel_mad * 1.4826
 ras_mask = np.zeros_like(ras)
-ras_mask[ras > pixel_mean + pixel_std] = 1
+ras_mask[ras > pixel_median + pixel_mad_scaled] = 1
 
 # Apply the anomaly-derived mask to BOTH datasets
 ras_extreme_anom = np.where(ras_mask == 1, ras, np.nan)
@@ -82,6 +90,10 @@ for s, e in zip(start_dates, end_dates):
     # Center of mass from ANOMALY extreme values
     subset_com = np.where(np.isnan(subset_extreme_anom), 0, subset_extreme_anom)
 
+    # the uncoimmented one is not necissarily what is in the results. 
+    # subset_weighted = subset_com**2
+    subset_weighted = (np.exp(subset_com) -1)**2
+
     if np.sum(subset_com) == 0:
         results.append({
             'start': str(s),
@@ -96,7 +108,7 @@ for s, e in zip(start_dates, end_dates):
         })
         continue
 
-    t_idx, lat_idx, lon_idx = center_of_mass(subset_com)
+    t_idx, lat_idx, lon_idx = center_of_mass(subset_weighted)
     t_round = min(int(round(t_idx)), len(subset_dates) - 1)
     center_date = str(subset_dates[t_round])[:10]
 
@@ -130,7 +142,7 @@ for s, e in zip(start_dates, end_dates):
 
 # -- Save to CSV --
 df = pd.DataFrame(results)
-out_csv = '/home/jamesash/koa_scratch/bloom_summary_20260328.csv'
+out_csv = '/home/jamesash/koa_scratch/bloom_summary_exp_2p_1mad_20260418.csv'
 df.to_csv(out_csv, index=False)
 print(f'Saved: {out_csv}')
 print(df.to_string())
