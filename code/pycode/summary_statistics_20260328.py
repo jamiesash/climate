@@ -26,7 +26,7 @@ pixel_mad    = np.nanmedian(np.abs(ras - pixel_median), axis=0)
 # Scaled MAD (consistent estimator of std for normal data)
 pixel_mad_scaled = pixel_mad * 1.4826
 ras_mask = np.zeros_like(ras)
-ras_mask[ras > pixel_median + pixel_mad_scaled*2] = 1
+ras_mask[ras > pixel_median + pixel_mad_scaled] = 1
 
 ras_extreme = np.where(ras_mask == 1, ras, np.nan)
 
@@ -67,6 +67,10 @@ for s, e in zip(start_dates, end_dates):
     # Center of mass
     subset_com = np.where(np.isnan(subset_extreme), 0, subset_extreme)
 
+    # power amplify to give higher values more wieght. 
+    power = 2
+    subset_weighted = subset_com ** power
+
     if np.sum(subset_com) == 0:
         results.append({
             'start': str(s),
@@ -78,7 +82,7 @@ for s, e in zip(start_dates, end_dates):
         })
         continue
 
-    t_idx, lat_idx, lon_idx = center_of_mass(subset_com)
+    t_idx, lat_idx, lon_idx = center_of_mass(subset_weighted)
     t_round = min(int(round(t_idx)), len(subset_dates) - 1)
     center_date = str(subset_dates[t_round])[:10]
 
