@@ -2,7 +2,7 @@ import numpy as np
 from netCDF4 import Dataset
 
 # -- Load data --
-file_id = Dataset('/home/jamesash/koa_scratch/chla_day_med_month_1997_2025_20260328.nc')
+file_id = Dataset('/home/jamesash/koa_scratch/chla_day_deseason_detrend_20260422.nc')
 ras  = file_id.variables["CHL_anom"][:].filled(np.nan).astype('float64')
 lat  = file_id.variables["latitude"][:].copy()
 lon  = file_id.variables["longitude"][:].copy()

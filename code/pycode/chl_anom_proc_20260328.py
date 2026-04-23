@@ -13,6 +13,8 @@ time_units = file_id.variables["time"].units       # preserve original units
 time_calendar = getattr(file_id.variables["time"], 'calendar', 'standard')
 file_id.close()
 
+ras[ras > 100] = np.nan
+
 # -- Build date vector --
 timedelta_vector = (time * np.timedelta64(1, 'D')).astype('timedelta64[ns]')
 base_date   = np.datetime64('1900-01-01')
