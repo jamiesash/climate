@@ -13,7 +13,7 @@ time_units = file_id.variables["time"].units
 time_calendar = getattr(file_id.variables["time"], 'calendar', 'standard')
 file_id.close()
 
-# ras[ras > 100] = np.nan
+ras[ras > 100] = np.nan
 
 # -- Build date vector --
 timedelta_vector = (time * np.timedelta64(1, 'D')).astype('timedelta64[ns]')
@@ -65,7 +65,7 @@ print(f'Detrended range: {np.nanmin(ras_detrended):.4f} to {np.nanmax(ras_detren
 # ============================================================================
 # Save
 # ============================================================================
-out_path = '/home/jamesash/koa_scratch/chla_day_deseason_detrend_20260422.nc'
+out_path = '/home/jamesash/koa_scratch/chla_day_deseason_detrend_20260423.nc'
 out = Dataset(out_path, 'w', format='NETCDF4')
 
 out.createDimension('time', ras_detrended.shape[0])
