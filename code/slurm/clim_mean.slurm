@@ -2,7 +2,7 @@
 #SBATCH --job-name=summer_mean
 #SBATCH --ntasks=1
 #SBATCH --partition=shared
-#SBATCH --time=0-00:20:00
+#SBATCH --time=0-02:00:00
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=175G
 #SBATCH --error=error-%A_%a.err
