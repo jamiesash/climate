@@ -4,7 +4,8 @@ from scipy.ndimage import uniform_filter1d
 
 # -- Load data --
 file_id = Dataset('../../data/chl/chl_1997_2025_day_l3_20260327.nc')
-ras  = file_id.variables["CHL"][:]
+# ras  = file_id.variables["CHL"][:]
+ras  = file_id.variables["CHL"][:].filled(np.nan).astype('float64')
 lat  = file_id.variables["latitude"][:]
 lon  = file_id.variables["longitude"][:]
 time = file_id.variables["time"][:]
@@ -12,7 +13,7 @@ time_units = file_id.variables["time"].units
 time_calendar = getattr(file_id.variables["time"], 'calendar', 'standard')
 file_id.close()
 
-ras[ras > 100] = np.nan
+# ras[ras > 100] = np.nan
 
 # -- Build date vector --
 timedelta_vector = (time * np.timedelta64(1, 'D')).astype('timedelta64[ns]')
