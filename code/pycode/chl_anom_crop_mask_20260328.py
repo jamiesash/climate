@@ -6,7 +6,7 @@ from shapely.geometry import Polygon, MultiPolygon
 from matplotlib.path import Path
 
 # -- Load anomaly data --
-file_id = Dataset('/home/jamesash/koa_scratch/chla_day_med_month_1997_2025_20260328.nc')
+file_id = Dataset('/home/jamesash/koa_scratch/chla_day_deseason_detrend_20260422.nc')
 ras      = file_id.variables["CHL_anom"][:]
 clim     = file_id.variables["CHL_clim"][:]
 lat      = file_id.variables["latitude"][:]

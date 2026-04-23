@@ -35,9 +35,9 @@ for i in range(ras.shape[0]):
 # ============================================================================
 # Step 2: Remove long-term trend (running mean)
 # ============================================================================
-# Window size in days — 365 gives a 1-year running mean
+# Window size in days — 1825 gives a 5-year running mean
 # This smooths out interannual variability, leaving only the long-term trend
-window = 365
+window = 1825
 
 # Replace NaN with 0 for filtering, track valid counts
 ras_filled = np.where(np.isnan(ras_anom), 0, ras_anom)
