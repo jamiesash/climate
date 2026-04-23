@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH --job-name=summer_stats_2p_exp
+#SBATCH --job-name=chla_detrend
 #SBATCH --ntasks=1
 #SBATCH --partition=shared
-#SBATCH --time=0-12:00:00
+#SBATCH --time=0-02:00:00
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=400G
+#SBATCH --mem=375G
 #SBATCH --error=error-%A_%a.err
 #SBATCH --output=output-%A_%a.out
 #SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,TIME_LIMIT_80

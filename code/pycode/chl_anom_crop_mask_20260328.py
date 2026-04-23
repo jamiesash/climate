@@ -6,8 +6,8 @@ from shapely.geometry import Polygon, MultiPolygon
 from matplotlib.path import Path
 
 # -- Load anomaly data --
-file_id = Dataset('/home/jamesash/koa_scratch/chla_day_deseason_detrend_20260422.nc')
-ras      = file_id.variables["CHL_anom"][:]
+file_id = Dataset('/home/jamesash/koa_scratch/chla_day_deseason_detrend_20260423.nc')
+ras      = file_id.variables["CHL_anom"][:].filled(np.nan).astype('float64')
 clim     = file_id.variables["CHL_clim"][:]
 lat      = file_id.variables["latitude"][:]
 lon      = file_id.variables["longitude"][:]
@@ -54,7 +54,7 @@ inside = inside.reshape(lon_grid.shape)
 ras[:, inside] = np.nan
 
 # -- Save cropped and masked anomaly as NetCDF --
-out_path = '/home/jamesash/koa_scratch/chl_anomaly_cropped_masked_20260328.nc'
+out_path = '/home/jamesash/koa_scratch/chl_anomaly_cropped_masked_20260423.nc'
 out = Dataset(out_path, 'w', format='NETCDF4')
 
 # Dimensions

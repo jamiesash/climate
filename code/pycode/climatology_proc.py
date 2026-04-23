@@ -2,7 +2,7 @@ import numpy as np
 from netCDF4 import Dataset
 
 # -- Load data --
-file_id = Dataset('/home/jamesash/koa_scratch/chla_day_deseason_detrend_20260422.nc')
+file_id = Dataset('/home/jamesash/koa_scratch/chla_day_deseason_detrend_20260423.nc')
 ras  = file_id.variables["CHL_anom"][:].filled(np.nan).astype('float64')
 lat  = file_id.variables["latitude"][:].copy()
 lon  = file_id.variables["longitude"][:].copy()
@@ -34,7 +34,7 @@ print(f'Output shape: {ras_mean.shape}')
 print(f'Value range: {np.nanmin(ras_mean):.4f} to {np.nanmax(ras_mean):.4f}')
 
 # -- Save as NetCDF --
-out_path = '/home/jamesash/koa_scratch/chla_day_summer_mean_20260403.nc'
+out_path = '/home/jamesash/koa_scratch/chla_day_summer_mean_20260423.nc'
 out = Dataset(out_path, 'w', format='NETCDF4')
 
 out.createDimension('latitude', len(lat))

@@ -4,7 +4,7 @@ from netCDF4 import Dataset
 from scipy.ndimage import center_of_mass
 
 # -- Load cropped and masked anomaly data --
-file_id = Dataset('/home/jamesash/koa_scratch/chl_anomaly_cropped_masked_20260328.nc')
+file_id = Dataset('/home/jamesash/koa_scratch/chl_anomaly_cropped_masked_20260423.nc')
 ras  = file_id.variables["CHL_anom"][:].filled(np.nan).astype('float64')
 cz_mask = file_id.variables["CZ_mask"][:].astype(bool)  # True = inside CZ
 lat  = file_id.variables["latitude"][:].copy()
@@ -142,7 +142,7 @@ for s, e in zip(start_dates, end_dates):
 
 # -- Save to CSV --
 df = pd.DataFrame(results)
-out_csv = '/home/jamesash/koa_scratch/bloom_summary_exp_2p_1mad_20260418.csv'
+out_csv = '/home/jamesash/koa_scratch/bloom_summary_exp_2p_1mad_20260423.csv'
 df.to_csv(out_csv, index=False)
 print(f'Saved: {out_csv}')
 print(df.to_string())
