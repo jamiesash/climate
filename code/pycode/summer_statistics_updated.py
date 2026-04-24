@@ -94,8 +94,8 @@ for s, e in zip(start_dates, end_dates):
     subset_com = np.where(np.isnan(subset_extreme_anom), 0, subset_extreme_anom)
 
     # the uncoimmented one is not necissarily what is in the results. 
-    # subset_weighted = subset_com**2
-    subset_weighted = (np.exp(subset_com) -1)**2
+    subset_weighted = subset_com**2
+    # subset_weighted = (np.exp(subset_com) -1)**2
 
     if np.sum(subset_com) == 0:
         results.append({
@@ -151,7 +151,7 @@ for s, e in zip(start_dates, end_dates):
 
 # -- Save to CSV --
 df = pd.DataFrame(results)
-out_csv = '/home/jamesash/koa_scratch/bloom_summary_exp_2p_1mad_20260423.csv'
+out_csv = '/home/jamesash/koa_scratch/bloom_summary_2p_1mad_20260423.csv'
 df.to_csv(out_csv, index=False)
 print(f'Saved: {out_csv}')
 print(df.to_string())
