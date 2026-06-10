@@ -86,6 +86,9 @@ for s, e in zip(start_dates, end_dates):
 
     # Magnitude from RAW CHL at extreme pixels
     mag = np.nanpercentile(subset_extreme_raw, 95)
+    mag_q25 = np.nanpercentile(subset_extreme_raw, 25)
+    mag_q75 = np.nanpercentile(subset_extreme_raw, 75)
+    mag_iqr = mag_q75 - mag_q25
 
     # Center of mass from ANOMALY extreme values
     subset_com = np.where(np.isnan(subset_extreme_anom), 0, subset_extreme_anom)
@@ -102,6 +105,9 @@ for s, e in zip(start_dates, end_dates):
             'center_lat': np.nan,
             'center_lon': np.nan,
             'magnitude': np.nan,
+            'mag_q25': np.nan,
+            'mag_q75': np.nan,
+            'mag_iqr': np.nan,
             'max_area_km2': np.nan,
             'max_area_date': 'N/A',
             'cloud_pct': np.nan
@@ -135,6 +141,9 @@ for s, e in zip(start_dates, end_dates):
         'center_lat': float(lat[int(round(lat_idx))]),
         'center_lon': float(lon[int(round(lon_idx))]),
         'magnitude': mag,
+        'mag_q25': float(mag_q25),
+        'mag_q75': float(mag_q75),
+        'mag_iqr': float(mag_iqr),        
         'max_area_km2': float(max_area),
         'max_area_date': max_area_date,
         'cloud_pct': round(float(cloud_pct), 2)
