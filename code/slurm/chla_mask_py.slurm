@@ -2,7 +2,7 @@
 #SBATCH --job-name=stl_large
 #SBATCH --ntasks=1
 #SBATCH --partition=shared
-#SBATCH --time=0-00:10:00
+#SBATCH --time=0-01:00:00
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=125G
 #SBATCH --error=error-%A_%a.err

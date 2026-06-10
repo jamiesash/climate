@@ -7,8 +7,10 @@ from matplotlib.path import Path
 
 # -- Load anomaly data --
 file_id = Dataset('/home/jamesash/koa_scratch/chla_day_deseason_detrend_20260423.nc')
+#ras      = file_id.variables["CHL_anom"][:].filled(np.nan).astype('float64')
+#clim     = file_id.variables["CHL_clim"][:]
 ras      = file_id.variables["CHL_anom"][:].filled(np.nan).astype('float64')
-clim     = file_id.variables["CHL_clim"][:]
+clim     = file_id.variables["CHL_clim"][:].filled(np.nan).astype('float64')
 lat      = file_id.variables["latitude"][:]
 lon      = file_id.variables["longitude"][:]
 time     = file_id.variables["time"][:]
